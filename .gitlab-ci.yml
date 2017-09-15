@@ -9,5 +9,7 @@ before_script:
 build:
   script:
     - pip install git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/makecourse.git
-    - git clone --recursive $CI_REPOSITORY_URL .
+    - git clone --recursive $CI_REPOSITORY_URL
+    - cd $CI_PROJECT_NAME
+    - pip install -e git+git@mas-gitlab.ncl.ac.uk:makecourse-tools/plastex.git@a7d0b8a4fbebc9fcad0840b29d5911c5cd7ce20e#egg=plasTeX
     - make upload
