@@ -1,0 +1,13 @@
+image: "georgestagg/makecourse-tools"
+
+before_script:
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - mkdir -p ~/.ssh
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+build:
+  script:
+    - pip install git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/makecourse.git
+    - git clone --recursive $CI_REPOSITORY_URL .
+    - make upload

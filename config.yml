@@ -1,0 +1,17 @@
+title: MAS0000
+code: MAS0000
+author: Ann Example
+web_dir: /module/MAS0000
+structure: 
+    - type: introduction
+      source: intro.tex
+    - type: part
+      title: Course Material
+      content:
+        - type: chapter
+          title: Chapter 1
+          source: chapter1/chapter1.tex
+        - type: chapter
+          title: Chapter 2
+          source: chapter2/chapter2.tex
+theme: NCLCourse
