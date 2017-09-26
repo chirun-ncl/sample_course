@@ -5,12 +5,12 @@ before_script:
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
   - mkdir -p ~/.ssh
   - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  - apt-get install -y pdf2svg
 
 build:
   script:
-    - pip install git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/makecourse.git
+    - pip install git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/makecourse.git -e git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/plastex.git@ncl-changes#egg=plasTeX
     - git clone --recursive $CI_REPOSITORY_URL
     - cd $CI_PROJECT_NAME
     - git checkout $CI_COMMIT_REF_NAME
-    - pip install -e git+git@mas-gitlab.ncl.ac.uk:makecourse-tools/plastex.git@ncl-changes#egg=plasTeX
     - make upload
