@@ -1,6 +1,6 @@
-CODE := $(shell grep code config.yml | awk -F ' ' '{print $$2}')
+CODE := $(shell grep code config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 
-build/index.html: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex)
+build/index.html: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
 	makecourse -vv 
 
 upload: build/index.html

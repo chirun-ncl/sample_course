@@ -14,4 +14,7 @@ structure:
         - type: chapter
           title: Chapter 2
           source: chapter2/chapter2.tex
+        - type: chapter
+          title: Code Test
+          source: code/code.md
 theme: NCLCourse
