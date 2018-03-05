@@ -18,3 +18,4 @@ structure:
           title: Code Test
           source: code/code.md
 theme: NCLCourse
+build_pdf: True

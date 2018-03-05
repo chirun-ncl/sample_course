@@ -1,18 +1,29 @@
 \documentclass[a4paper]{article}
-\usepackage{amsfonts,amssymb,amsmath,latexsym,amsbsy,graphicx,float}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{propdef}[thm]{Proposition-Definition}
-\newtheorem{pro}[thm]{Proposition}
-\newtheorem{defi}[thm]{Definition}
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{conj}[thm]{Conjecture}
-\newtheorem{eg}[thm]{{Example}}
-\newtheorem{ex}[thm]{Exercise}
-\newtheorem{rema}[thm]{Remark}
-\newtheorem{remarks}[thm]{Remarks}
-\newtheorem{proof}[thm]{Proof}
+\usepackage{amsfonts,amssymb,amsmath,latexsym,amsbsy,graphicx,float,hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{propdef}{Proposition-Definition}[section]
+\newtheorem{pro}{Proposition}[section]
+\newtheorem{defi}{Definition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{eg}{Example}[section]
+\newtheorem{ex}{Exercise}[section]
+\newtheorem{rema}{Remark}[section]
+\newtheorem{remarks}{Remarks}[section]
+\newtheorem{proof}{Proof}[section]
+
+\newif\ifplastex\plastexfalse
+\ifplastex
+    \usepackage{embed}
+\else
+    \usepackage{comment}
+    \excludecomment{HTML}
+    \newtheorem{nmbs_int}{Test Yourself}[section]
+    \newenvironment{numbas}[1][Visit the URL below to try a numbas exam:]{\begin{nmbs_int}\textrm{#1}\\}{\end{nmbs_int}}
+\fi
+
 \begin{document}
 
 \section{Section 1}
@@ -21,5 +32,9 @@ Content goes here.
 Subsections are shown on the web.
 \section{Section 2}
 More content goes here.
+
+\begin{numbas}[Try out this exam about differentiation:]
+https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/
+\end{numbas}
 
 \end{document}
