@@ -1,7 +1,7 @@
 title: MAS0000
 code: MAS0000
 author: Ann Example
-web_dir: /module/MAS0000
+web_dir: /module/MAS0000/
 structure: 
     - type: introduction
       source: intro.tex
