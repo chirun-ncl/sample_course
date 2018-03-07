@@ -1,5 +1,22 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{report}
+
+% LaTeX packages -- Be careful! Sufficently complex packages will break the build process.
 \usepackage{amsfonts,amssymb,amsmath,latexsym,amsbsy,graphicx,float,hyperref}
+
+% The following LaTeX code is required for processing to the web.
+% Removing it may break the build process.
+\newif\ifplastex\plastexfalse
+\ifplastex
+    \usepackage{embed}
+\else
+    \usepackage{comment}
+	\newcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
+    \excludecomment{HTML}
+    \newtheorem{nmbs_int}{Test Yourself}[section]
+    \newenvironment{numbas}[1][Visit the URL below to try a numbas exam:]{\begin{nmbs_int}\textrm{#1}\\}{\end{nmbs_int}}
+\fi
+
+% Theorem environments
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{prop}{Proposition}[section]
 \newtheorem{propdef}{Proposition-Definition}[section]
@@ -14,17 +31,10 @@
 \newtheorem{remarks}{Remarks}[section]
 \newtheorem{proof}{Proof}[section]
 
-\newif\ifplastex\plastexfalse
-\ifplastex
-    \usepackage{embed}
-\else
-    \usepackage{comment}
-    \excludecomment{HTML}
-    \newtheorem{nmbs_int}{Test Yourself}[section]
-    \newenvironment{numbas}[1][Visit the URL below to try a numbas exam:]{\begin{nmbs_int}\textrm{#1}\\}{\end{nmbs_int}}
-\fi
-
 \begin{document}
+%Be sure to set a reasonable chapter number here!
+\setcounter{chapter}{1}
+\chapter{Another chapter title}
 
 \section{Section 1}
 Content goes here.

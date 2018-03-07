@@ -1,25 +1,616 @@
-\documentclass[a4paper]{article}
-\usepackage{amsfonts,amssymb,amsmath,latexsym,amsbsy,graphicx,float}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{prop}{Proposition}[section]
-\newtheorem{propdef}{Proposition-Definition}[section]
-\newtheorem{pro}{Proposition}[section]
-\newtheorem{defi}{Definition}[section]
-\newtheorem{lem}{Lemma}[section]
-\newtheorem{cor}{Corollary}[section]
-\newtheorem{conj}{Conjecture}[section]
-\newtheorem{eg}{Example}[section]
-\newtheorem{ex}{Exercise}[section]
-\newtheorem{rema}{Remark}[section]
-\newtheorem{remarks}{Remarks}[section]
-\newtheorem{proof}{Proof}[section]
+\documentclass[a4paper]{report}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,latexsym,amsbsy,graphicx,float}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\usetikzlibrary{arrows.meta,bending,matrix,positioning}
+\allowdisplaybreaks
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{example}{Example}[chapter]
+\newtheorem*{note}{Note}
+\newtheorem*{solution}{Solution}
+
+% Set counters and new commands
+\newboolean{showlectures}
+\setboolean{showlectures}{true}
+\newcounter{nlecture}
+\setcounter{nlecture}{4}
+\newcommand{\lectureend}{
+\par \noindent [{\bf End of Lecture \arabic{nlecture}}]
+\refstepcounter{nlecture}
+}
+
 \begin{document}
+\setcounter{chapter}{1}
+\chapter{First-order ordinary differential equations}
+\label{chap:first} 
 
-\section{Section 1}
-Content goes here.
-\subsection{Subsection 1}
-Subsections are shown on the web.
-\section{Section 2}
-More content goes here.
+\section{Separable ODEs}
+\label{sec:first:sep}
 
+A {\bf separable} first-order ODE can be written in the form
+
+\begin{equation}
+\label{eqn:first:separable}
+y'=g(x)h(y).
+\end{equation}
+\noindent 
+\noindent We will assume that $g(x)$ is continuous over some range of values of $x$, e.g. $x\in(a,b)$, possibly the whole real line $(-\infty,\infty)$. Continuity of $g(x)$ ensures that we can take the necessary integrals. 
+
+\subsection{A simple solution}
+\label{subsec:first:sepsimple}
+
+Any (constant) solution of the equation $h(y)=0$ is also a possible solution of (\ref{eqn:first:separable}). 
+
+\begin{example}
+\label{ex:first:sepspecial}
+Show that $y=n\pi$ ($n\in\mathbb{Z}$) is a possible solution of the first-order ODE,
+
+\begin{displaymath} 
+y'=x\sin(y).
+\end{displaymath}
+\end{example}
+
+\begin{solution}
+Here $g(x)=x$ and $h(y)=\sin(y)$. Now, $h(y)=\sin(y)=0$ if $y=n\pi$ (where $n\in\mathbb{Z}$), so the right-hand side of the ODE is zero. Clearly
+$y=n\pi$ (constant) $\forall x$ $\Longrightarrow$ $y'=0$ (i.e. the left-hand side is also zero). Therefore $y=n\pi$ is a possible solution.
+\end{solution}
+
+\subsection{Separation of variables}
+\label{subsec:first:sepmethod}
+
+To derive a more general solution, we must assume that $h(y)\neq0$, so that we can divide each side by $h(y)$,
+
+\begin{displaymath}
+\frac{y'}{h(y)}=g(x).
+\end{displaymath}
+\noindent Integrating each side with respect to $x$,
+
+\begin{displaymath}
+\int \frac{y'}{h(y)}~{\rm d} x=\int g(x)~{\rm d}x.
+\end{displaymath}
+\noindent since $\mathrm{d}y=y'\,\mathrm{d}x$, this implies that
+
+\begin{equation}
+\label{eqn:first:sepsolution}
+\int \frac{{\rm d}y}{h(y)}=\int g(x)~{\rm d}x.
+\end{equation}
+\noindent Evaluating these integrals leads to a solution for $y(x)$. Sometimes the general solution will contain solutions of $h(y)=0$, but this is not always the case.
+
+\begin{example}
+\label{ex:first:separable1}
+Find the general solution to 
+
+\begin{displaymath}
+y'=x(y+1)^2.
+\end{displaymath}
+\end{example}
+
+\begin{solution}
+Clearly $y=-1$ is a possible constant solution. If $y\neq -1$, we separate variables,
+
+\begin{eqnarray*}
+\int \frac{{\rm d}y}{(y+1)^2}&=&\int x~{\rm d}x\\
+\Longrightarrow -\frac{1}{y+1} &=& \frac{x^2}{2} + C,
+\end{eqnarray*}
+\noindent where C is an arbitrary constant of integration. Rearranging this expression,
+
+\begin{eqnarray*}
+-\frac{2}{y+1} &=& x^2+2C\\
+\Longrightarrow y+1 &=& -\frac{2}{x^2+2C}\\
+\Longrightarrow y &=& -1 - \left(\frac{2}{x^2+D}\right),
+\end{eqnarray*}  
+
+\noindent where $D=2C$ is a rescaled constant. Alongside the special solution $y=-1$, this is the most general solution to this first order ODE. Different values of $D$ lead to a family of {\bf solution curves} (or {\bf integral curves}) in the $xy$-plane. \\
+
+\par \noindent {\bf Check (not lectured):} Differentiating this function, we see that 
+
+\begin{displaymath}
+y' = \frac{4x}{\left(x^2+D\right)^2} = x(y+1)^2,
+\end{displaymath}
+
+\noindent as required.\\
+
+
+ 
+\end{solution}
+
+\begin{example}
+\label{ex:first:separable2}
+Find the general solution of the ODE $y'=(y+xy)/x^2$ and then the particular solution which passes through the point $(1,1)$, i.e. $y(1)=1$.
+\end{example}
+
+\begin{solution}
+We have
+\begin{eqnarray*}
+y'&=&\frac{(y+xy)}{x^2}
+\\
+&=&\frac{(1+x)y}{x^2}.
+\end{eqnarray*}
+Clearly $y=0$ is a possible solution, but this is incompatible with $y(1)=1$ so can be ignored. Assuming $y\neq0$, separation of variables leads to 
+
+\begin{displaymath}
+\int \frac{{\rm d}y}{y}=\int \left(\frac{1+x}{x^2}\right){\rm d}x = \int \left(\frac{1}{x^2}+\frac{1}{x}\right)\,\mathrm{d}x \Longrightarrow 
+\ln|y|=-\frac{1}{x}+\ln|x| + C
+\end{displaymath}
+(where $C$ is the constant of integration). Taking the exponential of both sides,
+
+\begin{displaymath}
+|y|=\exp\left[-\frac{1}{x}+\ln |x| + C\right]=|x|\exp\left[-\frac{1}{x}+C\right]= |x|\exp[C]\exp\left[-\frac{1}{x}\right],
+\end{displaymath}
+\noindent where $\displaystyle{\exp(x)\equiv\mathrm{e}^x}$. Dropping the modulus operators from both sides,
+
+\begin{displaymath}
+y = \pm \,x \exp[C]\exp\left[-\frac{1}{x}\right].
+\end{displaymath}
+\noindent Absorbing the plus/minus sign into a new constant $D$ (where $|D|=\exp[C]$),
+\begin{displaymath}
+y=D x \exp\left[-\frac{1}{x}\right].
+\end{displaymath}
+If $y(1)=1$, this implies that
+
+\begin{displaymath}
+1=D\cdot 1 \cdot \exp[-1] \equiv D\mathrm{e}^{-1} \Rightarrow D=\mathrm{e}.
+\end{displaymath}
+So the required solution is,
+\begin{displaymath}
+y=\mathrm{e}x\exp\left[-\frac{1}{x}\right] = x \exp\left[1-\frac{1}{x}\right] \left(\equiv x \mathrm{e}^{\left[1-\left(1/x\right)\right]}\right).
+\end{displaymath}
+
+\end{solution}
+
+\lectureend
+
+\begin{example}
+\label{ex:first:radio}
+If $N(t)$ is the size of a radioactive sample at time $t$, then
+
+\begin{displaymath}
+\frac{\mathrm{d}N}{\mathrm{d}t} = -\alpha N,
+\end{displaymath}
+\noindent where $\alpha$ is a positive constant. How long does it take for half the sample to decay?
+\end{example}
+
+\begin{solution}
+Assuming that $N\neq 0$, we again proceed by separating variables (note the change of notation!):
+
+\begin{displaymath}
+\int \frac{{\rm d}N}{N}=-\alpha\int \,\mathrm{d}t \Longrightarrow \ln|N| = -\alpha t + C,
+\end{displaymath}
+\noindent where $C$ is a constant of integration. Hence,
+
+\begin{displaymath}
+|N(t)| = \mathrm{e}^C \mathrm{e}^{-\alpha t} \Longrightarrow N(t) =\pm \,\mathrm{e}^C \mathrm{e}^{-\alpha t}\Longrightarrow  N(t) = A \mathrm{e}^{-\alpha t},
+\end{displaymath}
+\noindent where $A$ is a new constant ($|A|=\mathrm{e}^C$) into which the plus/minus sign has been absorbed. If $N(0)=N_0$ (initial sample size) then,
+
+\begin{displaymath}
+N_0 = A \mathrm{e}^0 = A \Longrightarrow N(t) = N_0 \mathrm{e}^{-\alpha t}.
+\end{displaymath}
+
+
+\noindent Let $t_h$ be the length of time it takes for half the sample to decay, i.e. $N(t_h) = N_0/2$. This implies that,
+
+\begin{displaymath}   
+\frac{N_0}{2} = N(t_h) = N_0 \mathrm{e}^{-\alpha t_h}.
+\end{displaymath}
+\noindent Hence
+\begin{eqnarray*}
+\frac{1}{2} &=& \mathrm{e}^{-\alpha t_h}\\
+\mbox{(taking logs)}\;\Longrightarrow \ln \left[\frac{1}{2}\right] &=& -\alpha t_h\\
+\Longrightarrow \ln 1 - \ln 2 &=& -\alpha t_h \quad\mbox{(recall that $\ln(x/y)=\ln x - \ln y)$}\\
+\Longrightarrow 0 - \ln 2 &=& -\alpha t_h\\
+\Longrightarrow t_h &=& \frac{\ln 2}{\alpha}. 
+\end{eqnarray*}
+
+\noindent This is the time it takes for half the sample to decay (known as the sample's {\bf half-life}).
+
+\end{solution} 
+
+\section{Homogeneous ODEs}
+\label{sec:first:hom}
+
+A {\bf homogeneous} first-order ODE can be written in the form
+\begin{equation}
+y'=f(x,y)=F\left(\frac{y}{x} \right).
+\label{eqn:first:homoneode}
+\end{equation}
+\noindent We will assume that $F(y/x)$ is a continuous function of its argument. \\
+
+\par \noindent {\bf Idea:} Define a new variable, $v(x)$, such that 
+
+\begin{equation}
+\label{eqn:first:homoneodeidea}
+y(x)=xv(x).
+\end{equation}
+\noindent Rewriting (\ref{eqn:first:homoneode}) in terms of $v(x)$ and $x$, 
+
+\begin{displaymath}
+y'=F\left(\frac{y}{x}\right) \Longrightarrow \left(xv\right)'=F(v) \Longrightarrow xv' + v = F(v).
+\end{displaymath}
+
+\noindent Hence,
+
+\begin{equation}
+\label{eqn:first:homoneodesolution}
+xv' = F(v) - v,
+\end{equation}
+\noindent which can be solved by separating variables.
+
+\begin{example}
+\label{ex:first:hom}
+Find the general solution to $y'=(y^2+2xy)/x^2$. Then find the specific solution satisfying $y(1)=0.5$.
+\end{example}
+
+\begin{solution}
+Rearranging this equation, 
+
+\begin{displaymath}
+y'=\left(\frac{y}{x}\right)^2+2\left(\frac{y}{x}\right) \equiv F\left(\frac{y}{x}\right).
+\end{displaymath}
+
+\noindent This is a homogeneous, first-order ODE, so we set $y(x)=xv(x)$. Following the procedure leading to (\ref{eqn:first:homoneodesolution}), 
+\begin{eqnarray*}
+\left(xv\right)' &=& v^2+2v \\
+\Longrightarrow xv' + v &=& v^2 +2v\\
+\Longrightarrow xv' &=& v^2+v\\
+\Longrightarrow xv' &=& v(1+v).
+\end{eqnarray*}
+\noindent Separating variables and integrating both sides,
+\begin{equation*}
+\int \frac{{\rm d}v}{v(1+v)}=\int \frac{{\rm d}x}{x}.
+\end{equation*}
+\noindent Note that we have implicitly assumed that $v=y/x\neq0$ and $v=y/x\neq -1$. Neither of these special solutions are consistent with $y(1)=0.5$, so this is valid. 
+
+\lectureend
+
+\noindent To evaluate the integral on the left-hand side, use a partial fractions decomposition,
+
+\begin{displaymath}
+\frac{1}{v(1+v)}\equiv\frac{A}{v}+\frac{B}{1+v},
+\end{displaymath}
+
+\noindent where $A$ and $B$ are constants. Hence,
+
+\begin{displaymath}
+\frac{1}{v(1+v)} = \frac{A(1+v)+Bv}{v(1+v)} = \frac{A + (A+B)v}{v(1+v)}.
+\end{displaymath}
+\noindent For this to be true for {\bf any} $v$, we require that $A=1$ and $A+B=0 \Longrightarrow B=-A=-1$. Therefore
+
+\begin{displaymath}
+\frac{1}{v(1+v)}=\frac{1}{v}-\frac{1}{1+v}.
+\end{displaymath}
+\noindent Substituting this into the separated ODE, 
+\begin{eqnarray*}
+\int \left[\frac{1}{v}-\frac{1}{1+v}\right]\,\mathrm{d}v &=& \int \frac{{\rm d}x}{x}\\
+\Longrightarrow \ln|v|-\ln|1+v|&=&\ln|x|+C,
+\end{eqnarray*}
+\noindent where $C$ is a constant. Hence
+
+\begin{displaymath}
+\ln \left|\frac{v}{1+v}\right| = \ln |x| + C \Longrightarrow \frac{v}{1+v} = \pm\exp\left[\ln|x|+C\right] = \pm \mathrm{e}^C |x| = Dx,
+\end{displaymath}
+\noindent where $D$ is a new constant. Rearranging,
+
+\begin{displaymath}
+\frac{v}{1+v} = Dx \Longrightarrow v = Dx(1+v) \Longrightarrow v(1 - Dx) = Dx \Longrightarrow v = \frac{Dx}{1-Dx}.
+\end{displaymath}
+
+\noindent Recalling that $v=y/x$, this leads to the general solution
+
+\begin{displaymath}
+\frac{y}{x} = \frac{Dx}{1-Dx} \Longrightarrow y = \frac{Dx^2}{1-Dx}.
+\end{displaymath}
+
+\noindent Now, given that $y(1)=0.5$, 
+
+\begin{displaymath}
+\frac{1}{2} = \frac{D}{1-D} \Longrightarrow 1-D = 2D \Longrightarrow 3D = 1 \Longrightarrow D= \frac{1}{3}.
+\end{displaymath}
+
+\noindent Hence,
+
+\begin{displaymath}
+y = \frac{\frac{1}{3}x^2}{1- \frac{1}{3}x} = \frac{x^2}{3-x},
+\end{displaymath}
+\noindent which is the required answer. 
+\end{solution}
+
+\section{Linear first-order ODEs}
+\label{sec:first:linear}
+
+\subsection{Terminology}
+\label{subsec:first:linearform}
+Recalling our definition of a linear operator (\ref{eqn:intro:linearop}), 
+
+\begin{displaymath}
+L(y) = c_n(x)y^{(n)} + c_{n-1}(x)y^{(n-1)}+\ldots + c_1(x)y' + c_0(x)y
+\end{displaymath}
+
+\noindent (where the $c_i(x)$ are specified functions of $x$), any {\bf linear first-order ODE} can be written in the form
+
+\begin{equation}
+\label{eqn:first:pregenerallinear}
+L(y)\equiv c_1(x)y'+c_0(x)y = f(x),
+\end{equation}
+\noindent where $f(x)$ is another given function of $x$. Without loss of generality, we shall assume $c_1(x)\neq0$. 
+
+\begin{note}
+The case of $c_1(x)=0$ is trivial, i.e. $\displaystyle{c_0(x)y = f(x) \Longrightarrow y = \frac{f(x)}{c_0(x)}}$.
+\end{note}
+
+\noindent Dividing (\ref{eqn:first:pregenerallinear}) by $c_1(x)$, 
+
+\begin{equation}
+\label{eqn:first:generallinear}
+y'+p(x)y = q(x),
+\end{equation}
+\noindent where $p(x)=c_0(x)/c_1(x)$ and $q(x)=f(x)/c_1(x)$. This is the most general form for a (non-trivial) first-order linear ODE.
+
+\subsection{The integrating factor method}
+\label{subsec:first:linearint} 
+The challenge is to solve $y'+p(x)y = q(x)$. We shall assume that $p(x)$ and $q(x)$ are continuous (and hence integrable) over some interval $(a,b)$, possibly the whole real line $(-\infty,\infty)$. Let 
+
+\begin{displaymath}
+P(x) = \int p(x)\,\mathrm{d}x.
+\end{displaymath}
+\noindent For any $x\in(a,b)$, the fundamental theorem of calculus tells us that 
+
+\begin{displaymath}
+P'(x) = p(x).
+\end{displaymath}
+\noindent This implies that
+
+\begin{eqnarray*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] &=& y'\mathrm{e}^{P(x)} + P'(x)y \mathrm{e}^{P(x)}\\
+&=& y'\mathrm{e}^{P(x)} + p(x)y \mathrm{e}^{P(x)}\\
+&=& \left[y'+p(x)y\right] \mathrm{e}^{P(x)}.
+\end{eqnarray*}
+
+\noindent The quantity $\displaystyle{\mathrm{e}^{P(x)}\equiv\exp\left[P(x)\right]}$ is known as the {\bf integrating factor}. As we have just shown, if we multiply our original ODE by this integrating factor, i.e.
+
+\begin{displaymath}
+\left[y'+p(x)y\right] \mathrm{e}^{P(x)}=q(x) \mathrm{e}^{P(x)},
+\end{displaymath}
+\noindent this is equivalent to
+
+\begin{equation}
+\label{eqn:first:preintfactor}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] = q(x) \mathrm{e}^{P(x)}.
+\end{equation}
+
+\noindent Integrating this equation, 
+
+\begin{displaymath}
+y\mathrm{e}^{P(x)} = C + \int \left[q(x) \mathrm{e}^{P(x)}\right]\,\mathrm{d}x,
+\end{displaymath}
+\noindent where $C$ is a constant. Hence, recalling that $\displaystyle{P(x)=\int p(x)\,\mathrm{d}x}$, 
+
+\begin{equation}
+\label{eqn:first:intfactor}
+y = C \mathrm{e}^{-P(x)} + \mathrm{e}^{-P(x)}\int \left[q(x) \mathrm{e}^{P(x)}\right]\,\mathrm{d}x.
+\end{equation}
+
+\noindent This is the general solution. The term proportional to $C$ is often referred to as the {\bf complementary function}, whilst the rest of the right-hand side is known as the {\bf particular integral}. 
+
+\lectureend
+
+\begin{example}
+\label{ex:first:intfac}
+Find the general solutions of the following first-order ODEs:\\ 
+
+\begin{tabular}{rl}
+i) & $\displaystyle{y'+\frac{y}{x} = x}$;\\
+ii) & $\displaystyle{5xy'+6y = 1+x^2}$.
+\end{tabular}
+
+\end{example}
+
+\begin{solution}
+\noindent i) This equation is already in the form $y' + p(x)y = q(x)$. Here, $p(x)=1/x$ and $q(x)=x$. Clearly,
+
+\begin{displaymath}
+P(x) = \int p(x)\,\mathrm{d}x= \int \frac{\mathrm{d}x}{x}= \ln |x|
+\end{displaymath} 
+\noindent (note that the integrating factor is simply a computational tool, so we can ignore any constants of integration here). Hence,
+
+\begin{displaymath}
+\mathrm{e}^{P(x)} = \mathrm{e}^{\ln|x|} = |x|.
+\end{displaymath}
+
+\noindent Without loss of generality, we can ignore the modulus operator here, setting $\displaystyle{\mathrm{e}^{P(x)}=x}$ (this is because a negative integrating factor would also work in the same way). Multiplying our original equation by this integrating factor, we obtain the following ODE:
+
+\begin{displaymath}
+x\left(y'+\frac{y}{x}\right) = x^2 \Longrightarrow xy' + y = x^2.
+\end{displaymath}
+\noindent Referrring to (\ref{eqn:first:preintfactor}), we have already shown that this is equivalent to
+
+\begin{displaymath}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] = q(x) \mathrm{e}^{P(x)} \Longrightarrow \frac{\mathrm{d}}{\mathrm{d}x}\left[xy\right] = x^2.
+\end{displaymath}
+
+\noindent Integrating this equation,
+
+\begin{eqnarray*}
+xy &=& C+ \frac{x^3}{3}\quad\mbox{(where $C$ is constant)}\\
+\Longrightarrow y &=& \frac{C}{x} +\frac{x^2}{3},
+\end{eqnarray*}
+\noindent which is the required result.\\
+
+\par \noindent [{\bf Check:} $\displaystyle{y'+\frac{y}{x}=-\frac{C}{x^2}+\frac{2x}{3}+\frac{C}{x^2}+\frac{x}{3}=x}$, as required.] \\
+
+\par \noindent ii) This equation ($\displaystyle{5xy'+6y = 1+x^2}$) is not in the correct form to apply the integrating factor directly. Dividing through by $5x$,
+
+\begin{displaymath}
+y' + \frac{6y}{5x} = \frac{1}{5x} + \frac{x}{5},
+\end{displaymath}
+\noindent so $p(x)=6/5x$ and $q(x)=(1/5x)+(x/5)$. Here,
+
+\begin{displaymath}
+P(x) = \int p(x)\,\mathrm{d}x= \int \frac{\mathrm{6d}x}{5x}= \frac{6}{5}\ln |x|= \ln \left(|x|^{6/5}\right).
+\end{displaymath} 
+\noindent Hence,
+
+\begin{displaymath}
+\mathrm{e}^{P(x)} = |x|^{6/5}.
+\end{displaymath}
+\noindent Again we can drop the modulus operator, so that $\displaystyle{\mathrm{e}^{P(x)}=x^{6/5}}$. Applying this integrating factor,
+
+\begin{displaymath}
+x^{6/5}y' + \frac{6yx^{1/5}}{5} = x^{6/5} \left(\frac{1}{5x} + \frac{x}{5}\right),
+\end{displaymath}
+\noindent which, by (\ref{eqn:first:preintfactor}), is equivalent to
+
+\begin{displaymath}
+\frac{\mathrm{d}}{\mathrm{d}x} \left[x^{6/5}y\right]=  \frac{x^{1/5}}{5} + \frac{x^{11/5}}{5}.
+\end{displaymath}
+\noindent Integrating each side of this equation,
+
+\begin{eqnarray*}
+x^{6/5}y &=& C + \frac{x^{6/5}}{6}+\frac{x^{16/5}}{16}\quad\mbox{(where $C$ is constant)}\\
+\Longrightarrow y &=& Cx^{-6/5} + \frac{1}{6} + \frac{x^2}{16}, 
+\end{eqnarray*}
+\noindent which is the required solution.\\
+
+\par \noindent [{\bf Check:} $\displaystyle{5xy'+6y=-6Cx^{-6/5}+\frac{5x^2}{8}+6Cx^{-6/5}+1+\frac{3x^2}{8}=1+x^2}$, as required.] \\
+\end{solution}
+
+\subsection{Existence and uniqueness}
+\label{subsec:first:linearexist}
+{\bf Theorem:} If the functions $p(x)$ and $q(x)$ are continuous $\forall x \in (a,b)$, then there exists a unique function $y(x)$, defined on the open interval $a < x < b$, satisfying the linear first-order ODE
+
+\begin{displaymath}
+y'+p(x)y=q(x), \quad y\left(x_0\right)=y_0,
+\end{displaymath}
+\noindent for some given $x_0\in(a,b)$ and $y_0\in\mathbb{R}$. \\
+
+\par \noindent {\bf Proof:} Existence has already been demonstrated by the construction of an explicit solution (\ref{eqn:first:intfactor}). For uniqueness, we assume that there are two solutions $y_1(x)$ and $y_2(x)$. Consider the function $Y(x)=y_1(x)-y_2(x)$. Clearly
+
+\begin{eqnarray*}
+Y' + p(x)Y &=& \left(y_1-y_2\right)' + p(x)\left(y_1-y_2\right)\\
+&=& \left[y_1'+p(x)y_1\right] - \left[y_2'+p(x)y_2\right]\\
+&=& q(x)-q(x)\\
+\Longrightarrow Y' + p(x)Y &=& 0,
+\end{eqnarray*}
+
+\lectureend
+
+\noindent whilst $\displaystyle{Y\left(x_0\right) = y_1\left(x_0\right)-y_2\left(x_0\right) = y_0-y_0 = 0}$. Obviously $Y=0$ is a possible solution of this ODE, in which case $y_1(x)=y_2(x)$ (i.e. the solution is unique). For $Y\neq0$, separation of variables leads to
+
+\begin{displaymath}
+Y' = -p(x)Y \iff \int \frac{\mathrm{d}Y}{Y} = -\int p(x)\,\mathrm{d}x \iff \ln|Y| = C-P(x),
+\end{displaymath}
+\noindent (where, as before. $\displaystyle{P(x) = \int p(x)\,\mathrm{d}x}$ and $C$ is a constant). Rearranging this expression, we see that
+
+\begin{displaymath}
+Y = A\mathrm{e}^{-P(x)}, 
+\end{displaymath}
+\noindent where $A$ is a redefined constant. The only way that this can be compatible with $Y(0)=0$ is if $A=0 \Longrightarrow Y(x)=0 \;\forall x$. This again implies that $y_1(x)=y_2(x)$, i.e. unique solution. 
+
+\begin{note}
+Linearity is crucial to this result. There are many {\bf nonlinear} ODEs for which solutions are not unique. For example, consider the following differentiable function,
+
+\begin{displaymath}
+y(x)=\left\{\begin{array}{l} 0  \hspace{0.83in} \mbox{if}
+      \hspace{0.1in} x\le C \\ (x-C)^2 \hspace{0.3in} \mbox{if} \hspace{0.1in} x > C,
+    \end{array} \right\}
+\end{displaymath}  
+
+\noindent where $C$ is {\bf any} positive constant (i.e. $C\ge 0$). For any valid choice of $C$ (of which there are infinitely many), this function satisfies the nonlinear ODE
+
+\begin{displaymath}
+y'=2\sqrt{y},
+\end{displaymath}
+\noindent subject to $y(0)=0$.
+
+
+\end{note}
+
+\section{Isoclines}
+\label{sec:first:iso}
+
+Consider an equation of the form $y'=f(x,y)$. The function $f(x,y)$ defines the {\bf slope} of the solution curve at each point in the $xy$-plane. Lines of constant slope, known as {\bf isoclines}, satisfy 
+
+\begin{equation}
+\label{eqn:first:isocline}
+f(x,y)=m,
+\end{equation}
+\noindent where $m$ is a constant ($m\in\mathbb{R}$). Isoclines can be used to sketch the solution curves. 
+
+\begin{example}
+\label{ex:first:iso}
+Consider the following ODE:
+
+\begin{displaymath}
+y' = y+2x.
+\end{displaymath}
+
+\noindent By finding the isoclines, sketch some integral curves (i.e. solution curves) for this ODE ({\bf Exercise:} show that the general solution is $\displaystyle{y=A\mathrm{e}^x-2-2x}$, where $A$ is a constant).
+\end{example}
+
+\begin{solution}
+The isoclines correspond to 
+\begin{displaymath}
+y+2x =m \Longrightarrow y=m-2x.
+\end{displaymath}
+\noindent These are straight lines on which the slope of the solution curve is $m$. The short line elements (or {\bf flow vectors}) on the sketch indicate the corresponding {\bf direction field}, i.e. the slope of the solution curves at each point in space. By connecting these, we can sketch the solution.
+
+\end{solution}
+
+\lectureend
+
+
+\begin{example}
+\label{ex:first:iso2}
+Find the isoclines and sketch some solution curves for the following ODE,
+
+\begin{displaymath}
+y' =-\frac{x}{y}.
+\end{displaymath}
+\noindent Check your solution curves by finding the exact solution.
+\end{example}
+
+\begin{solution}
+The isoclines are given by
+
+\begin{displaymath}
+-\frac{x}{y} = m \Longrightarrow y = -\frac{x}{m},
+\end{displaymath}
+\noindent which are straight lines, of gradient $-1/m$, passing through the origin. 
+
+
+\noindent Connecting up the flow vectors (see sketch) we obtain the solution curves. These look like concentric circles, centred at the origin. To find the exact solution, we can separate variables:
+
+\begin{displaymath}
+\int y\,\mathrm{d}y = -\int x \,\mathrm{d}x \Longrightarrow \frac{y^2}{2} = - \frac{x^2}{2}+C,
+\end{displaymath}
+\noindent where $C$ is a constant of integration. Rearranging,
+
+\begin{displaymath}
+y^2+x^2 = 2C, 
+\end{displaymath}
+\noindent which describes a circle, centred at the origin in the $xy$-plane, of radius $\sqrt{2C}$. This is consistent with the solution curves obtained from the isoclines. 
+
+\end{solution}
+
+\noindent {\bf Terminology:} Consider an ODE of the form
+
+\begin{displaymath}
+y' =\frac{g(x,y)}{h(x,y)},
+\end{displaymath}
+
+\noindent with isoclines defined by 
+\begin{displaymath}
+\frac{g(x,y)}{h(x,y)} = m. 
+\end{displaymath}
+\noindent Lines of zero slope (i.e. $m=0$) are defined by $g(x,y)=0$, whilst lines of infinite slope (i.e. $1/m=0$) are defined by $h(x,y)=0$. If 
+
+\begin{displaymath}
+g(x,y)=h(x,y)=0
+\end{displaymath}
+\noindent at any point in the $xy$-plane, then the point is said to be {\bf singular}. At this point, the slope is not single-valued: it lies on both the $m=0$ and $1/m=0$ isoclines. In Example~\ref{ex:first:iso2}, {\bf all} of the isoclines intersect at the origin, which is the only singular point in this case. See handout for a more complicated example.
+
+\lectureend
 \end{document}

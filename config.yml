@@ -2,6 +2,7 @@ title: MAS0000
 code: MAS0000
 author: Ann Example
 web_dir: /module/MAS0000/
+mock_test_dir: https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/
 structure: 
     - type: introduction
       source: intro.tex
@@ -14,6 +15,9 @@ structure:
         - type: chapter
           title: Chapter 2
           source: chapter2/chapter2.tex
+    - type: part
+      title: Practice
+      content:
         - type: chapter
           title: Code Test
           source: code/code.md
