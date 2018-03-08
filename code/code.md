@@ -22,3 +22,11 @@ p = round(poly(A))
 roots(p)
 q = conv(p,p)
 ```
+
+
+# Adding Slides
+## Some Slides
+Here are some embedded slides!
+{%slides
+GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==
+%}
