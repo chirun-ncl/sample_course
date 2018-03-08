@@ -21,5 +21,8 @@ structure:
         - type: chapter
           title: Code Test
           source: code/code.md
+        - type: url
+          title: URL Test
+          source: https://mas-coursebuild.ncl.ac.uk/p/GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==/
 theme: NCLCourse
 build_pdf: True
