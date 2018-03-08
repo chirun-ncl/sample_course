@@ -3,17 +3,20 @@ ifeq ($(strip $(CODE)),)
 $(error CODE is empty)
 endif
 
-build/index.html: ref.paux config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -l -vv 
+tmp/remote-build: ref.paux config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
+	makecourse -l -vv
+	if [ -f tmp/local-build ]; then rm tmp/local-build; fi
+	touch tmp/remote-build
 
-build/local-build: ref.paux config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
+tmp/local-build: ref.paux config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
 	makecourse -l -vv -w "$(shell pwd)/build/"
-	touch build/local-build
+	if [ -f tmp/remote-build ]; then rm tmp/remote-build; fi
+	touch tmp/local-build
 
-local: build/local-build
+local: tmp/local-build
 	xdg-open file://$(shell pwd)/build/index.html
 
-upload: build/index.html cleanremote
+upload: tmp/remote-build cleanremote
 	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)"
 	scp -r ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)
 
