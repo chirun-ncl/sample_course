@@ -2,7 +2,13 @@ title: MAS0000
 code: MAS0000
 author: Ann Example
 web_dir: /module/MAS0000/
-mock_test_dir: https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/
+top_links:
+  - title: Mock Test
+    icon: fa-graduation-cap
+    url: https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/
+  - title: Information
+    icon: fa-info-circle
+    url: /module/MAS0000/
 structure: 
     - type: introduction
       source: intro.tex
