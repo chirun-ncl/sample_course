@@ -1,6 +1,7 @@
 \documentclass[a4paper]{report}
 
 % LaTeX packages -- Be careful! Sufficently complex packages will break the build process.
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{amsfonts,amssymb,amsmath,latexsym,amsbsy,graphicx,float,hyperref}
 
 % The following LaTeX code is required for processing to the web.
@@ -12,8 +13,9 @@
     \usepackage{comment}
 	\newcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
     \excludecomment{HTML}
-    \newtheorem{nmbs_int}{Test Yourself}[section]
-    \newenvironment{numbas}[1][Visit the URL below to try a numbas exam:]{\begin{nmbs_int}\textrm{#1}\\}{\end{nmbs_int}}
+    \newcommand{\numbas}[2][Visit the URL below to try a numbas exam:]{\bigskip\noindent\textbf{Test Yourself} \textrm{#1}\\\expandafter\url{#2}\par}
+    \newcommand{\vimeo}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://player.vimeo.com/video/#2}\par}
+	\newcommand{\youtube}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://www.youtube.com/embed/#2}\par}
 \fi
 
 % Theorem environments
@@ -48,7 +50,7 @@ Subsections are shown on the web.
 \section{Section 2}
 More content goes here.
 
-\begin{numbas}[Try out this exam about differentiation:]
-https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/
-\end{numbas}
+\numbas{https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/}
+\vimeo{124148255}
+\youtube{EdyociU35u8}
 \end{document}
