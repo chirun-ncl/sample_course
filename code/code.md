@@ -1,8 +1,3 @@
----
-title: Code Test
-tags: MAS0000
----
-
 # Test
 This is some test octave code.
 
@@ -27,11 +22,3 @@ q = conv(p,p)
 x<-c(1,2,3,4,5)
 which(x>3)
 ```
-
-
-# Adding Slides
-## Some Slides
-Here are some embedded slides!
-{%slides
-GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==
-%}

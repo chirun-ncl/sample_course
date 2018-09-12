@@ -1,7 +1,6 @@
 title: MAS0000
 code: MAS0000
 author: Ann Example
-web_dir: /module/MAS0000/
 top_links:
   - title: Mock Test
     icon: fa-graduation-cap
@@ -21,14 +20,25 @@ structure:
         - type: chapter
           title: Chapter 2
           source: chapter2/chapter2.tex
+        - type: slides
+          title: Slides Test
+          source: slides/slides.tex
+          #slides_format: beamer
+          slides_format: reveal
     - type: part
-      title: Practice
+      title: Demonstration
       content:
         - type: chapter
-          title: Code Test
-          source: code/code.md
+          title: First-order ODEs
+          source: numbasdemo/chapter1.tex
+        - type: chapter
+          title: ANOVA Code Demo
+          source: code/code-psy2010.md
         - type: url
           title: URL Test
           source: https://mas-coursebuild.ncl.ac.uk/p/GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==/
-theme: NCLCourse
+          hidden: true
+default_theme: NCLCourse
+other_themes:
+  - theme-lenartowicz
 build_pdf: True
