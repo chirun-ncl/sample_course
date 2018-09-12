@@ -1,0 +1,233 @@
+\documentclass[a4paper]{report}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,latexsym,amsbsy,graphicx,float,hyperref}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\allowdisplaybreaks
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{example}{Example}[chapter]
+\newtheorem*{note}{Note}
+\newtheorem*{solution}{Solution}
+
+% Set counters and new commands
+\newboolean{showlectures}
+\setboolean{showlectures}{true}
+\newcounter{nlecture}
+\setcounter{nlecture}{4}
+\newcommand{\lectureend}{
+\par \noindent [\textbf{End of Lecture \arabic{nlecture}}]
+\refstepcounter{nlecture}
+}
+
+% The following LaTeX code is required for processing to the web.
+% Removing it may break the build process.
+\newif\ifplastex\plastexfalse
+\ifplastex
+    \usepackage{embed}
+\else
+    \usepackage{comment}
+    \usepackage{a4wide}
+	\renewcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
+    \excludecomment{HTML}
+    \newcommand{\externaldocument}[1]{}
+    \newcommand{\numbas}[2][Visit the URL below to try a numbas exam:]{\bigskip\noindent\textbf{Test Yourself} \textrm{#1}\\\expandafter\url{#2}\par}
+    \newcommand{\vimeo}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://player.vimeo.com/video/#2}\par}
+	\newcommand{\youtube}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://www.youtube.com/embed/#2}\par}
+\fi
+
+% For cross document referencing!
+\externaldocument{../chapter2/chapter2}
+
+% Dont forget to set the correct chapter number!
+\setcounter{chapter}{0}
+
+\begin{document}
+\chapter{First-order ordinary differential equations}
+\label{chap:first} 
+
+\section{Separable ODEs}
+\label{sec:first:sep}
+
+A \textbf{separable} first-order ODE can be written in the form
+
+\begin{equation}
+\label{eqn:first:separable}
+y'=g(x)h(y).
+\end{equation}
+\noindent 
+\noindent We will assume that $g(x)$ is continuous over some range of values of $x$, e.g. $x\in(a,b)$, possibly the whole real line $(-\infty,\infty)$. Continuity of $g(x)$ ensures that we can take the necessary integrals. 
+
+\subsection{A simple solution}
+\label{subsec:first:sepsimple}
+
+Any (constant) solution of the equation $h(y)=0$ is also a possible solution of (\ref{eqn:first:separable}). 
+
+\begin{example}
+\label{ex:first:sepspecial}
+Show that $y=n\pi$ ($n\in\mathbb{Z}$) is a possible solution of the first-order ODE,
+
+\begin{displaymath} 
+y'=x\sin(y).
+\end{displaymath}
+\end{example}
+
+\begin{solution}
+Here $g(x)=x$ and $h(y)=\sin(y)$. Now, $h(y)=\sin(y)=0$ if $y=n\pi$ (where $n\in\mathbb{Z}$), so the right-hand side of the ODE is zero. Clearly
+$y=n\pi$ (constant) $\forall x$ $\Longrightarrow$ $y'=0$ (i.e. the left-hand side is also zero). Therefore $y=n\pi$ is a possible solution.
+\end{solution}
+
+\subsection{Separation of variables}
+\label{subsec:first:sepmethod}
+
+To derive a more general solution, we must assume that $h(y)\neq0$, so that we can divide each side by $h(y)$,
+
+\begin{displaymath}
+\frac{y'}{h(y)}=g(x).
+\end{displaymath}
+\noindent Integrating each side with respect to $x$,
+
+\begin{displaymath}
+\int \frac{y'}{h(y)}~{\rm d} x=\int g(x)~{\rm d}x.
+\end{displaymath}
+\noindent since $\mathrm{d}y=y'\,\mathrm{d}x$, this implies that
+
+\begin{equation}
+\label{eqn:first:sepsolution}
+\int \frac{{\rm d}y}{h(y)}=\int g(x)~{\rm d}x.
+\end{equation}
+\noindent Evaluating these integrals leads to a solution for $y(x)$. Sometimes the general solution will contain solutions of $h(y)=0$, but this is not always the case.
+
+\begin{example}
+\label{ex:first:separable1}
+Find the general solution to 
+
+\begin{displaymath}
+y'=x(y+1)^2.
+\end{displaymath}
+\end{example}
+
+\begin{solution}
+Clearly $y=-1$ is a possible constant solution. If $y\neq -1$, we separate variables,
+
+\begin{eqnarray*}
+\int \frac{{\rm d}y}{(y+1)^2}&=&\int x~{\rm d}x\\
+\Longrightarrow -\frac{1}{y+1} &=& \frac{x^2}{2} + C,
+\end{eqnarray*}
+\noindent where C is an arbitrary constant of integration. Rearranging this expression,
+
+\begin{eqnarray*}
+-\frac{2}{y+1} &=& x^2+2C\\
+\Longrightarrow y+1 &=& -\frac{2}{x^2+2C}\\
+\Longrightarrow y &=& -1 - \left(\frac{2}{x^2+D}\right),
+\end{eqnarray*}  
+
+\noindent where $D=2C$ is a rescaled constant. Alongside the special solution $y=-1$, this is the most general solution to this first order ODE. Different values of $D$ lead to a family of \textbf{solution curves} (or {\bf integral curves}) in the $xy$-plane. \\
+
+\par \noindent {\bf Check (not lectured):} Differentiating this function, we see that 
+
+\begin{displaymath}
+y' = \frac{4x}{\left(x^2+D\right)^2} = x(y+1)^2,
+\end{displaymath}
+
+\noindent as required.\\
+
+
+ 
+\end{solution}
+
+\begin{example}
+\label{ex:first:separable2}
+Find the general solution of the ODE $y'=(y+xy)/x^2$ and then the particular solution which passes through the point $(1,1)$, i.e. $y(1)=1$.
+\end{example}
+
+\begin{solution}
+We have
+\begin{eqnarray*}
+y'&=&\frac{(y+xy)}{x^2}
+\\
+&=&\frac{(1+x)y}{x^2}.
+\end{eqnarray*}
+Clearly $y=0$ is a possible solution, but this is incompatible with $y(1)=1$ so can be ignored. Assuming $y\neq0$, separation of variables leads to 
+
+\begin{displaymath}
+\int \frac{{\rm d}y}{y}=\int \left(\frac{1+x}{x^2}\right){\rm d}x = \int \left(\frac{1}{x^2}+\frac{1}{x}\right)\,\mathrm{d}x \Longrightarrow 
+\ln|y|=-\frac{1}{x}+\ln|x| + C
+\end{displaymath}
+(where $C$ is the constant of integration). Taking the exponential of both sides,
+
+\begin{displaymath}
+|y|=\exp\left[-\frac{1}{x}+\ln |x| + C\right]=|x|\exp\left[-\frac{1}{x}+C\right]= |x|\exp[C]\exp\left[-\frac{1}{x}\right],
+\end{displaymath}
+\noindent where $\displaystyle{\exp(x)\equiv\mathrm{e}^x}$. Dropping the modulus operators from both sides,
+
+\begin{displaymath}
+y = \pm \,x \exp[C]\exp\left[-\frac{1}{x}\right].
+\end{displaymath}
+\noindent Absorbing the plus/minus sign into a new constant $D$ (where $|D|=\exp[C]$),
+\begin{displaymath}
+y=D x \exp\left[-\frac{1}{x}\right].
+\end{displaymath}
+If $y(1)=1$, this implies that
+
+\begin{displaymath}
+1=D\cdot 1 \cdot \exp[-1] \equiv D\mathrm{e}^{-1} \Rightarrow D=\mathrm{e}.
+\end{displaymath}
+So the required solution is,
+\begin{displaymath}
+y=\mathrm{e}x\exp\left[-\frac{1}{x}\right] = x \exp\left[1-\frac{1}{x}\right] \left(\equiv x \mathrm{e}^{\left[1-\left(1/x\right)\right]}\right).
+\end{displaymath}
+
+\end{solution}
+
+\lectureend
+
+\begin{example}
+\label{ex:first:radio}
+If $N(t)$ is the size of a radioactive sample at time $t$, then
+
+\begin{displaymath}
+\frac{\mathrm{d}N}{\mathrm{d}t} = -\alpha N,
+\end{displaymath}
+\noindent where $\alpha$ is a positive constant. How long does it take for half the sample to decay?
+\end{example}
+
+\begin{solution}
+Assuming that $N\neq 0$, we again proceed by separating variables (note the change of notation!):
+
+\begin{displaymath}
+\int \frac{{\rm d}N}{N}=-\alpha\int \,\mathrm{d}t \Longrightarrow \ln|N| = -\alpha t + C,
+\end{displaymath}
+\noindent where $C$ is a constant of integration. Hence,
+
+\begin{displaymath}
+|N(t)| = \mathrm{e}^C \mathrm{e}^{-\alpha t} \Longrightarrow N(t) =\pm \,\mathrm{e}^C \mathrm{e}^{-\alpha t}\Longrightarrow  N(t) = A \mathrm{e}^{-\alpha t},
+\end{displaymath}
+\noindent where $A$ is a new constant ($|A|=\mathrm{e}^C$) into which the plus/minus sign has been absorbed. If $N(0)=N_0$ (initial sample size) then,
+
+\begin{displaymath}
+N_0 = A \mathrm{e}^0 = A \Longrightarrow N(t) = N_0 \mathrm{e}^{-\alpha t}.
+\end{displaymath}
+
+
+\noindent Let $t_h$ be the length of time it takes for half the sample to decay, i.e. $N(t_h) = N_0/2$. This implies that,
+
+\begin{displaymath}   
+\frac{N_0}{2} = N(t_h) = N_0 \mathrm{e}^{-\alpha t_h}.
+\end{displaymath}
+\noindent Hence
+\begin{eqnarray*}
+\frac{1}{2} &=& \mathrm{e}^{-\alpha t_h}\\
+\mbox{(taking logs)}\;\Longrightarrow \ln \left[\frac{1}{2}\right] &=& -\alpha t_h\\
+\Longrightarrow \ln 1 - \ln 2 &=& -\alpha t_h \quad\mbox{(recall that $\ln(x/y)=\ln x - \ln y)$}\\
+\Longrightarrow 0 - \ln 2 &=& -\alpha t_h\\
+\Longrightarrow t_h &=& \frac{\ln 2}{\alpha}. 
+\end{eqnarray*}
+
+\noindent This is the time it takes for half the sample to decay (known as the sample's {\bf half-life}).
+\end{solution}
+
+\subsection{Numbas Test}
+\numbas{https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/}
+
+\end{document}
