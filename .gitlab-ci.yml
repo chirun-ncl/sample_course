@@ -1,4 +1,4 @@
-image: georgestagg/makecourse-tools:1.1
+image: "georgestagg/makecourse-tools"
 
 before_script:
   - eval $(ssh-agent -s)
