@@ -1,6 +1,6 @@
 [submodule "themes/NCLCourse"]
 	path = themes/NCLCourse
 	url = git@mas-gitlab.ncl.ac.uk:makecourse-tools/NCLCourse.git
-[submodule "themes/theme-lenartowicz"]
-	path = themes/theme-lenartowicz
-	url = git@mas-gitlab.ncl.ac.uk:makecourse-tools/theme-lenartowicz.git
+[submodule "themes/accessible"]
+	path = themes/accessible
+	url = http://mas-gitlab.ncl.ac.uk/makecourse-tools/theme-lenartowicz.git

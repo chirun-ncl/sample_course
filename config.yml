@@ -1,5 +1,6 @@
 title: MAS0000
 code: MAS0000
+year: 2018-19
 author: Ann Example
 top_links:
   - title: Mock Test
@@ -20,11 +21,6 @@ structure:
         - type: chapter
           title: Chapter 2
           source: chapter2/chapter2.tex
-        - type: slides
-          title: Slides Test
-          source: slides/slides.tex
-          #slides_format: beamer
-          slides_format: reveal
     - type: part
       title: Demonstration
       content:
@@ -40,5 +36,5 @@ structure:
           hidden: true
 default_theme: NCLCourse
 other_themes:
-  - theme-lenartowicz
+  - accessible 
 build_pdf: True
