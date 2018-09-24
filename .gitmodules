@@ -3,4 +3,4 @@
 	url = git@mas-gitlab.ncl.ac.uk:makecourse-tools/NCLCourse.git
 [submodule "themes/accessible"]
 	path = themes/accessible
-	url = http://mas-gitlab.ncl.ac.uk/makecourse-tools/theme-lenartowicz.git
+	url = git@mas-gitlab.ncl.ac.uk:makecourse-tools/theme-lenartowicz.git
