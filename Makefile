@@ -7,18 +7,18 @@ ifeq ($(strip $(YEAR)),)
 $(error YEAR is empty)
 endif
 
+tmp/local-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
+	makecourse -l -vv 
+	if [ -f tmp/remote-build ]; then rm tmp/remote-build; fi
+	mkdir -p tmp
+	touch tmp/local-build
+
 tmp/remote-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
 	makecourse -vv
 	makecourse -vv
 	mkdir -p tmp
 	if [ -f tmp/local-build ]; then rm tmp/local-build; fi
 	touch tmp/remote-build
-
-tmp/local-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -l -vv 
-	if [ -f tmp/remote-build ]; then rm tmp/remote-build; fi
-	mkdir -p tmp
-	touch tmp/local-build
 
 local: tmp/local-build
 	xdg-open file://$(shell pwd)/build/index.html
