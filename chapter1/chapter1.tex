@@ -1,5 +1,5 @@
 \documentclass[a4paper]{report}
-\usepackage{amsfonts,amssymb,amsmath,amsthm,latexsym,amsbsy,graphicx,float,hyperref}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,latexsym,amsbsy,graphicx,float,hyperref,ifthen,color}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \allowdisplaybreaks
@@ -27,10 +27,9 @@
 \ifplastex
     \usepackage{embed}
 \else
-    \usepackage{comment}
+    \usepackage{comment,xr}
 	\renewcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
     \excludecomment{HTML}
-    \newcommand{\externaldocument}[1]{}
     \newcommand{\numbas}[2][Visit the URL below to try a numbas exam:]{\bigskip\noindent\textbf{Test Yourself} \textrm{#1}\\\expandafter\url{#2}\par}
     \newcommand{\vimeo}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://player.vimeo.com/video/#2}\par}
 	\newcommand{\youtube}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://www.youtube.com/embed/#2}\par}

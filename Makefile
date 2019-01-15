@@ -8,13 +8,13 @@ $(error YEAR is empty)
 endif
 
 tmp/local-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -l -vv 
+	makecourse -l -z -vv 
 	if [ -f tmp/remote-build ]; then rm tmp/remote-build; fi
 	mkdir -p tmp
 	touch tmp/local-build
 
 tmp/remote-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -vv
+	makecourse -z -vv
 	makecourse -vv
 	mkdir -p tmp
 	if [ -f tmp/local-build ]; then rm tmp/local-build; fi
@@ -29,6 +29,7 @@ upload: tmp/remote-build cleanremote
 
 clean:
 	rm -rf build *.paux tmp
+	find . \( -name '*.log' -o -name '*.aux' -o -name '*.out' \) -exec rm {} \;
 
 cleanremote:
 	ssh webedit@mas-coursebuild.ncl.ac.uk "rm -rf /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
