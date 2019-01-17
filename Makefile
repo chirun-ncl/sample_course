@@ -25,7 +25,7 @@ local: tmp/local-build
 
 upload: tmp/remote-build cleanremote
 	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
-	scp -r ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
+	scp -r config.yml ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
 
 clean:
 	rm -rf build *.paux tmp
