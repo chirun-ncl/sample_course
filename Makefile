@@ -28,7 +28,7 @@ upload: tmp/remote-build cleanremote
 	scp -r config.yml ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
 
 clean:
-	rm -rf build *.paux tmp
+	rm -rf build tmp
 	find . \( -name '*.log' -o -name '*.aux' -o -name '*.out' \) -exec rm {} \;
 
 cleanremote:
