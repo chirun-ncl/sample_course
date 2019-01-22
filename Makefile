@@ -1,6 +1,6 @@
 CODE := $(shell grep code config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 YEAR := $(shell grep year config.yml | awk -F ' ' '{print $$2}' | head -n 1)
-UNAME_S := $(shell uname -s)
+-UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
 	OPENCMD := open 
 else
@@ -13,16 +13,14 @@ ifeq ($(strip $(YEAR)),)
 $(error YEAR is empty)
 endif
 
-
-
 tmp/local-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -l -vv
+	makecourse -l -z -vv 
 	if [ -f tmp/remote-build ]; then rm tmp/remote-build; fi
 	mkdir -p tmp
 	touch tmp/local-build
 
 tmp/remote-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -vv
+	makecourse -z -vv
 	makecourse -vv
 	mkdir -p tmp
 	if [ -f tmp/local-build ]; then rm tmp/local-build; fi
@@ -33,10 +31,11 @@ local: tmp/local-build
 
 upload: tmp/remote-build cleanremote
 	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
-	scp -r ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
+	scp -r config.yml ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
 
 clean:
-	rm -rf build *.paux tmp
+	rm -rf build tmp
+	find . \( -name '*.log' -o -name '*.aux' -o -name '*.out' \) -exec rm {} \;
 
 cleanremote:
 	ssh webedit@mas-coursebuild.ncl.ac.uk "rm -rf /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
