@@ -8,7 +8,7 @@ before_script:
 
 build:
   script:
-    - python3 -m pip install git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/makecourse.git -e git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/plastex.git@ncl-changes#egg=plasTeX
+    - python3 -m pip install git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/makecourse.git -e git+ssh://git@mas-gitlab.ncl.ac.uk/makecourse-tools/plastex.git
     - git clone --recursive $CI_REPOSITORY_URL
     - cd $CI_PROJECT_NAME
     - git checkout $CI_COMMIT_REF_NAME
