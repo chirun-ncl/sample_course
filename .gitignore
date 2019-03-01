@@ -3,4 +3,7 @@
 */*.out
 */*.pdf
 */*.swp
+*/*.toc
+*/*.snm
+*/*.swp
 build/*
