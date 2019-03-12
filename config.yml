@@ -34,7 +34,11 @@ structure:
           title: URL Test
           source: https://mas-coursebuild.ncl.ac.uk/p/GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==/
           hidden: true
-default_theme: NCLCourse
-other_themes:
-  - accessible 
+themes: 
+  - title: Default
+    source: NCLCourse
+    path: default 
+  - title: Accessible
+    source: accessible
+    path: accessible
 build_pdf: True
