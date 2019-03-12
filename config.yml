@@ -38,7 +38,7 @@ themes:
   - title: Default
     source: NCLCourse
     path: default 
-  - title: Accessible
+  - title: Large text
     source: accessible
     path: accessible
 build_pdf: True
