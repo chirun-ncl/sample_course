@@ -1,5 +1,6 @@
 CODE := $(shell grep code config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 YEAR := $(shell grep year config.yml | awk -F ' ' '{print $$2}' | head -n 1)
+DEFAULTTHEME := $(shell grep -A 5 themes config.yml | grep 'path:' | head -1 | tr -d ' ' | awk -F  ':' '{print $$2;}')
 -UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
 	OPENCMD := open 
@@ -27,7 +28,7 @@ tmp/remote-build: config.yml $(shell find themes -type f) $(shell find . -type f
 	touch tmp/remote-build
 
 local: tmp/local-build
-	$(OPENCMD) file://$(shell pwd)/build/index.html
+	$(OPENCMD) file://$(shell pwd)/build/$(DEFAULTTHEME)/index.html
 
 upload: tmp/remote-build cleanremote
 	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"

@@ -18,6 +18,10 @@ $$H_0 : \mu_1 = \mu_2 = \mu_3\dots=\mu_t$$
 where $t$ is the number of samples, i.e.  no differences among the
 population means.  This is what ANOVA sets out to do.
 
+Here is a sample markdown image:
+
+![](./build/static/images/mc.png){width=80%}
+
 ## Why do observations vary?
 There are two reason why observations vary:
 
