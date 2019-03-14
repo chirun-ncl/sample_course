@@ -33,10 +33,11 @@ local: tmp/local-build
 upload: tmp/remote-build cleanremote
 	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
 	scp -r config.yml ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
+	ssh webedit@mas-coursebuild.ncl.ac.uk "echo '<?php header(\"Location: /module/$(CODE)/$(YEAR)/$(DEFAULTTHEME)/\");die();?>' > /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)/index.php"
 
 clean:
 	rm -rf build tmp
-	find . \( -name '*.log' -o -name '*.aux' -o -name '*.out' \) -exec rm {} \;
+	find . \( -name '*.log' -o -name '*.aux' -o -name '*.out' -o -name '*.nav' -o -name '*.snm' -o -name '*.toc' \) -exec rm {} \;
 
 cleanremote:
 	ssh webedit@mas-coursebuild.ncl.ac.uk "rm -rf /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"

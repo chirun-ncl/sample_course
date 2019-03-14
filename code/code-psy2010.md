@@ -20,7 +20,7 @@ population means.  This is what ANOVA sets out to do.
 
 Here is a sample markdown image:
 
-![](./build/static/images/mc.png){width=80%}
+![](static/images/mc.png){width=80%}
 
 ## Why do observations vary?
 There are two reason why observations vary:

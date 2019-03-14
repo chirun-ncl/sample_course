@@ -4,3 +4,6 @@
 [submodule "themes/accessible"]
 	path = themes/accessible
 	url = git@mas-gitlab.ncl.ac.uk:makecourse-tools/theme-lenartowicz.git
+[submodule "themes/customisable"]
+	path = themes/customisable
+	url = git@mas-gitlab.ncl.ac.uk:makecourse-tools/customisable.git

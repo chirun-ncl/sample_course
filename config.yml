@@ -41,5 +41,8 @@ themes:
   - title: Large text
     source: accessible
     path: accessible
-    #hidden: True
+    hidden: True
+  - title: Customisable
+    source: customisable
+    path: customisable
 build_pdf: True
