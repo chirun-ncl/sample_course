@@ -1,7 +1,7 @@
 CODE := $(shell grep code config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 YEAR := $(shell grep year config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 DEFAULTTHEME := $(shell grep -A 5 themes config.yml | grep 'path:' | head -1 | tr -d ' ' | awk -F  ':' '{print $$2;}')
--UNAME_S := $(shell uname -s)
+UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
 	OPENCMD := open 
 else
