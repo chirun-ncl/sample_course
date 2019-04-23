@@ -22,3 +22,7 @@ q = conv(p,p)
 x<-c(1,2,3,4,5)
 which(x>3)
 ```
+
+```{.python .runnable .editable .slides-large}
+x = 5;
+```

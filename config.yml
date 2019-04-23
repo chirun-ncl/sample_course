@@ -28,8 +28,8 @@ structure:
           title: First-order ODEs
           source: numbasdemo/chapter1.tex
         - type: chapter
-          title: ANOVA Code Demo
-          source: code/code-psy2010.md
+          title: Code Demo
+          source: code/code.md
         - type: url
           title: URL Test
           source: https://mas-coursebuild.ncl.ac.uk/p/GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==/
