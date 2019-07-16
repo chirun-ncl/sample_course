@@ -1,0 +1,268 @@
+%% Example of using the nclexam style file nclexam.sty
+\documentclass[12pt,a4paper]{article} %11 pt might be needed for very verbose front-page instructions
+\usepackage{amsmath,amssymb}
+\usepackage{nclexam}
+
+%%Exam options
+%Commenting out a line entirely will result in the default setting, but selecting the appropriate setting is preferable
+%Note: \switchname{} will NOT enable the default in most cases.	
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+\moduleno{MAS1234}
+\moduleno[2]{MAS8234}			%Module numbers for exam variants are defined here 
+\moduleno[3]{PHY1234}			%You can have up to 3 variants.
+%\moduleno[4]{PHY5678}
+\setvariant{2}						%Use this switch to set the current variant - Default: 1
+
+\modulename{Module Title}			%Use mixed case
+\semester{1}						%1, 2 or other (e.g. August, Lab, Mid-Semester Test)
+\setyear{2018/19}					%Use the current year for resits/mid-semester tests
+\settime{40 minutes}				%Exam length
+\rubric{B}							%Select rubric
+%Available Rubrics -
+% A: No sections, answer everything
+% B: 2 sections, answer everything.
+% D: No sections. Credit given for the best set of n answers, where you can set n with \attempt{n}.
+% E: 2 Sections. Answer everything in section A. Credit given for best answer in section B.
+% F: 2 Sections. Answer everything in section A. Credit given for best n answers in section B, where you can set n with \attempt{n}.
+% N: For Engineering Maths. Answer everything. Shows the total marks and states that "The General Formula Sheet is available".
+% M: For "Tests".  Either 1 or 2 sections. Answer everything.
+
+\extrainstructions{}
+%\extrainstructions{Graph paper and statistical tables will be provided.} 
+%\extrainstructions{Graph paper will be provided.} 
+%\extrainstructions{Statistical tables will be provided. } 
+
+\calculatorpermitted{false}		%Are calculators permitted in this exam? Set to true/false. Default: true
+\solutionshow{hidden}			%Solutions but no gaps (full), gaps but no solutions (hidden), or No solutions or gaps (none) - Default: none
+\roughpages{2}				%Add a number of rough pages to the end of the exam. Note that \insertblankpages also applies here and will increase the total number of inserted rough pages. - Default: 0
+\writeonexam{true}			%Write-on exam (true), not a write-on exam (false) or write in section A only (secaonly) - Default: false
+\newpagequestion{true}		%Add a \newpage after questions - Default: false
+\insertblankpages{false}		%Insert a blank page after every page - Default: false
+
+\showinfocollection{false}		%Show info-collection boxes on the front page. Useful for mid-semester tests - Default: false
+\showmarkboxes{false}			%Show boxes for marks at THE END. Useful for mid-semester tests - Default: false
+
+\setquestionnsize{\large}		%Set font size for the questions (use \LARGE for large print exams) - Default: \large
+\setsolutionsize{\large}			%Set font size for the solutions (can also be used for making answer gaps larger if \solution{} is used in place of \solution[]{}) - Default: \large
+\setsolutioncolor{red}			%Set text colour for solutions (if shown) - Default: red
+\setcommentcolor{blue}		%Set text colour for comments (if shown) - Default: blue
+\settotalmarks{100}			%Override for exams with marks that don't add to 100.
+\questionpartlabelling{alph}		%Sets roman or alph counting for question parts. Sub parts then use the other style. Default: alph
+\showanswercontinued{true}	%Print an informative header when answers continue over several pages. Default: false
+
+\begin{document}
+\makefront					%Produce the front page
+\sect{A}						%Section A
+
+\begin{question}{5}			%Include marks for each question
+Exam behaviour and visual style is configured using switches in the \texttt{.tex} preamble.
+Comment out a switch entirely to use the default setting. Note: \texttt{\textbackslash switchname\{\}} will NOT enable the default in most cases.
+
+\textit{All} questions are inserted using the \texttt{question} environment. Solutions are inserted with the \texttt{solution} macro.
+
+\comment{This is a comment for the external examiner on the nature of the question. It can be placed anywhere and won't show up in the 'hidden solutions' version.}
+\solution{Solutions can contain inline equations: $G_{\mu\nu} = 8\pi G(T_{\mu\nu} + \rho_\Lambda g_{\mu\nu})$, display equations:
+$$i\hbar\frac{\partial\psi(\mathbf{r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r}) + g|\psi(\mathbf{r},t)|^2\right)\psi(\mathbf{r},t),$$
+and environments:
+\begin{align}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0},\\
+\nabla \cdot \mathbf{B} &= 0, \\
+\nabla \times \mathbf{E} &= - \frac{\partial \mathbf{B}}{\partial t}, \\
+\nabla \times \mathbf{B} &= \mu_{0}\left(\mathbf{J} + \varepsilon_{0}\frac{\partial E}{\partial t}\right).
+\end{align}}
+\end{question}
+
+\begin{question}{5}			%Include marks for each question
+When the exam solutions are in``hidden'' mode, the \texttt{solution} macro will typeset a blank space approximately the vertical space of the solution. 
+
+An optional argument has been added to override this calculation, \\e.g. \texttt{\textbackslash solution[30cm]\{Solution text...\}}.\\ The solution will take up space approximately equal to the optional argument if it is provided.
+
+The switch \texttt{\textbackslash solutionmodifier\{relative\}} can alternatively be used so that the argument is instead added to the solution size calculation. This method allows you to add or remove small amounts of space from the solution.
+
+Note that a newline is always added before the marks are printed, and so even a solution of 0pt height will produce a small space.
+\solution[30cm]{Solution text...}
+\end{question}
+
+\begin{question}{10}
+This is another question in part A.
+\begin{enumerate}			%Use the enumerate environment for parts
+	\item The \texttt{enumerate} environment provides question parts.
+	\begin{enumerate}		%Enumerates can be nested
+		\item  Enumerates can be nested. Nested enumerates use bracketed roman numerals.
+		\solution{Adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+		\item The \texttt{submarks} macro is used after solutions to assign submarks to question parts.
+		\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit, $$x = -1 \pm 2i.$$ Suspendisse sit amet ante a orci interdum pulvinar.}
+	\end{enumerate}
+	\submarks{5}			%The submarks macro is used to assign submarks
+	\newpage
+	\item For write-on papers the \texttt{solution} macro can alternatively be placed after the \texttt{submarks} macro, so that the answer gap appears after the submarks have been shown, but before the total.
+	\submarks{5}		%Submarks can be placed above the solution so that the marks appear *before* the write-on space, if preferred.
+	\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+	
+\end{enumerate}
+\end{question}
+
+\begin{question}{5}
+You can also place the \texttt{solution} macro completely \textit{outside} the question environment. This might be useful for write-on exams if you want the total marks for a question to appear before the write-on answer gap.
+\end{question}
+\solution{When placing the \texttt{solution} macro outside the question environment, usage is otherwise identical.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+
+\begin{question}{5}
+As an alternative to typesetting answers with the \texttt{solution} macro, the \texttt{answergap} macro can be used to create gaps for write-on papers. When in ``hidden'' mode the answer will take up the requested space.
+
+When in ``full`` solutions mode, the answergap will be condensed so as to save paper.
+\answergap{15cm}
+\end{question}
+
+\begin{question}{5} 
+If you are asking students to enter information in boxes or draw on a diagram, and you are providing the solution in the file, you will not necessarily want an `{\bf Answer:}' prompt on the exam paper. Using \textbackslash solution\{text\} or \textbackslash solution[5cm]\{text\} will insert an `{\bf Answer:}' prompt, but \textbackslash solution*\{text\} will not.\\
+
+Are the following statements TRUE or FALSE? Write T or F in the relevant box. 
+	
+	\hspace*{14.4cm} \mbox{T or F} 
+	
+	\hfill
+	\begin{minipage}[t]{.75\textwidth}
+		\begin{enumerate}
+			\item Statement 1. 
+			\item Statement 2.  
+			\item Statement 3. 
+			\item Statement 4. 
+			\item Statement 5. 
+			
+		\end{enumerate} 
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.12\textwidth}
+		\vspace*{-.8cm}
+		\begin{enumerate}
+			\item[]  \framebox(40,25){} 
+			\vspace*{-1.5cm}
+			\item[]  \framebox(40,25){}
+			\vspace*{-1.5cm}
+			
+			\item[]  \framebox(40,25){}
+			\vspace*{-1.5cm}
+			
+			\item[]  \framebox(40,25){}
+			\vspace*{-1.5cm}
+			\item[]  \framebox(40,25){}
+		\end{enumerate} 
+	\vspace*{1cm}
+	\end{minipage}
+\end{question}
+
+\comment{Taken from a list of True/False questions available for private study}
+
+\solution*[0cm]{
+Answer:	
+
+	\vspace*{-1cm}
+	
+\hspace*{14.4cm} \mbox{T or F} 
+
+\hfill
+\begin{minipage}[t]{.75\textwidth}
+	\begin{enumerate}
+		\item Statement 1. 
+		\item Statement 2.  
+		\item Statement 3. 
+		\item Statement 4. 
+		\item Statement 5. 
+		
+	\end{enumerate} 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.12\textwidth}
+	\vspace*{-.8cm}
+	\begin{enumerate}
+		\item[]  \framebox(40,25){T} 
+		\vspace*{-1.5cm}
+		\item[]  \framebox(40,25){F}
+		\vspace*{-1.5cm}
+		
+		\item[]  \framebox(40,25){F}
+		\vspace*{-1.5cm}
+		
+		\item[]  \framebox(40,25){T}
+		\vspace*{-1.5cm}
+		\item[]  \framebox(40,25){F}
+		
+	\end{enumerate} 
+\end{minipage}
+	
+}
+
+
+\sect{B}				%Section B
+
+\begin{question}{30}
+\begin{enumerate}
+	\item The marks given in the \texttt{submarks} macro must sum to the total marks given in the \texttt{question} environment, otherwise an error is generated.
+	\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor $$x^2 + 5.$$}
+	\submarks{5}
+	\item Another part
+	\begin{enumerate}
+		\item A sub part. This one has been labelled in the \texttt{.tex} source. \label{aq}
+		\solution{Lorem ipsum dolor sit amet, consectetur adipisci.}
+		\item Question parts can then be referenced: See \ref{aq}.
+		\solution{Adipiscing elit.}
+		\item Another sub part
+		\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+	\end{enumerate}
+	\submarks{10}
+	\item A final part
+	\begin{enumerate}
+		\item A sub part
+		\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Susp $$x^2 + 5$$endisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+		\item A final sub part.
+		\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auc $$x^2 + 5$$tor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+	\end{enumerate}
+	\submarks{15}
+\end{enumerate}
+\end{question}
+
+\begin{question}{35}{h}
+\begin{enumerate}
+\item Different exam variants can be set up within a single exam. Define a variant with \texttt{\textbackslash moduleno[N]\{MAS8234\}}, where $N=2\text{ to }4$, to define up to 3 extra variants within an exam. The displayed variant can be set in the preamble with \texttt{\textbackslash setvariant\{N\}}. Then, when using the \texttt{question} environment, define marks for each variant after the standard marks. The following are examples of valid definitions:
+\begin{itemize}
+\item \textbackslash begin\{question\}\{30\}: Always show this question with 30 marks.
+\item \textbackslash begin\{question\}\{35\}\{25\}: Show this question with 35 marks in variant 1 and 25 marks in variant 2.
+\item \textbackslash begin\{question\}\{h\}\{25\}\{10\}: Hide this question in variant 1, show with 25 marks in variant 2, and show with 10 marks in variant 3.
+\item \textbackslash begin\{question\}\{h\}: Always hide this question.
+\end{itemize}
+\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam.}
+\submarks{25}
+\item A sub part
+\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam.}
+\submarks{10}
+\end{enumerate}
+\end{question}
+
+\begin{question}{h}{25}{35}
+\begin{enumerate}
+\item Different exam variants can be set up within a single exam. Define a variant with \texttt{\textbackslash moduleno[N] \{MAS8234\}}, where $N=2\text{ to }4$, to define up to 3 extra variants within an exam. The displayed variant can be set in the preamble with \texttt{\textbackslash setvariant\{N\}}. Then, when using the \texttt{question} environment, define marks for each variant after the standard marks. The following are examples of valid definitions:
+\begin{itemize}
+\item \textbackslash begin\{question\}\{30\}: Always show this question with 30 marks.
+\item \textbackslash begin\{question\}\{35\}\{25\}: Show this question with 35 marks in variant 1 and 25 marks in variant 2.
+\item \textbackslash begin\{question\}\{h\}\{25\}\{10\}: Hide this question in variant 1, show with 25 marks in variant 2, and show with 10 marks in variant 3.
+\item \textbackslash begin\{question\}\{h\}: Always hide this question.
+\end{itemize}
+\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\submarks{15}{15}{25}
+\item A sub part
+\solution{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam.}
+\submarks{10}
+\end{enumerate}
+\end{question}
+
+
+\begin{question}{h}{10}{h}
+This question will not appear on variant 1.
+\solution[40cm]{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet ante a orci interdum pulvinar. Donec eget laoreet tellus. Nam porta urna at metus volutpat tristique. Pellentesque quis auctor velit, vitae tristique quam. Maecenas interdum consequat est vitae porttitor. Aliquam dictum feugiat elit in laoreet. Nulla elementum sagittis mauris sit amet porttitor.}
+\end{question}
+
+\theend			%You must include the theend macro at the end of the exam
+\end{document}

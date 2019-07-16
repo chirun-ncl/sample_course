@@ -1,5 +1,6 @@
 CODE := $(shell grep code config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 YEAR := $(shell grep year config.yml | awk -F ' ' '{print $$2}' | head -n 1)
+BASE_DIR := $(shell grep base_dir config.yml | awk -F ' ' '{print $$2}' | head -n 1)
 DEFAULTTHEME := $(shell grep -A 5 themes config.yml | grep 'path:' | head -1 | tr -d ' ' | awk -F  ':' '{print $$2;}')
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
@@ -12,6 +13,9 @@ $(error CODE is empty)
 endif
 ifeq ($(strip $(YEAR)),)
 $(error YEAR is empty)
+endif
+ifeq ($(strip $(BASE_DIR)),)
+BASE_DIR := module
 endif
 
 tmp/local-build: config.yml $(shell find themes -type f) $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
@@ -31,15 +35,16 @@ local: tmp/local-build
 	$(OPENCMD) file://$(shell pwd)/build/$(DEFAULTTHEME)/index.html
 
 upload: tmp/remote-build cleanremote
-	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
-	scp -r config.yml ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)
-	ssh webedit@mas-coursebuild.ncl.ac.uk "echo '<?php header(\"Location: /module/$(CODE)/$(YEAR)/$(DEFAULTTHEME)/\");die();?>' > /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)/index.php"
+	ssh webedit@mas-coursebuild.ncl.ac.uk "mkdir -p /srv/www/mas-coursebuild.ncl.ac.uk443/$(BASE_DIR)/$(CODE)/$(YEAR)"
+	scp -r config.yml ./build/* webedit@mas-coursebuild.ncl.ac.uk:/srv/www/mas-coursebuild.ncl.ac.uk443/$(BASE_DIR)/$(CODE)/$(YEAR)
+	ssh webedit@mas-coursebuild.ncl.ac.uk "echo '<?php header(\"Location: /$(BASE_DIR)/$(CODE)/$(YEAR)/$(DEFAULTTHEME)/\");die();?>' > /srv/www/mas-coursebuild.ncl.ac.uk443/$(BASE_DIR)/$(CODE)/$(YEAR)/index.php"
 
 clean:
 	rm -rf build tmp
 	find . \( -name '*.log' -o -name '*.aux' -o -name '*.out' -o -name '*.nav' -o -name '*.snm' -o -name '*.toc' \) -exec rm {} \;
 
 cleanremote:
-	ssh webedit@mas-coursebuild.ncl.ac.uk "rm -rf /srv/www/mas-coursebuild.ncl.ac.uk443/module/$(CODE)/$(YEAR)"
+	ssh webedit@mas-coursebuild.ncl.ac.uk "rm -rf /srv/www/mas-coursebuild.ncl.ac.uk443/$(BASE_DIR)/$(CODE)/$(YEAR)"
 
 all: clean upload
+

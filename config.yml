@@ -1,14 +1,8 @@
 title: MAS0000
 code: MAS0000
 year: 2018-19
+base_dir: module
 author: Ann Example
-top_links:
-  - title: Mock Test
-    icon: fa-graduation-cap
-    url: https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/
-  - title: Information
-    icon: fa-info-circle
-    url: /module/MAS0000/
 structure: 
     - type: introduction
       source: intro.tex
@@ -30,19 +24,21 @@ structure:
         - type: chapter
           title: Code Demo
           source: code/code.md
-        - type: url
-          title: URL Test
-          source: https://mas-coursebuild.ncl.ac.uk/p/GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==/
-          hidden: True
+#        - type: url
+#          title: URL Test
+#          source: https://mas-coursebuild.ncl.ac.uk/p/GwI2wDgTgdhBaAZsAjAE3gFgKYGYCs8IAxgfAEzBpoqIrD6RpA==/
+#          hidden: True
+    - type: part
+      title: Assessment 
+      content:
+        - type: chapter
+          title: Example exam
+          source: exam/example_exam.tex
 themes: 
   - title: Default
-    source: NCLCourse
-    path: default 
+    source: customisable
+    path: customisable
   - title: Large text
     source: accessible
     path: accessible
-    hidden: True
-  - title: Customisable
-    source: customisable
-    path: customisable
 build_pdf: True
