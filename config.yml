@@ -13,29 +13,17 @@ structure:
           title: Chapter 1
           source: chapter1/chapter1.tex
         - type: chapter
-          title: Chapter 2
+          title: Embed Demo
           source: chapter2/chapter2.tex
-        - type: slides
-          title: Markdown Slides
-          source: slides/slides.md
+        - type: url
+          title: URL Test
+          source: "https://bbc.co.uk/"
     - type: part
       title: Slides
       content:
         - type: slides
           title: Markdown Slides
           source: slides/slides.md
-    - type: part
-      title: Demonstration
-      content:
-        - type: chapter
-          title: First-order ODEs
-          source: numbasdemo/chapter1.tex
-        - type: chapter
-          title: Code Demo
-          source: code/code.md
-        - type: url
-          title: URL Test
-          source: "https://bbc.co.uk/"
     - type: part
       title: Assessment 
       content:
