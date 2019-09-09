@@ -3,7 +3,7 @@ This is some test octave code.
 
 ## The code
 
-```{.octave .runnable .editable}
+```runnable lang="octave"
 A = [1 2 0; 2 5 -1; 4 10 -1]
 B = A'
 C = A * B
@@ -18,11 +18,11 @@ roots(p)
 q = conv(p,p)
 ```
 
-```{.R .runnable .editable}
+```runnable lang="r"
 x<-c(1,2,3,4,5)
 which(x>3)
 ```
 
-```{.python .runnable .editable .slides-large}
+```runnable lang="python"
 x = 5;
 ```
