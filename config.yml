@@ -1,7 +1,7 @@
 title: "MAS0000: Example Content"
 code: MAS0000
 year: 2018-19
-base_dir: lti-dev/content
+base_dir: lti/content
 author: Ann Example
 structure: 
     - type: introduction
