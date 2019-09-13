@@ -6,6 +6,8 @@ author: Ann Example
 structure: 
     - type: introduction
       source: intro.tex
+      leading_text: "This is a short paragraph that will be 
+      inserted into the introduction page, just under the author and year."
     - type: part
       title: Course Material
       content:
