@@ -1,40 +1,8 @@
 \documentclass[a4paper]{report}
-
-% LaTeX packages -- Be careful! Sufficently complex packages will break the build process.
-\PassOptionsToPackage{hyphens}{url}
-\usepackage{amsfonts,amssymb,amsmath,latexsym,amsbsy,graphicx,float,hyperref,ifthen,color}
-
-% The following LaTeX code is required for processing to the web.
-% Removing it may break the build process.
-\newif\ifplastex\plastexfalse
-\ifplastex
-    \usepackage{embed}
-\else
-    \usepackage{comment,xr}
-	\newcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
-    \excludecomment{HTML}
-    \newcommand{\numbas}[2][Visit the URL below to try a numbas exam:]{\bigskip\noindent\textbf{Test Yourself} \textrm{#1}\\\expandafter\url{#2}\par}
-    \newcommand{\vimeo}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://player.vimeo.com/video/#2}\par}
-	\newcommand{\youtube}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://www.youtube.com/embed/#2}\par}
-\fi
-
-% Theorem environments
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{prop}{Proposition}[section]
-\newtheorem{propdef}{Proposition-Definition}[section]
-\newtheorem{pro}{Proposition}[section]
-\newtheorem{defi}{Definition}[section]
-\newtheorem{lem}{Lemma}[section]
-\newtheorem{cor}{Corollary}[section]
-\newtheorem{conj}{Conjecture}[section]
-\newtheorem{eg}{Example}[section]
-\newtheorem{ex}{Exercise}[section]
-\newtheorem{rema}{Remark}[section]
-\newtheorem{remarks}{Remarks}[section]
-\newtheorem{proof}{Proof}[section]
+\usepackage{amsmath}
+\usepackage{makecourse}
 
 \begin{document}
-%Be sure to set a reasonable chapter number here!
 \setcounter{chapter}{1}
 \chapter{Another chapter title}
 
@@ -47,6 +15,12 @@ L(y)= c_n(x)y^{(n)} + c_{n-1}(x)y^{(n-1)}+\ldots + c_1(x)y' + c_0(x)y,
 
 \subsection{Subsection 1}
 Subsections are shown on the web.
+\begin{eqnarray*}
+	\lefteqn{y = (x-2)(x+2)} \\
+	&& = x^2-2x+2x-4 \\
+	&& = x^2-4 
+\end{eqnarray*}
+
 \section{Section 2}
 More content goes here.
 
