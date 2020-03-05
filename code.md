@@ -1,7 +1,4 @@
-# Test
-This is some test octave code.
-
-## The code
+# Runnable code examples
 
 ```runnable lang="octave"
 A = [1 2 0; 2 5 -1; 4 10 -1]
@@ -24,5 +21,7 @@ which(x>3)
 ```
 
 ```runnable lang="python"
-x = 5;
+primes = [2, 3, 5, 7]
+for prime in primes:
+    print(prime)
 ```

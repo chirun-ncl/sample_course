@@ -1,38 +1,13 @@
 \documentclass[a4paper]{report}
 \usepackage{amsfonts,amssymb,amsmath,amsthm,latexsym,amsbsy,graphicx,float,hyperref,ifthen,color}
+\usepackage{makecourse}
 \usepackage{tikz}
 \allowdisplaybreaks
-
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{example}{Example}[chapter]
 \newtheorem*{note}{Note}
 \newtheorem*{solution}{Solution}
-
-% Set counters and new commands
-\newboolean{showlectures}
-\setboolean{showlectures}{true}
-\newcounter{nlecture}
-\setcounter{nlecture}{4}
-\newcommand{\lectureend}{
-\par \noindent [{\bf End of Lecture \arabic{nlecture}}]
-\refstepcounter{nlecture}
-}
-
-
-% The following LaTeX code is required for processing to the web.
-% Removing it may break the build process.
-\newif\ifplastex\plastexfalse
-\ifplastex
-    \usepackage{embed}
-\else
-    \usepackage{comment,xr}
-	\renewcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
-    \excludecomment{HTML}
-    \newcommand{\numbas}[2][Visit the URL below to try a numbas exam:]{\bigskip\noindent\textbf{Test Yourself} \textrm{#1}\\\expandafter\url{#2}\par}
-    \newcommand{\vimeo}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://player.vimeo.com/video/#2}\par}
-	\newcommand{\youtube}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://www.youtube.com/embed/#2}\par}
-\fi
 
 % For cross document referencing!
 \externaldocument{../chapter2/chapter2}
@@ -178,8 +153,6 @@ y=\mathrm{e}x\exp\left[-\frac{1}{x}\right] = x \exp\left[1-\frac{1}{x}\right] \l
 
 \end{solution}
 
-\lectureend
-
 \begin{example}
 \label{ex:first:radio}
 If $N(t)$ is the size of a radioactive sample at time $t$, then
@@ -280,8 +253,6 @@ y'=\left(\frac{y}{x}\right)^2+2\left(\frac{y}{x}\right) \equiv F\left(\frac{y}{x
 \int \frac{{\rm d}v}{v(1+v)}=\int \frac{{\rm d}x}{x}.
 \end{equation*}
 \noindent Note that we have implicitly assumed that $v=y/x\neq0$ and $v=y/x\neq -1$. Neither of these special solutions are consistent with $y(1)=0.5$, so this is valid. 
-
-\lectureend
 
 \noindent To evaluate the integral on the left-hand side, use a partial fractions decomposition,
 
@@ -412,8 +383,6 @@ y = C \mathrm{e}^{-P(x)} + \mathrm{e}^{-P(x)}\int \left[q(x) \mathrm{e}^{P(x)}\r
 
 \noindent This is the general solution. The term proportional to $C$ is often referred to as the {\bf complementary function}, whilst the rest of the right-hand side is known as the {\bf particular integral}. 
 
-\lectureend
-
 \begin{example}
 \label{ex:first:intfac}
 Find the general solutions of the following first-order ODEs:\\ 
@@ -512,8 +481,6 @@ Y' + p(x)Y &=& \left(y_1-y_2\right)' + p(x)\left(y_1-y_2\right)\\
 \Longrightarrow Y' + p(x)Y &=& 0,
 \end{eqnarray*}
 
-\lectureend
-
 \noindent whilst $\displaystyle{Y\left(x_0\right) = y_1\left(x_0\right)-y_2\left(x_0\right) = y_0-y_0 = 0}$. Obviously $Y=0$ is a possible solution of this ODE, in which case $y_1(x)=y_2(x)$ (i.e. the solution is unique). For $Y\neq0$, separation of variables leads to
 
 \begin{displaymath}
@@ -576,9 +543,6 @@ y+2x =m \Longrightarrow y=m-2x.
 
 \end{solution}
 
-\lectureend
-
-
 \begin{example}
 \label{ex:first:iso2}
 Find the isoclines and sketch some solution curves for the following ODE,
@@ -629,5 +593,4 @@ g(x,y)=h(x,y)=0
 \end{displaymath}
 \noindent at any point in the $xy$-plane, then the point is said to be {\bf singular}. At this point, the slope is not single-valued: it lies on both the $m=0$ and $1/m=0$ isoclines. In Example~\ref{ex:first:iso2}, {\bf all} of the isoclines intersect at the origin, which is the only singular point in this case. See handout for a more complicated example.
 
-\lectureend
 \end{document}

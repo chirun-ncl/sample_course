@@ -9,5 +9,7 @@
 **/*.snm
 **/*.swp
 **/*.paux
+**/.DS_Store
 build/*
 tmp/*
+oembed-cache.json

@@ -1,7 +1,7 @@
-title: "MAS0000: Example Content"
-code: MAS0000
-year: 2018-19
-base_dir: lti/content
+title: "Sample Course"
+code: SAM0000
+year: 2020
+base_dir: /path/to/web/content
 author: Ann Example
 structure: 
     - type: introduction
@@ -12,13 +12,16 @@ structure:
       title: Course Material
       content:
         - type: chapter
-          title: Chapter 1
-          source: chapter1/chapter1.tex
+          title: LaTeX notes
+          source: latex.tex
         - type: chapter
-          title: Embed Demo
-          source: chapter2/chapter2.tex
+          title: Markdown notes
+          source: markdown.md
+        - type: chapter
+          title: Embedding Demo
+          source: embed.tex
         - type: url
-          title: URL Test
+          title: An External URL
           source: "https://bbc.co.uk/"
     - type: part
       title: Slides
@@ -26,12 +29,9 @@ structure:
         - type: slides
           title: Markdown Slides
           source: slides/slides.md
-    - type: part
-      title: Assessment 
-      content:
-        - type: exam 
-          title: Example exam
-          source: exam/example_exam.tex
+        - type: slides
+          title: Beamer Slides
+          source: slides/slides.tex
 themes: 
   - title: Default
     source: default

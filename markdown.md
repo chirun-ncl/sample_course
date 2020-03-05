@@ -2,7 +2,7 @@
 Analysis of Variance (often abbreviated to ANOVA) is a technique for
 comparing the mean levels of response arising in several samples.
 Where just two samples are involved it might be appropriate to use a
-two-sample $t$-test or a paired $t$-test (See Week 5).
+two-sample $t$-test or a paired $t$-test.
 
 In the case of several samples, we might consider using $t$-tests to
 compare each pair of samples.  However, this is a poor approach for the
@@ -72,7 +72,7 @@ to the mean levels of response.
 
 ### R Code
 
-```{.R .runnable .editable}
+```runnable lang="r"
 Response = c(46,35,34,39,43,40,47,39,37,37,31,40,28,36,39,
              42,26,36,34,26,37,34,32,31,35,40,28)
 Group = factor(c('A','A','A','A','A','A','A','A','A',

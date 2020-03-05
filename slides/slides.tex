@@ -3,131 +3,16 @@
 \usecolortheme{default}
 \usepackage{amsbsy,amsmath,latexsym,amsfonts,subfigure,enumerate}
 \usepackage{hyperref}
+\usepackage{makecourse}
 \usepackage{graphicx}
 \setbeamertemplate{navigation symbols}{}
-\title{MAS3901}
-\author{Phil Ansell}
-\institute{MAS3901@ncl.ac.uk}
+\title{Sample Slides}
+\author{Ann Example}
+\institute{}
 \date{}
-\definecolor{dgreen}{rgb}{0.,0.4,0.}
-\newcommand{\bqed}{\blacksquare}
-\newcommand{\fblu}{\setbeamercolor{frametitle}{bg=white,fg=blue}}
-\newcommand{\fred}{\setbeamercolor{frametitle}{bg=white,fg=blue}}
-\newcommand{\fgreen}{\setbeamercolor{frametitle}{bg=white,fg=blue}}
-\newcommand{\fblack}{\setbeamercolor{frametitle}{bg=white,fg=blue}}
-\newcommand{\tw}{\textcolor{blue}}
 \setbeamertemplate{blocks}[framed]
-%\pgfpagesuselayout{2 on 1}[a4paper]
-\newcommand{\aframetitle}[1]{\frametitle{\thepart.\thesection ~#1}}
-\newcommand{\bframetitle}[1]{\frametitle{\thepart.\thesection.\thesubsection ~#1}}
-\newcommand{\xvec}{\underline{x}}
-\newcommand{\yvec}{\underline{y}}
-\newcommand{\Xvec}{\underline{X}}
-\newcommand{\Yvec}{\underline{Y}}
-\newcommand{\thetavec}{\underline{\theta}}
-\newcommand{\xvece}{\underline{x}=(x_1,x_2,\ldots,x_n)}
-\newcommand{\Xrow}{X_1,X_2,\ldots,X_n}
-\newcommand{\xrow}{x_1,x_2,\ldots,x_n}
-\newcommand{\arow}{a_1,a_2,\ldots,a_n}
-\newcommand{\ttheta}{\psfrag{t}{$\theta$}}
-\newcommand{\asim}{\sim\hspace*{-9.6pt}\raisebox{0.5pt}{:}\hspace*{6pt}}
-\newcommand{\aasim}{\sim\hspace*{-17pt}\raisebox{0.5pt}{:}\hspace*{6pt}}
-\newcommand{\bigfrac}[2]{\frac{\displaystyle{#1}}{\displaystyle{#2}}}
-\newcommand{\QED}{{\it Q.E.D.}}
-\newcommand{\dsp}{\doublespace}
-\newcommand{\ssp}{\singlespace}
-\newcommand{\osp}{\onehalfspace}
-\newcommand{\pencil}{\PencilRightDown}
-\newcommand{\ffrac}[2]{\displaystyle{\genfrac{}{}{0pt}{}{#1}{#2}}}
-\renewcommand{\vec}[1]{\boldsymbol{#1}}
-
-% The following LaTeX code is required for processing to the web.
-% Removing it may break the build process.
-\newif\ifplastex\plastexfalse
-\ifplastex
-    \usepackage{embed}
-    \usepackage{beamer}
-    \newcommand{\cellcolor}[2][white]{}
-\else
-    \usepackage{comment}
-    \usepackage{colortbl}
-    \newcommand{\externaldocument}[1]{}
-	\renewcommand\qed{\begin{flushright}$\blacksquare$\end{flushright}}
-    \excludecomment{HTML}
-    \newcommand{\numbas}[2][Visit the URL below to try a numbas exam:]{\bigskip\noindent\textbf{Test Yourself} \textrm{#1}\\\expandafter\url{#2}\par}
-    \newcommand{\vimeo}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://player.vimeo.com/video/#2}\par}
-	\newcommand{\youtube}[2][Visit the URL below to view a video:]{\bigskip\noindent\textbf{Video} \textrm{#1}\\\expandafter\url{https://www.youtube.com/embed/#2}\par}
-\fi
 
 \begin{document}
-
-\begin{frame}
-\begin{center}
-\Huge
-\textbf{MAS3901} \\
-\textbf{Applied Probability}\\
-\vspace{0.1cm}
-\huge
-\textbf{Lecturer: Dr Phil Ansell}
-\vspace{0.2cm}
-
-Office: \textsf{3.05, Herschel Building} \\ Phone: \textsf{0191 208 6344} \\ \ Email: \texttt{MAS3901@ncl.ac.uk} 
-\vspace{0.2cm}
-\end{center}
-\end{frame}
-
-\begin{frame}[t]
-	\frametitle{Module Timetable}
-	\begin{center}
-		\begin{tabular}{|l||c|c|c|c|}
-			\hline
-			Week & Mon 12-1 & Tue 9-10 & Wed 12-1 & Thu 4-6 \\
-			\hline
-			1 (2/10) &  & \cellcolor[gray]{0.5} Lecture 1 & \cellcolor[gray]{0.5} Lecture 2 &  \\
-			\hline
-			2 (9/10) & \cellcolor[gray]{0.5} Lecture 3 & \cellcolor[gray]{0.5} Lecture 4 & \cellcolor[gray]{0.5} Pr Class 1 & \\
-			\hline
-			3 (16/10) & & \cellcolor[gray]{0.5} Lecture 5 & \cellcolor[gray]{0.5} Lecture 6& \\
-			\hline
-			4 (23/10) & \cellcolor[gray]{0.5} Lecture 7 & \cellcolor[gray]{0.5} Lecture 8 & \cellcolor[gray]{0.5} Pr Class 2 &  \\
-			\hline
-			5 (30/10) & \cellcolor[gray]{0.5} Test 1 & & & \cellcolor[gray]{0.8} Lecture 9 \\
-			\hline
-			6 (6/11) & \cellcolor[gray]{0.65} Lecture 10 & \cellcolor[gray]{0.65} Drop-in & \cellcolor[gray]{0.65} Lecture 11  & \cellcolor[gray]{0.8} Comp 1 \\
-			\hline
-			7 (13/11) & \cellcolor[gray]{0.65} Lecture 12 &  & \cellcolor[gray]{0.65} Lecture 13 & \cellcolor[gray]{0.8} Deadline \\
-			\hline
-			8 (20/11) & \cellcolor[gray]{0.65} Lecture 14 & \cellcolor[gray]{0.65} Drop-in & \cellcolor[gray]{0.65} Lecture 15 &  \\
-			\hline
-			9 (27/11) & \cellcolor[gray]{0.65} Lecture 16 & \cellcolor[gray]{0.65} Drop-in & \cellcolor[gray]{0.65} Pr Class 3 &  \\
-			\hline
-			10 (4/12) & &\cellcolor[gray]{0.65} Test 2 & &  \\
-			\hline
-			11 (11/12) & \cellcolor[gray]{0.5} Lecture 17 & & \cellcolor[gray]{0.5} Pr Class 4 & \\
-			\hline
-			12 (8/1) & Revision 1 & & Revision 2 & \\
-			\hline
-		\end{tabular}
-	\end{center}
-	Mon 12-1: Herb LT2; \\
-	Tue 9-10: BSTC 1.46; \\
-	Wed 12-1: Herb LT3; \\
-	Thu 4-6: Herschel Learning Lab.
-\end{frame}
-\begin{frame}[t]
-	\frametitle{Introduction}
-	\begin{enumerate}[--]
-		\item Coursework will make up {\bf 10\%} of your final mark: {\bf Test 1 (L1-8, 2.5\%)}, {\bf Group Project (5\%)}, {\bf Test 2 (L10-16, 2.5\%)}. 
-		\item Since there are no assessed homeworks, in weeks {\bf 1-4}, {\bf 6-9} and {\bf 11}, I will provide you with a set of problems (and later, solutions) for you to practice on. Further questions will be discussed in the Problem Classes.
-		\item Announcements will be via email and posted on {\bf Blackboard}. You should check your email regularly!
-		\item Please send any email requests to the module email account: {\bf MAS3901@ncl.ac.uk} and this will be checked between {\bf 8am} and {\bf 9am} each morning and whenever possible {\bf but please do not expect an immediate response to your email}. 
-		\item I operate an {\bf open door} policy. 
-		\item The group project must be handed in by the given deadline and will count as zero for assessment purposes unless a good reason is given via a PEC. {\bf This module does not allow extensions.}
-		\item Note that you should be familiar with Degree Programme Handbook and in particular {\bf Section 7: Expectations}. 
-		\item All the lectures for this module will be recorded by {\bf ReCap}. 
-		
-	\end{enumerate}
-\end{frame}
 
 \begin{frame}[t]
 	\frametitle{Series Results}
@@ -140,7 +25,7 @@ Office: \textsf{3.05, Herschel Building} \\ Phone: \textsf{0191 208 6344} \\ \ E
 \end{frame}
 
 \begin{frame}[t]
-	\frametitle{Expectation}
+\frametitle{Expectation}
 {\bf Discrete Random Variables}
 \begin{eqnarray*}
 E[g(X)] &=& \sum_{x \in S} g(x) Pr(X=x) \\
@@ -201,7 +86,7 @@ E[X] = \frac{r}{p} \qquad Var(X) = \frac{r(1-p)}{p^2}.
 Pr(X=x) &=& \frac{1}{n}, \ x=1,2,\ldots,n.
 \end{eqnarray*}
 \[
-E[X] = \frac{n+1}{2} \qquad Var(X) = \frac{n^2-1}{12}.
+E[X] = (n+1)/2 \qquad Var(X) = (n^2-1)/12.
 \]
 \end{frame}
 

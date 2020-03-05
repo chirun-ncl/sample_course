@@ -1,83 +1,47 @@
-## Foo
+## Do not adjust your set!
 
-```python
-print("hello world")
-```
+Maths is important
 
 ---
 
-## Bar
-* test
-* test
+How is maths traditionally presented - Whiteboard/visualiser, PDF, hand-written notes, viewed via BB/Canvas mobile website or app
 
 ---
 
-## Foo
-```python
-print("hello world")
-```
+
+$$ \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x $$
 
 ---
 
-## Bar
-* test
-* test
+### About Coursebuilder
+
+ Motivations:
+
+* to support students with special requirements
+* to offer flexibility for different devices
+* to enrich lecture notes
 
 ---
 
-# Runnable code test
+The idea: to use a single source file to generate lecture material in a variety of formats:
 
-This is some test octave code. Some $inline maths$.
-
-$$This is some maths$$
+![Coursebuilder Image](/static/images/coursebuilder.png)
 
 ---
 
-## The code
-
-```matlab
-A = [1 2 0; 2 5 -1; 4 10 -1]
-```
-```output
-Some output
-```
-
-```runnable lang="matlab"
-A = [1 2 0; 2 5 -1; 4 10 -1]
-B = A'
-C = A * B
-C = A .* B
-b = [1;3;5]
-x = A\b
-r = A*x - b
-eig(A)
-svd(A)
-p = round(poly(A))
-roots(p)
-q = conv(p,p)
-```
+The content for this page - in the format of slides, PDF and responsive web pages in multiple themes - is all generated from one file.
 
 ---
 
-R code
+### Maths!
 
-```runnable lang="r" gutter-symbol=">>>"
-x<-c(1,2,3,4,5)
-which(x>3)
-```
+$$ \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x $$
 
 ---
 
-Python code
+### Live code
 
-```runnable lang="python"
-x = 5
-if x==5:
-	do_something(123)
-```
-
-```runnable lang="python"
-x = 5
-if x==5:
-	do_something(123)
+```runnable lang="octave"
+x = 1:100;
+x(mod(x,7)==0)
 ```
