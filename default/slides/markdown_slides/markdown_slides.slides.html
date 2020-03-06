@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex">
+		<meta name="author" content="Ann Example" />
+		<meta name="date" content="2020-03-06" />
+		
+
+		<title>Markdown Slides</title>
+
+		
+		<link rel="stylesheet" id="customiseCodeCSS" href="/__w/sample_course/sample_course/build/default/static/pygmentize.light.css">
+		<link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/reveal.js/css/reveal.css">
+		<link id="customiseCSS" rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/reveal.js/css/theme/light.css">
+		<link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/slides.css">
+		<link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/lib/codemirror.css">
+		<link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/boole.css">
+		
+		
+		
+
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+		<script defer src="/__w/sample_course/sample_course/build/default/static/jquery.flexibleArea.js"></script>
+		<script defer src="/__w/sample_course/sample_course/build/default/static/spin.min.js"></script>
+		<script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/lib/codemirror.js"></script>
+		<script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/mode/octave/octave.js"></script>
+		<script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/mode/python/python.js"></script>
+		<script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/mode/r/r.js"></script>
+		<script src="/__w/sample_course/sample_course/build/default/static/customisation.js"></script>
+		<script src="/__w/sample_course/sample_course/build/default/static/boole.js"></script>
+		<script>
+			if( window.location.search.match( /print-pdf/gi )){
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = "/__w/sample_course/sample_course/build/default/static/reveal.js/css/print/pdf.css";
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = "/__w/sample_course/sample_course/build/default/static/slides_print.css";
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<script type="text/x-mathjax-config">MathJax.Hub.Config({
+    TeX: { extensions: ["color.js", "boldsymbol.js"],
+		    Macros: { mathsterling: '{\\unicode{xA3}}',
+									pounds: '{\\unicode{xA3}}',
+									euro: '\\unicode{x20AC}',
+									bm: ["\\boldsymbol{ #1 }",1],
+									lefteqn: ["\\rlap{ #1 }\\quad",1],
+								}
+		},
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+		skipStartupTypeset: false,
+});
+MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 1 });</script>
+		
+
+	</head>
+	<body >
+		<div class="reveal">
+
+			
+			<div class="header-l">Markdown Slides</div>
+			<div class="header-r">Ann Example</div>
+			
+
+			<div class="slides">
+				
+					
+					<section id="title-slide">
+						<h1 class="title">Markdown Slides</h1>
+						<p class="author">Ann Example</p>
+					</section>
+					
+				
+
+				
+				<section data-splitter data-separator="<hr/?>" data-separator-notes="^Data-Note:">
+					<textarea data-template>
+						<section class="section2"><h2>Do not adjust your set!</h2>
+<p>Maths is important</p>
+<hr/>
+<p>How is maths traditionally presented - Whiteboard/visualiser, PDF, hand-written notes, viewed via BB/Canvas mobile website or app</p>
+<hr/>
+<script type="math/tex; mode=display"> \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x </script>
+<hr/>
+<section class="section3"><h3>About Coursebuilder</h3>
+<p>Motivations:</p>
+<ul>
+<li class="fragment">to support students with special requirements</li>
+<li class="fragment">to offer flexibility for different devices</li>
+<li class="fragment">to enrich lecture notes</li>
+</ul>
+<hr/>
+<p>The idea: to use a single source file to generate lecture material in a variety of formats:</p>
+<p><figure class="figure1" data-title="Coursebuilder Image"><img alt="Coursebuilder Image" src="/__w/sample_course/sample_course/build/default/static/images/coursebuilder.png"/></figure></p>
+<hr/>
+<p>The content for this page - in the format of slides, PDF and responsive web pages in multiple themes - is all generated from one file.</p>
+<hr/>
+</section><section class="section3"><h3>Maths!</h3>
+<script type="math/tex; mode=display"> \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x </script>
+<hr/>
+</section><section class="section3"><h3>Live code</h3>
+<pre class="cm-block" data-language="octave" data-runnable="true" data-uuid="09ac519c-27be-4201-8cf1-1adacaf26755"><code>x = 1:100;
+x(mod(x,7)==0)</code></pre>
+</section></section>
+					</textarea>
+				</section>
+				
+
+			</div>
+
+		</div>
+		<script src="/__w/sample_course/sample_course/build/default/static/reveal.js/js/reveal.js"></script>
+		<script src="/__w/sample_course/sample_course/build/default/static/reveal.js/lib/js/head.min.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				history: true,
+				dependencies: [
+					{ src: "/__w/sample_course/sample_course/build/default/static/reveal.js/plugin/splitter/splitter.js" },
+					{ src: "/__w/sample_course/sample_course/build/default/static/reveal.js/plugin/math/math.js" },
+					{ src: "/__w/sample_course/sample_course/build/default/static/reveal.js/plugin/notes/notes.js", async: true },
+					{ src: "/__w/sample_course/sample_course/build/default/static/reveal.js/plugin/highlight/highlight.js", async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

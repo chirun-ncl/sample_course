@@ -1,0 +1,304 @@
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+body {
+  position: relative;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.breadcrumb {
+	border-radius: 0px;
+}
+.breadcrumb-item > a:hover,
+.breadcrumb-item > a:focus {
+	text-decoration: none;
+}
+.navbar-toggler{
+	padding: 0;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.nav-links{
+  display:none;
+}
+
+.id-link{
+  display:none;
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.tikzpicture{
+    max-width: 400px;
+    width: 100%;
+		display: inline;
+}
+
+.flushright{
+  text-align: right;
+}
+
+.fbox{
+  border: 1px solid;
+  display: inline-block;
+  padding: 3pt;
+}
+
+.minipage{
+  display: inline-block;
+}
+
+.centered{
+  display:block;
+  text-align: center;
+}
+
+/* Try to match LaTeX table styles */
+.tabular {
+	display: inline-block;
+  width: initial;
+	border-top: initial;
+	border-bottom: initial;
+	line-height: initial;
+}
+.tabular p {
+	margin: 0;
+}
+.tabular td {
+	padding: 0.1em 0.5em;
+}
+/*------*/
+
+h4 {
+    font-size: 1.3rem;
+}
+h5 {
+    font-size: 1.15rem;
+}
+
+.hidden {
+  display:none;
+}
+
+* ~ .section {
+    margin-top: 3rem;
+}
+
+* ~ .subsection {
+    margin-top: 2rem;
+}
+
+section.section1 + section.section1 {
+	margin-top: 3rem;
+}
+
+img {
+  max-width: 100%;
+  max-height: 60vh;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+tr, img {
+    page-break-inside: avoid;
+}
+
+.vimeo-aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+}
+
+.vimeo-aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.recap-aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+}
+
+.recap-aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.youtube-aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+}
+
+.youtube-aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+
+.numbas-aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+}
+
+.numbas {
+  width: 100%;
+  height: 1000px;
+}
+
+.oembed > iframe {
+    margin: 0 auto;
+    display: block;
+}
+
+.theme-switch {
+  font-size: 13px;
+}
+
+.theme-switch .form-control {
+  width: auto;
+  font-size: 13px;
+}
+
+thead {
+  line-height: 3rem;
+}
+
+table {
+	width: 100%;
+  margin-bottom: 1rem;
+	line-height: 2rem;
+}
+
+.exercise {
+  padding: 10px;
+  margin-bottom:20px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.interlude {
+  padding: 10px;
+  margin-bottom:20px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.CodeMirror {
+  min-height: 30px;
+}
+
+.CodeMirror-scroll {
+  min-height: 30px;
+}
+
+pre {
+	font-size: 110%;
+}
+
+.thin-table {
+    text-align: center;
+
+}
+
+.thin-table table {
+    max-width: 250px;
+    margin-left: 10px;
+}
+
+figure {
+      text-align: center;
+}
+figure + em, .reveal figure + em {
+  display: inherit;
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: -10px;
+}
+
+
+.wrapfig {
+	max-width: 35%;
+}
+
+.ttfamily{
+  font-family: "Courier New", Courier, monospace;
+}
+
+.bibliography>li>p:first-of-type, .itemize>li>p:first-of-type,
+.enumerate>li>p:first-of-type {
+  display: inline;
+}
+
+.bibliography .bibcite {
+	display: inline-block;
+	margin-right: 0.5em;
+}
+
+.btn-pastel {
+	color: #222;
+	background-color: #FFFFE6;
+	border-color: #FFFFE6;
+}
+#font-size-display {
+	width: 2.5rem;
+	text-align: center;
+}

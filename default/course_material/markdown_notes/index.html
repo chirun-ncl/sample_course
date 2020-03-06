@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Ann Example" />
+            <meta name="date" content="2020-03-06" />
+        
+
+        <title>Markdown notes | Sample Course</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/styles.css">
+            <link rel="stylesheet" id="customiseCSS" href="/__w/sample_course/sample_course/build/default/static/light.css">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="/__w/sample_course/sample_course/build/default/static/pygmentize.light.css">
+
+    <link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/bootstrap-toc.css?v=3">
+    <link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/lib/codemirror.css">
+    <link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/boole.css">
+    <link rel="stylesheet" href="/__w/sample_course/sample_course/build/default/static/print.css">
+
+
+        
+    
+            <script type="text/x-mathjax-config">MathJax.Hub.Config({
+    TeX: { extensions: ["color.js", "boldsymbol.js"],
+		    Macros: { mathsterling: '{\\unicode{xA3}}',
+									pounds: '{\\unicode{xA3}}',
+									euro: '\\unicode{x20AC}',
+									bm: ["\\boldsymbol{ #1 }",1],
+									lefteqn: ["\\rlap{ #1 }\\quad",1],
+								}
+		},
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+		skipStartupTypeset: false,
+});
+MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 1 });</script>
+            <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <script defer src="/__w/sample_course/sample_course/build/default/static/customisation.js"></script>
+        
+    <script defer src="/__w/sample_course/sample_course/build/default/static/jquery.flexibleArea.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/spin.min.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/lib/codemirror.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/mode/octave/octave.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/mode/python/python.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/codemirror-5.26.0/mode/r/r.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/boole.js"></script>
+    <script defer src="/__w/sample_course/sample_course/build/default/static/bootstrap-toc.js"></script>
+
+    </head>
+    <body data-spy="scroll" data-target="#chapterTOC" data-offset="50">
+        
+<div class="collapse" id="navbarToggleCustomise">
+	<div class="bg-secondary text-white p-2">
+		<h5>Theme Customisation</h5>
+		<form onsubmit="return false;" id="navbarCustomise" class="form-inline">
+			<button class="btn btn-dark mr-2" value="dark">Dark</button>
+			<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
+			<button class="btn btn-light mr-4" value="light">Light</button>
+			<label class="mr-2" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
+			<input type="range" class="form-control-range col-md-3 mr-2" id="font-scale" min="60" max="700" value="100">
+		</form>
+	</div>
+</div>
+<nav aria-label="breadcrumb">
+	<ul class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="/__w/sample_course/sample_course/build/default/index.html">Sample Course</a>
+		</li>
+		
+		<li class="breadcrumb-item">
+			<a href="/__w/sample_course/sample_course/build/default/course_material/index.html">Course Material</a>
+		</li>
+		
+		<li class="breadcrumb-item active">
+			Markdown notes
+		</li>
+		<li class="ml-auto">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleCustomise" aria-controls="navbarToggleCustomise" aria-expanded="false" aria-label="Toggle customisations panel">
+				<span class="fa fa-cog"></span>
+			</button>
+		</li>
+	</ul>
+</nav>
+
+        <header>
+            
+            
+        </header>
+        <main>
+            
+    <div class="container mt-3">
+        <div class="row">
+            
+            <div id="sidebar" class="col-md-3">
+                <nav class="mb-3" id="chapterTOC" data-toggle="toc">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                        <li><a class="nav-link" href="/__w/sample_course/sample_course/build/default/course_material/markdown_notes/markdown_notes.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download Chapter as PDF</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div id="content" class="col-md-9"> 
+            
+            <section class="section1"><h1>Analysis of variance (ANOVA)</h1>
+<p>Analysis of Variance (often abbreviated to ANOVA) is a technique for
+comparing the mean levels of response arising in several samples.
+Where just two samples are involved it might be appropriate to use a
+two-sample <script type="math/tex">t</script>-test or a paired <script type="math/tex">t</script>-test.</p>
+<p>In the case of several samples, we might consider using <script type="math/tex">t</script>-tests to
+compare each pair of samples.  However, this is a poor approach for the
+following reasons:</p>
+<ul>
+<li class="fragment">It can be very time consuming;</li>
+<li class="fragment">It can be misleading.</li>
+</ul>
+<p>What is needed is a single test of the extended null hypothesis</p>
+<script type="math/tex; mode=display">H_0 : \mu_1 = \mu_2 = \mu_3\dots=\mu_t</script>
+<p>where <script type="math/tex">t</script> is the number of samples, i.e.  no differences among the
+population means.  This is what ANOVA sets out to do.</p>
+<p>Here is a sample markdown image:</p>
+<p><figure class="figure1" data-title=""><img alt="" src="./build/static/images/mc.png" width="80%"/></figure></p>
+<section class="section2"><h2>Why do observations vary?</h2>
+<p>There are two reason why observations vary:</p>
+<ul>
+<li class="fragment">Variation in response, from group to group;</li>
+<li class="fragment">Variation between individuals within groups.</li>
+</ul>
+<p>We can break down (explain) the total variability of responses into these
+two components. We calculate variance estimates for each source and compare them using
+a variance-ratio test (or <script type="math/tex">F</script>-test).</p>
+<p>The sums of squares can be calculated as follows,</p>
+<script type="math/tex; mode=display">\begin{align}TSS &= \Sigma\Sigma\left(x^2\right) - \frac{G^2}{N}\\
+BTSS &= \Sigma\left(\frac{T_i^2}{n_i}\right) - \frac{G^2}{N}\\
+RSS &= TSS-BTSS,
+\end{align}</script>
+<p>where <script type="math/tex">N</script> is the number of observations, <script type="math/tex">G=\Sigma\Sigma x</script> is the sum of all of
+the observations, <script type="math/tex">T_i</script> is the sum of observations in group <script type="math/tex">i</script> and <script type="math/tex">n_i</script> is the
+number of observations in group <script type="math/tex">i</script>.</p>
+</section><section class="section2"><h2>ANOVA</h2>
+<p>The resulting variance estimates (referred to in ANOVA as mean squares)
+can be compared using the variance-ratio test (<script type="math/tex">F</script>-test).</p>
+<p>The standard Analysis of Variance is a parametric test and is therefore
+dependent (like the <script type="math/tex">t</script>-test) on the assumptions that the observations are
+Normally distributed, independent and have a common standard deviation <script type="math/tex">\sigma</script>
+(often abbreviated to Normality, Independence, Homogeneity).</p>
+</section></section><section class="section1"><h1>Example</h1>
+<p>In an educational experiment on teaching children to read, the children
+were divided into three groups and listened to while they read.  The
+teacher was instructed to respond as follows:  for Group A, praise as
+much as possible and do not criticise; for Group B, criticise errors and do
+not praise; for Group C, comment as little as possible.  The children were
+assessed at the start and end of the experiment and a response
+measurement of the degree of improvement (0-50 scale) was recorded.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A (praised)</td>
+<td>46</td>
+<td>35</td>
+<td>34</td>
+<td>39</td>
+<td>43</td>
+<td>40</td>
+<td>47</td>
+<td>39</td>
+<td>37</td>
+</tr>
+<tr>
+<td>B (criticised)</td>
+<td>37</td>
+<td>31</td>
+<td>40</td>
+<td>28</td>
+<td>36</td>
+<td>39</td>
+<td>42</td>
+<td>26</td>
+<td>36</td>
+</tr>
+<tr>
+<td>C (ignored)</td>
+<td>34</td>
+<td>26</td>
+<td>37</td>
+<td>34</td>
+<td>32</td>
+<td>31</td>
+<td>35</td>
+<td>40</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+<p>We wish to test whether the different methods have made any difference
+to the mean levels of response.</p>
+<section class="section3"><h3>R Code</h3>
+<pre class="cm-block" data-language="r" data-runnable="true" data-uuid="bd5f3743-c74e-47f6-9c65-4d85a3ce16dd"><code>Response = c(46,35,34,39,43,40,47,39,37,37,31,40,28,36,39,
+             42,26,36,34,26,37,34,32,31,35,40,28)
+Group = factor(c('A','A','A','A','A','A','A','A','A',
+                 'B','B','B','B','B','B','B','B','B',
+                 'C','C','C','C','C','C','C','C','C'))
+df = data.frame(Response, Group)
+fit &lt;- aov(Response ~ Group, data=df)
+summary(fit)</code></pre>
+</section></section>
+            </div>
+        </div>
+    </div>
+
+        </main>
+        <footer class="text-muted">
+    <div class="container">
+        <div class="float-right">
+					<p><a href="#">Back to top</a></p>
+						
+<div class="theme-switch">
+    <label for="themes">Switch theme:</label>
+    <select class="form-control" id="themes" onchange="location.href=this.value;">
+        
+            
+            <option value="/__w/sample_course/sample_course/build/default/index.html" selected>Default (active)</option>
+            
+        
+            
+            <option value="/__w/sample_course/sample_course/build/accessible/index.html">Accessible</option>
+            
+        
+    </select>
+</div>
+
+        </div>
+        <p>&copy; Ann Example - Newcastle University 2020</p>
+        <p>Generated using software written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>Site last generated: 2020-03-06</p>
+    </div>
+</footer>
+    </body>
+</html>
