@@ -1,7 +1,7 @@
 title: "Sample Course"
 code: SAM0000
 year: 2020
-base_dir: /path/to/web/content
+base_dir: sample_course
 author: Ann Example
 structure: 
     - type: introduction
