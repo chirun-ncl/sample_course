@@ -12,7 +12,3 @@ then running `make local` in this repository.
 
 Notes ready to be uploaded online can be built by changing the web path in `config.yml` and
 then running `make remote`.
-
-#### Preview
-The CourseBuilder output after running the `makecourse` script on this repository can be
-previewed at https://coursebuilder-ncl.github.io/sample_course/.
