@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run the makecourse script
-      run: make
+      run: make remote
     - name: Setup webdirectory
       run: mkdir -p deploy/SAM0000/2020/ && cp -r build/* deploy/SAM0000/2020/ && cp .github/workflows/index.html deploy/index.html
     - name: Deploy
