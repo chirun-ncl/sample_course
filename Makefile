@@ -6,13 +6,10 @@ else
 	OPENCMD := xdg-open
 endif
 
-local-build: config.yml $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
-	makecourse -l -z -vv 
-
-remote: config.yml $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
+build: config.yml $(shell find . -type f -name \*.tex) $(shell find . -type f -name \*.md)
 	makecourse -z -vv
 
-local: local-build
+local: build
 	$(OPENCMD) file://$(shell pwd)/build/$(DEFAULTTHEME)/index.html
 
 clean:
