@@ -1,0 +1,58 @@
+\documentclass[a4paper]{report}
+\usepackage{amsmath,graphicx,tikz}
+\usepackage{makecourse}
+\usetikzlibrary[topaths]
+\newcount\mycount
+
+\begin{document}
+\setcounter{chapter}{1}
+\chapter{A chapter title}
+
+\section{Figures}
+\subsection{Graphics}
+\begin{figure}
+\includegraphics[width=10cm]{images/hist.pdf}
+\caption{A histogram originally provided in .pdf format}
+\end{figure}
+
+\subsection{Tikz}
+% A complete graph
+% Author: Quintin Jean-NoÃ«l
+% <http://moais.imag.fr/membres/jean-noel.quintin/>
+\begin{figure}
+\begin{tikzpicture}[transform shape]
+  \foreach \number in {1,...,8}{
+        \mycount=\number
+        \advance\mycount by -1
+  \multiply\mycount by 45
+        \advance\mycount by 0
+      \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:5.4cm) {};
+    }
+  \foreach \number in {9,...,16}{
+        \mycount=\number
+        \advance\mycount by -1
+  \multiply\mycount by 45
+        \advance\mycount by 22.5
+      \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:5.4cm) {};
+    }
+  \foreach \number in {1,...,15}{
+        \mycount=\number
+        \advance\mycount by 1
+  \foreach \numbera in {\the\mycount,...,16}{
+    \path (N-\number) edge[->,bend right=3] (N-\numbera)  edge[<-,bend
+      left=3] (N-\numbera);
+  }
+}
+\end{tikzpicture}
+\caption{A complete graph, drawn with tikz.}
+\end{figure}
+
+\section{Embedding}
+\subsection{Numbas}
+\numbas{https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/}
+\subsection{Vimeo}
+\vimeo{8169375}
+\subsection{Youtube}
+\youtube{EdyociU35u8}
+
+\end{document}
