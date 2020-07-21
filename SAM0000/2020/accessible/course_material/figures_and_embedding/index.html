@@ -6,10 +6,10 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Ann Example" />
-            <meta name="date" content="2020-07-08" />
+            <meta name="date" content="2020-07-21" />
         
 
-        <title>Embedding Demo | Sample Course</title>
+        <title>Figures and Embedding | Sample Course</title>
         
 
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -59,7 +59,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 	
 	<a href="../../course_material/index.html">Course Material</a>  &mdash;
 	
-	Embedding Demo
+	Figures and Embedding
 </nav>
 
         <header>
@@ -72,26 +72,76 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 <ul style="padding:0;list-style-type:none">
 	
 	
-	<li><a class="nav-link" href="../../course_material/embedding_demo/embedding_demo.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download Chapter as PDF</a></li>
+	<li><a class="nav-link" href="../../course_material/figures_and_embedding/figures_and_embedding.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download Chapter as PDF</a></li>
 	
 </ul>
 </nav>
  <!-- Latex Chapter/Part -->
-<h1 id="a0000000070">A chapter title</h1>
+<h1 id="a0000000088">A chapter title</h1>
 <section class="section">
-<h2 id="a0000000071">2.1 Embedding</h2>
+<h2 id="a0000000089">2.1 Figures</h2>
 <section class="subsection">
-<h3 id="a0000000072">2.1.1 Numbas</h3>
+<h3 id="a0000000090">2.1.1 Graphics</h3>
+<figure id="a0000000091">
+<p>
+<img src="../../course_material/figures_and_embedding/images/img-0002.png" style="width:10cm"/>
+</p>
+<figcaption>
+<span class="caption_title">Figure</span>
+<span class="caption_ref">2.1</span>
+<span class="caption_text">A histogram originally provided in .pdf format</span>
+</figcaption>
+</figure>
+</section><section class="subsection">
+<h3 id="a0000000092">2.1.2 Tikz</h3>
+<figure id="a0000000093">
+<div class="tikzcd" id="a0000000094">
+<img alt="\begin{tikzpicture} [transform shape]
+  \foreach \number in {1,...,8}{
+        \mycount=\number
+        \advance\mycount by -1
+  \multiply\mycount by 45
+        \advance\mycount by 0
+      \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:5.4cm) {};
+    }
+  \foreach \number in {9,...,16}{
+        \mycount=\number
+        \advance\mycount by -1
+  \multiply\mycount by 45
+        \advance\mycount by 22.5
+      \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:5.4cm) {};
+    }
+  \foreach \number in {1,...,15}{
+        \mycount=\number
+        \advance\mycount by 1
+  \foreach \numbera in {\the\mycount,...,16}{
+    \path (N-\number) edge[-&gt;,bend right=3] (N-\numbera)  edge[&lt;-,bend
+      left=3] (N-\numbera);
+  }
+}
+\end{tikzpicture}" src="../../course_material/figures_and_embedding/images/img-0001.svg">
+</img></div>
+<figcaption>
+<span class="caption_title">Figure</span>
+<span class="caption_ref">2.2</span>
+<span class="caption_text">A complete graph, drawn with tikz.</span>
+</figcaption>
+</figure>
+</section>
+</section><section class="section">
+<h2 id="a0000000095">2.2 Embedding</h2>
+<section class="subsection">
+<h3 id="a0000000096">2.2.1 Numbas</h3>
 <p>
 <iframe class="numbas" frameborder="0" src="https://numbas.mathcentre.ac.uk/test-yourself/maths-support-diagnostic-test-differentiation/"></iframe>
 </p>
 </section><section class="subsection">
-<h3 id="a0000000073">2.1.2 Vimeo</h3>
+<h3 id="a0000000097">2.2.2 Vimeo</h3>
 <p>
 <div class="vimeo-aspect-ratio"><iframe allowfullscreen="" class="vimeo" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/8169375" webkitallowfullscreen=""></iframe></div>
 </p>
 </section><section class="subsection">
-<h3 id="a0000000074">2.1.3 Youtube</h3>
+<h3 id="a0000000098">2.2.3 Youtube</h3>
 <p>
 <div class="youtube-aspect-ratio"><iframe allowfullscreen="" class="youtube" frameborder="0" src="https://www.youtube.com/embed/EdyociU35u8?ecver=1"></iframe></div>
 </p>
