@@ -18,8 +18,8 @@ structure:
           title: Markdown notes
           source: markdown.md
         - type: chapter
-          title: Embedding Demo
-          source: embed.tex
+          title: Figures and Embedding
+          source: figures_embed.tex
         - type: url
           title: An External URL
           source: "https://bbc.co.uk/"

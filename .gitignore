@@ -4,6 +4,7 @@
 **/*.fdb_latexmk
 **/*.fls
 **/*.pdf
+!images/*.pdf
 **/*.swp
 **/*.toc
 **/*.snm
