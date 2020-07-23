@@ -1,4 +1,4 @@
-\documentclass[serif,10pt,compress]{beamer}
+\documentclass[compress]{beamer}
 \usetheme{default}
 \usecolortheme{default}
 \usepackage{amsbsy,amsmath,latexsym,amsfonts,subfigure,enumerate}
@@ -136,4 +136,18 @@ f_X(x) &=& \frac{1}{B(a,b)} x^{a-1}(1-x)^{b-1} \\
 E[X]=\frac{a}{a+b} \qquad  Var(X) = \frac{ab}{(a+b)^2(a+b+1)}.
 \]
 \end{frame}
+
+\begin{frame}
+\frametitle{Column example}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+   Here is some text in a left hand column.
+\end{column}
+\begin{column}{0.4\textwidth}
+     \includegraphics[width=\textwidth]{image.png}
+	 \alttext{An image showing an example plot of a histogram.}
+\end{column}
+\end{columns}
+\end{frame}
+
 \end{document}
