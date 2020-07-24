@@ -76,28 +76,34 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 	
 </ul>
 </nav>
-<p>
-<p>
-<hr/>
+<div class="breamer-titlepage">
+<h1>Sample Slides</h1>
+<p class="beamer-authors">
+<span class="author">Ann Example</span>
+</p>
+<p class="beamer-date">July 24, 2020</p>
+</div>
+<div class="beamer-frame">
 <h2>Series Results</h2>
-</p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  \sum _{x=0}^{\infty } q^ x & =&  \frac{1}{1-q}, \  |q|<1. \\ \frac{d}{dx}\left(\sum _{x=0}^{\infty } q^ x \right) & =&  \sum _{x=0}^{\infty } xq^{x-1}=\sum _{x=1}^{\infty } xq^{x-1} = \frac{1}{(1-q)^2}, \  |q|<1. \\ \sum _{x=0}^{N} q^ x & =&  \frac{1-q^{N+1}}{1-q}. \\ \sum _{n=0}^{\infty } \frac{x^ n}{n!} & =&  1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots = e^ x \end{eqnarray*}</script></span>
-</p>
-<p>
-<p>
+</div>
 <hr/>
-<h2>Expectation</h2> <b class="bf">Discrete Random Variables</b>
+<div class="beamer-frame">
+<h2>Expectation</h2>
+<p>
+<b class="bf">Discrete Random Variables</b>
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  E[g(X)] & =&  \sum _{x \in S} g(x) Pr(X=x) \\ Var(X) & =&  E[X^2] - E[X]^2. \end{eqnarray*}</script></span>
 <p>
 <b class="bf">Continuous Random Variables</b>
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  E[g(X)] & =&  \int _{-\infty }^{\infty } g(x) f_ X(x) dx \\ Var(X) & =&  E[X^2]-E[X]^2. \end{eqnarray*}</script></span>
-</p>
-<p>
-<p>
+</div>
 <hr/>
-<h2>Families of Discrete Random Variables I</h2> <b class="bf">Bernoulli random variables, <script type="math/tex">X \sim Bern(p)</script></b>
+<div class="beamer-frame">
+<h2>Families of Discrete Random Variables I</h2>
+<p>
+<b class="bf">Bernoulli random variables, <script type="math/tex">X \sim Bern(p)</script></b>
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \left\{  \begin{array}{cc} p, &  x=1, \\ 1-p, &  x=0. \end{array} \right. \end{eqnarray*}</script></span>
 <span class="dmath"><script type="math/tex; mode=display">E[X] = p \qquad Var(X) = p(1-p).</script></span>
@@ -111,12 +117,10 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \frac{\lambda ^ x e^{-\lambda }}{x!}, \  x=0,1,2,\ldots . \end{eqnarray*}</script></span>
 <span class="dmath"><script type="math/tex; mode=display">E[X] = \lambda \qquad Var(X) = \lambda .</script></span>
-</p>
-<p>
-<p>
+</div>
 <hr/>
+<div class="beamer-frame">
 <h2>Families of Discrete Random Variables II</h2>
-</p>
 <p>
 <b class="bf">Geometric random variables, <script type="math/tex">X \sim Geom(p)</script></b>
 </p>
@@ -132,12 +136,10 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \frac{1}{n}, \  x=1,2,\ldots ,n. \end{eqnarray*}</script></span>
 <span class="dmath"><script type="math/tex; mode=display">E[X] = (n+1)/2 \qquad Var(X) = (n^2-1)/12.</script></span>
-</p>
-<p>
-<p>
+</div>
 <hr/>
+<div class="beamer-frame">
 <h2>Families of Continuous Random Variables I</h2>
-</p>
 <p>
 <b class="bf">Uniform random variables</b>, <script type="math/tex">X \sim U(a,b)</script>, 
 </p>
@@ -153,11 +155,12 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 </p>
 <span class="dmath"><script type="math/tex; mode=display">f_ X(x) = \frac{1}{\sqrt{2\pi \sigma ^2}} e^{-\frac{(x-\mu )^2}{2\sigma ^2}}, \  -\infty < x < \infty , \  -\infty < \mu < \infty , \  \sigma >0.</script></span>
 <span class="dmath"><script type="math/tex; mode=display">E[X]= \mu \qquad Var(X) = \sigma ^2.</script></span>
-</p>
-<p>
-<p>
+</div>
 <hr/>
-<h2>Families of Continuous Random Variables II</h2> <b class="bf">Gamma random variables</b>, <script type="math/tex">X \sim Ga(n,\lambda )</script>, 
+<div class="beamer-frame">
+<h2>Families of Continuous Random Variables II</h2>
+<p>
+<b class="bf">Gamma random variables</b>, <script type="math/tex">X \sim Ga(n,\lambda )</script>, 
 </p>
 <span class="dmath"><script type="math/tex; mode=display">f_ X(x) = \frac{\lambda ^{n}}{\Gamma (n)} x^{n-1} e^{-\lambda x}, \qquad x>0, \  n>0,\  \lambda >0, \  \Gamma (n)=(n-1)!</script></span>
 <span class="dmath"><script type="math/tex; mode=display">E[X] = \frac{n}{\lambda } \qquad Var(X) = \frac{n}{\lambda ^2}.</script></span>
@@ -166,19 +169,19 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  f_ X(x) & =&  \frac{1}{B(a,b)} x^{a-1}(1-x)^{b-1} \\ & =&  \frac{\Gamma (a+b)}{\Gamma (a)\Gamma (b)} x^{a-1}(1-x)^{b-1},\qquad 0<x<1, \  a>0, \  b >0. \end{eqnarray*}</script></span>
 <span class="dmath"><script type="math/tex; mode=display">E[X]=\frac{a}{a+b} \qquad Var(X) = \frac{ab}{(a+b)^2(a+b+1)}.</script></span>
-</p>
-<p>
-<p>
+</div>
 <hr/>
-<h2>Column example</h2> <div class="beamer-columns">
+<div class="beamer-frame">
+<h2>Column example</h2>
+<div class="beamer-columns">
 <div class="beamer-column" style="width:281.853pt">
  Here is some text in a left hand column. 
 </div> <div class="beamer-column" style="width:187.90200000000002pt">
 <img alt="An image showing an example plot of a histogram." src="../../slides/beamer_slides/images/img-0001.png" style="width:469.755pt"/>
 </div>
 </div>
-</p>
-</p>
+</div>
+<hr/>
 
 
         </main>
