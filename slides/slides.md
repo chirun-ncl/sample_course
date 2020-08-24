@@ -25,7 +25,7 @@ $$ \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x $$
 
 The idea: to use a single source file to generate lecture material in a variety of formats:
 
-![Coursebuilder Image](/static/images/coursebuilder.png)
+![Coursebuilder Image](images/coursebuilder.png)
 
 ---
 
