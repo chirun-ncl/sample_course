@@ -317,3 +317,11 @@ figure + em, .reveal figure + em {
 	display: flex;
 	justify-content: space-evenly;
 }
+
+.kframe {
+	margin-top: 1rem;
+}
+
+.collapse-content {
+	margin-bottom: 1rem;
+}
