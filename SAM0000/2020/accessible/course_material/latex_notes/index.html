@@ -6,7 +6,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Ann Example" />
-            <meta name="date" content="2020-08-24" />
+            <meta name="date" content="2020-10-23" />
         
 
         <title>LaTeX notes | Sample Course</title>
@@ -54,6 +54,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
     </head>
     <body >
         
+
 <nav>
 	<a href="../../index.html">Sample Course</a>  &mdash; 
 	
@@ -61,6 +62,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 	
 	LaTeX notes
 </nav>
+
 
         <header>
             
@@ -84,55 +86,55 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 A <b class="bf">separable</b> first-order ODE can be written in the form 
 </p>
 <div class="eqn" id="eqn:first:separable">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:separable} y’=g(x)h(y).\tag{1.1}\end{equation}</script>
+\begin{equation}\label{eqn:first:separable} y’=g(x)h(y).\tag{1.1}\end{equation}
 </div>
 <p>
- We will assume that <script type="math/tex">g(x)</script> is continuous over some range of values of <script type="math/tex">x</script>, e.g. <script type="math/tex">x\in (a,b)</script>, possibly the whole real line <script type="math/tex">(-\infty ,\infty )</script>. Continuity of <script type="math/tex">g(x)</script> ensures that we can take the necessary integrals. 
+ We will assume that \(g(x)\) is continuous over some range of values of \(x\), e.g. \(x\in (a,b)\), possibly the whole real line \((-\infty ,\infty )\). Continuity of \(g(x)\) ensures that we can take the necessary integrals. 
 </p>
 <section class="subsection">
 <h3 id="subsec:first:sepsimple">1.1.1 A simple solution</h3>
 <p>
-Any (constant) solution of the equation <script type="math/tex">h(y)=0</script> is also a possible solution of (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:separable">1.1</a>). 
+Any (constant) solution of the equation \(h(y)=0\) is also a possible solution of (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:separable">1.1</a>). 
 </p>
 <p>
 <b class="bfseries">Example 1.1. </b><i class="itshape"><p>
- Show that <script type="math/tex">y=n\pi</script> (<script type="math/tex">n\in \mathbb {Z}</script>) is a possible solution of the first-order ODE, 
+ Show that \(y=n\pi \) (\(n\in \mathbb {Z}\)) is a possible solution of the first-order ODE, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’=x\sin (y).</script></span>
+<span class="dmath">\[  y’=x\sin (y).  \]</span>
 </i>
 </p>
 <p>
-<b class="bfseries">Solution. </b><i class="itshape">Here <script type="math/tex">g(x)=x</script> and <script type="math/tex">h(y)=\sin (y)</script>. Now, <script type="math/tex">h(y)=\sin (y)=0</script> if <script type="math/tex">y=n\pi</script> (where <script type="math/tex">n\in \mathbb {Z}</script>), so the right-hand side of the ODE is zero. Clearly <script type="math/tex">y=n\pi</script> (constant) <script type="math/tex">\forall x</script> <script type="math/tex">\Longrightarrow</script> <script type="math/tex">y’=0</script> (i.e. the left-hand side is also zero). Therefore <script type="math/tex">y=n\pi</script> is a possible solution. </i>
+<b class="bfseries">Solution. </b><i class="itshape">Here \(g(x)=x\) and \(h(y)=\sin (y)\). Now, \(h(y)=\sin (y)=0\) if \(y=n\pi \) (where \(n\in \mathbb {Z}\)), so the right-hand side of the ODE is zero. Clearly \(y=n\pi \) (constant) \(\forall x\) \(\Longrightarrow \) \(y’=0\) (i.e. the left-hand side is also zero). Therefore \(y=n\pi \) is a possible solution. </i>
 </p>
 </section><section class="subsection">
 <h3 id="subsec:first:sepmethod">1.1.2 Separation of variables</h3>
 <p>
-To derive a more general solution, we must assume that <script type="math/tex">h(y)\neq 0</script>, so that we can divide each side by <script type="math/tex">h(y)</script>, 
+To derive a more general solution, we must assume that \(h(y)\neq 0\), so that we can divide each side by \(h(y)\), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{y'}{h(y)}=g(x).</script></span>
+<span class="dmath">\[  \frac{y'}{h(y)}=g(x).  \]</span>
 <p>
- Integrating each side with respect to <script type="math/tex">x</script>, 
+ Integrating each side with respect to \(x\), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\int \frac{y'}{h(y)}~ {\rm d} x=\int g(x)~ {\rm d}x.</script></span>
+<span class="dmath">\[  \int \frac{y'}{h(y)}~ {\rm d} x=\int g(x)~ {\rm d}x.  \]</span>
 <p>
- since <script type="math/tex">\mathrm{d}y=y’\, \mathrm{d}x</script>, this implies that 
+ since \(\mathrm{d}y=y’\, \mathrm{d}x\), this implies that 
 </p>
 <div class="eqn" id="eqn:first:sepsolution">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:sepsolution} \int \frac{{\rm d}y}{h(y)}=\int g(x)~ {\rm d}x.\tag{1.2}\end{equation}</script>
+\begin{equation}\label{eqn:first:sepsolution} \int \frac{{\rm d}y}{h(y)}=\int g(x)~ {\rm d}x.\tag{1.2}\end{equation}
 </div>
 <p>
- Evaluating these integrals leads to a solution for <script type="math/tex">y(x)</script>. Sometimes the general solution will contain solutions of <script type="math/tex">h(y)=0</script>, but this is not always the case. 
+ Evaluating these integrals leads to a solution for \(y(x)\). Sometimes the general solution will contain solutions of \(h(y)=0\), but this is not always the case. 
 </p>
 <p>
 <b class="bfseries">Example 1.2. </b><i class="itshape"><p>
  Find the general solution to 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’=x(y+1)^2.</script></span>
+<span class="dmath">\[  y’=x(y+1)^2.  \]</span>
 </i>
 </p>
 <p>
 <b class="bfseries">Solution. </b><i class="itshape"><p>
-Clearly <script type="math/tex">y=-1</script> is a possible constant solution. If <script type="math/tex">y\neq -1</script>, we separate variables, 
+Clearly \(y=-1\) is a possible constant solution. If \(y\neq -1\), we separate variables, 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  \int \frac{{\rm d}y}{(y+1)^2}& =& \int x~ {\rm d}x\\ \Longrightarrow -\frac{1}{y+1} & =&  \frac{x^2}{2} + C, \end{eqnarray*}</script></span>
 <p>
@@ -140,19 +142,19 @@ Clearly <script type="math/tex">y=-1</script> is a possible constant solution. I
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  -\frac{2}{y+1} & =&  x^2+2C\\ \Longrightarrow y+1 & =&  -\frac{2}{x^2+2C}\\ \Longrightarrow y & =&  -1 - \left(\frac{2}{x^2+D}\right), \end{eqnarray*}</script></span>
 <p>
-where <script type="math/tex">D=2C</script> is a rescaled constant. Alongside the special solution <script type="math/tex">y=-1</script>, this is the most general solution to this first order ODE. Different values of <script type="math/tex">D</script> lead to a family of <b class="bf">solution curves</b> (or <b class="bf">integral curves</b>) in the <script type="math/tex">xy</script>-plane. <br/>
+where \(D=2C\) is a rescaled constant. Alongside the special solution \(y=-1\), this is the most general solution to this first order ODE. Different values of \(D\) lead to a family of <b class="bf">solution curves</b> (or <b class="bf">integral curves</b>) in the \(xy\)-plane. <br/>
 </p>
 <p>
 <b class="bf">Check (not lectured):</b> Differentiating this function, we see that 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’ = \frac{4x}{\left(x^2+D\right)^2} = x(y+1)^2,</script></span>
+<span class="dmath">\[  y’ = \frac{4x}{\left(x^2+D\right)^2} = x(y+1)^2,  \]</span>
 <p>
 as required.<br/>
 </p>
 </i>
 </p>
 <p>
-<b class="bfseries">Example 1.3. </b><i class="itshape"> Find the general solution of the ODE <script type="math/tex">y’=(y+xy)/x^2</script> and then the particular solution which passes through the point <script type="math/tex">(1,1)</script>, i.e. <script type="math/tex">y(1)=1</script>. </i>
+<b class="bfseries">Example 1.3. </b><i class="itshape"> Find the general solution of the ODE \(y’=(y+xy)/x^2\) and then the particular solution which passes through the point \((1,1)\), i.e. \(y(1)=1\). </i>
 </p>
 <p>
 <b class="bfseries">Solution. </b><i class="itshape"><p>
@@ -160,62 +162,62 @@ We have
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  y’& =& \frac{(y+xy)}{x^2} \\ & =& \frac{(1+x)y}{x^2}. \end{eqnarray*}</script></span>
 <p>
- Clearly <script type="math/tex">y=0</script> is a possible solution, but this is incompatible with <script type="math/tex">y(1)=1</script> so can be ignored. Assuming <script type="math/tex">y\neq 0</script>, separation of variables leads to 
+ Clearly \(y=0\) is a possible solution, but this is incompatible with \(y(1)=1\) so can be ignored. Assuming \(y\neq 0\), separation of variables leads to 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\int \frac{{\rm d}y}{y}=\int \left(\frac{1+x}{x^2}\right){\rm d}x = \int \left(\frac{1}{x^2}+\frac{1}{x}\right)\, \mathrm{d}x \Longrightarrow \ln |y|=-\frac{1}{x}+\ln |x| + C</script></span>
+<span class="dmath">\[  \int \frac{{\rm d}y}{y}=\int \left(\frac{1+x}{x^2}\right){\rm d}x = \int \left(\frac{1}{x^2}+\frac{1}{x}\right)\, \mathrm{d}x \Longrightarrow \ln |y|=-\frac{1}{x}+\ln |x| + C  \]</span>
 <p>
- (where <script type="math/tex">C</script> is the constant of integration). Taking the exponential of both sides, 
+ (where \(C\) is the constant of integration). Taking the exponential of both sides, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">|y|=\exp \left[-\frac{1}{x}+\ln |x| + C\right]=|x|\exp \left[-\frac{1}{x}+C\right]= |x|\exp [C]\exp \left[-\frac{1}{x}\right],</script></span>
+<span class="dmath">\[  |y|=\exp \left[-\frac{1}{x}+\ln |x| + C\right]=|x|\exp \left[-\frac{1}{x}+C\right]= |x|\exp [C]\exp \left[-\frac{1}{x}\right],  \]</span>
 <p>
- where <script type="math/tex">\displaystyle {\exp (x)\equiv \mathrm{e}^ x}</script>. Dropping the modulus operators from both sides, 
+ where \(\displaystyle {\exp (x)\equiv \mathrm{e}^ x}\). Dropping the modulus operators from both sides, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y = \pm \, x \exp [C]\exp \left[-\frac{1}{x}\right].</script></span>
+<span class="dmath">\[  y = \pm \, x \exp [C]\exp \left[-\frac{1}{x}\right].  \]</span>
 <p>
- Absorbing the plus/minus sign into a new constant <script type="math/tex">D</script> (where <script type="math/tex">|D|=\exp [C]</script>), 
+ Absorbing the plus/minus sign into a new constant \(D\) (where \(|D|=\exp [C]\)), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y=D x \exp \left[-\frac{1}{x}\right].</script></span>
+<span class="dmath">\[  y=D x \exp \left[-\frac{1}{x}\right].  \]</span>
 <p>
- If <script type="math/tex">y(1)=1</script>, this implies that 
+ If \(y(1)=1\), this implies that 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">1=D\cdot 1 \cdot \exp [-1] \equiv D\mathrm{e}^{-1} \Rightarrow D=\mathrm{e}.</script></span>
+<span class="dmath">\[  1=D\cdot 1 \cdot \exp [-1] \equiv D\mathrm{e}^{-1} \Rightarrow D=\mathrm{e}.  \]</span>
 <p>
  So the required solution is, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y=\mathrm{e}x\exp \left[-\frac{1}{x}\right] = x \exp \left[1-\frac{1}{x}\right] \left(\equiv x \mathrm{e}^{\left[1-\left(1/x\right)\right]}\right).</script></span>
+<span class="dmath">\[  y=\mathrm{e}x\exp \left[-\frac{1}{x}\right] = x \exp \left[1-\frac{1}{x}\right] \left(\equiv x \mathrm{e}^{\left[1-\left(1/x\right)\right]}\right).  \]</span>
 </i>
 </p>
 <p>
 <b class="bfseries">Example 1.4. </b><i class="itshape"><p>
- If <script type="math/tex">N(t)</script> is the size of a radioactive sample at time <script type="math/tex">t</script>, then 
+ If \(N(t)\) is the size of a radioactive sample at time \(t\), then 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{\mathrm{d}N}{\mathrm{d}t} = -\alpha N,</script></span>
+<span class="dmath">\[  \frac{\mathrm{d}N}{\mathrm{d}t} = -\alpha N,  \]</span>
 <p>
- where <script type="math/tex">\alpha</script> is a positive constant. How long does it take for half the sample to decay? 
+ where \(\alpha \) is a positive constant. How long does it take for half the sample to decay? 
 </p>
 </i>
 </p>
 <p>
 <b class="bfseries">Solution. </b><i class="itshape"><p>
-Assuming that <script type="math/tex">N\neq 0</script>, we again proceed by separating variables (note the change of notation!): 
+Assuming that \(N\neq 0\), we again proceed by separating variables (note the change of notation!): 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\int \frac{{\rm d}N}{N}=-\alpha \int \, \mathrm{d}t \Longrightarrow \ln |N| = -\alpha t + C,</script></span>
+<span class="dmath">\[  \int \frac{{\rm d}N}{N}=-\alpha \int \, \mathrm{d}t \Longrightarrow \ln |N| = -\alpha t + C,  \]</span>
 <p>
- where <script type="math/tex">C</script> is a constant of integration. Hence, 
+ where \(C\) is a constant of integration. Hence, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">|N(t)| = \mathrm{e}^ C \mathrm{e}^{-\alpha t} \Longrightarrow N(t) =\pm \, \mathrm{e}^ C \mathrm{e}^{-\alpha t}\Longrightarrow N(t) = A \mathrm{e}^{-\alpha t},</script></span>
+<span class="dmath">\[  |N(t)| = \mathrm{e}^ C \mathrm{e}^{-\alpha t} \Longrightarrow N(t) =\pm \, \mathrm{e}^ C \mathrm{e}^{-\alpha t}\Longrightarrow N(t) = A \mathrm{e}^{-\alpha t},  \]</span>
 <p>
- where <script type="math/tex">A</script> is a new constant (<script type="math/tex">|A|=\mathrm{e}^ C</script>) into which the plus/minus sign has been absorbed. If <script type="math/tex">N(0)=N_0</script> (initial sample size) then, 
+ where \(A\) is a new constant (\(|A|=\mathrm{e}^ C\)) into which the plus/minus sign has been absorbed. If \(N(0)=N_0\) (initial sample size) then, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">N_0 = A \mathrm{e}^0 = A \Longrightarrow N(t) = N_0 \mathrm{e}^{-\alpha t}.</script></span>
+<span class="dmath">\[  N_0 = A \mathrm{e}^0 = A \Longrightarrow N(t) = N_0 \mathrm{e}^{-\alpha t}.  \]</span>
 <p>
-Let <script type="math/tex">t_ h</script> be the length of time it takes for half the sample to decay, i.e. <script type="math/tex">N(t_ h) = N_0/2</script>. This implies that, 
+Let \(t_ h\) be the length of time it takes for half the sample to decay, i.e. \(N(t_ h) = N_0/2\). This implies that, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{N_0}{2} = N(t_ h) = N_0 \mathrm{e}^{-\alpha t_ h}.</script></span>
+<span class="dmath">\[  \frac{N_0}{2} = N(t_ h) = N_0 \mathrm{e}^{-\alpha t_ h}.  \]</span>
 <p>
  Hence 
 </p>
-<span><script type="math/tex; mode=display">\begin{eqnarray*}  \frac{1}{2} & =&  \mathrm{e}^{-\alpha t_ h}\\ \mbox{(taking logs)}\; \Longrightarrow \ln \left[\frac{1}{2}\right] & =&  -\alpha t_ h\\ \Longrightarrow \ln 1 - \ln 2 & =&  -\alpha t_ h \quad \mbox{(recall that $\ln (x/y)=\ln x - \ln y)$}\\ \Longrightarrow 0 - \ln 2 & =&  -\alpha t_ h\\ \Longrightarrow t_ h & =&  \frac{\ln 2}{\alpha }. \end{eqnarray*}</script></span>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  \frac{1}{2} & =&  \mathrm{e}^{-\alpha t_ h}\\ \mbox{(taking logs)}\; \Longrightarrow \ln \left[\frac{1}{2}\right] & =&  -\alpha t_ h\\ \Longrightarrow \ln 1 - \ln 2 & =&  -\alpha t_ h \quad \mbox{(recall that \(\ln (x/y)=\ln x - \ln y)\)}\\ \Longrightarrow 0 - \ln 2 & =&  -\alpha t_ h\\ \Longrightarrow t_ h & =&  \frac{\ln 2}{\alpha }. \end{eqnarray*}</script></span>
 <p>
 This is the time it takes for half the sample to decay (known as the sample’s <b class="bf">half-life</b>). 
 </p>
@@ -228,85 +230,85 @@ This is the time it takes for half the sample to decay (known as the sample’s 
 A <b class="bf">homogeneous</b> first-order ODE can be written in the form 
 </p>
 <div class="eqn" id="eqn:first:homoneode">
-<script type="math/tex; mode=display">\begin{equation}y’=f(x,y)=F\left(\frac{y}{x} \right). \label{eqn:first:homoneode}\tag{1.3}\end{equation}</script>
+\begin{equation}y’=f(x,y)=F\left(\frac{y}{x} \right). \label{eqn:first:homoneode}\tag{1.3}\end{equation}
 </div>
 <p>
- We will assume that <script type="math/tex">F(y/x)</script> is a continuous function of its argument. <br/>
+ We will assume that \(F(y/x)\) is a continuous function of its argument. <br/>
 </p>
 <p>
-<b class="bf">Idea:</b> Define a new variable, <script type="math/tex">v(x)</script>, such that 
+<b class="bf">Idea:</b> Define a new variable, \(v(x)\), such that 
 </p>
 <div class="eqn" id="eqn:first:homoneodeidea">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:homoneodeidea} y(x)=xv(x).\tag{1.4}\end{equation}</script>
+\begin{equation}\label{eqn:first:homoneodeidea} y(x)=xv(x).\tag{1.4}\end{equation}
 </div>
 <p>
- Rewriting (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:homoneode">1.3</a>) in terms of <script type="math/tex">v(x)</script> and <script type="math/tex">x</script>, 
+ Rewriting (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:homoneode">1.3</a>) in terms of \(v(x)\) and \(x\), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’=F\left(\frac{y}{x}\right) \Longrightarrow \left(xv\right)’=F(v) \Longrightarrow xv’ + v = F(v).</script></span>
+<span class="dmath">\[  y’=F\left(\frac{y}{x}\right) \Longrightarrow \left(xv\right)’=F(v) \Longrightarrow xv’ + v = F(v).  \]</span>
 <p>
 Hence, 
 </p>
 <div class="eqn" id="eqn:first:homoneodesolution">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:homoneodesolution} xv’ = F(v) - v,\tag{1.5}\end{equation}</script>
+\begin{equation}\label{eqn:first:homoneodesolution} xv’ = F(v) - v,\tag{1.5}\end{equation}
 </div>
 <p>
  which can be solved by separating variables. 
 </p>
 <p>
-<b class="bfseries">Example 1.5. </b><i class="itshape"> Find the general solution to <script type="math/tex">y’=(y^2+2xy)/x^2</script>. Then find the specific solution satisfying <script type="math/tex">y(1)=0.5</script>. </i>
+<b class="bfseries">Example 1.5. </b><i class="itshape"> Find the general solution to \(y’=(y^2+2xy)/x^2\). Then find the specific solution satisfying \(y(1)=0.5\). </i>
 </p>
 <p>
 <b class="bfseries">Solution. </b><i class="itshape"><p>
 Rearranging this equation, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’=\left(\frac{y}{x}\right)^2+2\left(\frac{y}{x}\right) \equiv F\left(\frac{y}{x}\right).</script></span>
+<span class="dmath">\[  y’=\left(\frac{y}{x}\right)^2+2\left(\frac{y}{x}\right) \equiv F\left(\frac{y}{x}\right).  \]</span>
 <p>
-This is a homogeneous, first-order ODE, so we set <script type="math/tex">y(x)=xv(x)</script>. Following the procedure leading to (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:homoneodesolution">1.5</a>), 
+This is a homogeneous, first-order ODE, so we set \(y(x)=xv(x)\). Following the procedure leading to (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:homoneodesolution">1.5</a>), 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  \left(xv\right)’ & =&  v^2+2v \\ \Longrightarrow xv’ + v & =&  v^2 +2v\\ \Longrightarrow xv’ & =&  v^2+v\\ \Longrightarrow xv’ & =&  v(1+v). \end{eqnarray*}</script></span>
 <p>
  Separating variables and integrating both sides, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\begin{equation*}  \int \frac{{\rm d}v}{v(1+v)}=\int \frac{{\rm d}x}{x}. \end{equation*}</script></span>
+<span class="dmath">\begin{equation*}  \int \frac{{\rm d}v}{v(1+v)}=\int \frac{{\rm d}x}{x}. \end{equation*}</span>
 <p>
- Note that we have implicitly assumed that <script type="math/tex">v=y/x\neq 0</script> and <script type="math/tex">v=y/x\neq -1</script>. Neither of these special solutions are consistent with <script type="math/tex">y(1)=0.5</script>, so this is valid. 
+ Note that we have implicitly assumed that \(v=y/x\neq 0\) and \(v=y/x\neq -1\). Neither of these special solutions are consistent with \(y(1)=0.5\), so this is valid. 
 </p>
 <p>
 To evaluate the integral on the left-hand side, use a partial fractions decomposition, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{1}{v(1+v)}\equiv \frac{A}{v}+\frac{B}{1+v},</script></span>
+<span class="dmath">\[  \frac{1}{v(1+v)}\equiv \frac{A}{v}+\frac{B}{1+v},  \]</span>
 <p>
-where <script type="math/tex">A</script> and <script type="math/tex">B</script> are constants. Hence, 
+where \(A\) and \(B\) are constants. Hence, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{1}{v(1+v)} = \frac{A(1+v)+Bv}{v(1+v)} = \frac{A + (A+B)v}{v(1+v)}.</script></span>
+<span class="dmath">\[  \frac{1}{v(1+v)} = \frac{A(1+v)+Bv}{v(1+v)} = \frac{A + (A+B)v}{v(1+v)}.  \]</span>
 <p>
- For this to be true for <b class="bf">any</b> <script type="math/tex">v</script>, we require that <script type="math/tex">A=1</script> and <script type="math/tex">A+B=0 \Longrightarrow B=-A=-1</script>. Therefore 
+ For this to be true for <b class="bf">any</b> \(v\), we require that \(A=1\) and \(A+B=0 \Longrightarrow B=-A=-1\). Therefore 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{1}{v(1+v)}=\frac{1}{v}-\frac{1}{1+v}.</script></span>
+<span class="dmath">\[  \frac{1}{v(1+v)}=\frac{1}{v}-\frac{1}{1+v}.  \]</span>
 <p>
  Substituting this into the separated ODE, 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  \int \left[\frac{1}{v}-\frac{1}{1+v}\right]\, \mathrm{d}v & =&  \int \frac{{\rm d}x}{x}\\ \Longrightarrow \ln |v|-\ln |1+v|& =& \ln |x|+C, \end{eqnarray*}</script></span>
 <p>
- where <script type="math/tex">C</script> is a constant. Hence 
+ where \(C\) is a constant. Hence 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\ln \left|\frac{v}{1+v}\right| = \ln |x| + C \Longrightarrow \frac{v}{1+v} = \pm \exp \left[\ln |x|+C\right] = \pm \mathrm{e}^ C |x| = Dx,</script></span>
+<span class="dmath">\[  \ln \left|\frac{v}{1+v}\right| = \ln |x| + C \Longrightarrow \frac{v}{1+v} = \pm \exp \left[\ln |x|+C\right] = \pm \mathrm{e}^ C |x| = Dx,  \]</span>
 <p>
- where <script type="math/tex">D</script> is a new constant. Rearranging, 
+ where \(D\) is a new constant. Rearranging, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{v}{1+v} = Dx \Longrightarrow v = Dx(1+v) \Longrightarrow v(1 - Dx) = Dx \Longrightarrow v = \frac{Dx}{1-Dx}.</script></span>
+<span class="dmath">\[  \frac{v}{1+v} = Dx \Longrightarrow v = Dx(1+v) \Longrightarrow v(1 - Dx) = Dx \Longrightarrow v = \frac{Dx}{1-Dx}.  \]</span>
 <p>
-Recalling that <script type="math/tex">v=y/x</script>, this leads to the general solution 
+Recalling that \(v=y/x\), this leads to the general solution 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{y}{x} = \frac{Dx}{1-Dx} \Longrightarrow y = \frac{Dx^2}{1-Dx}.</script></span>
+<span class="dmath">\[  \frac{y}{x} = \frac{Dx}{1-Dx} \Longrightarrow y = \frac{Dx^2}{1-Dx}.  \]</span>
 <p>
-Now, given that <script type="math/tex">y(1)=0.5</script>, 
+Now, given that \(y(1)=0.5\), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{1}{2} = \frac{D}{1-D} \Longrightarrow 1-D = 2D \Longrightarrow 3D = 1 \Longrightarrow D= \frac{1}{3}.</script></span>
+<span class="dmath">\[  \frac{1}{2} = \frac{D}{1-D} \Longrightarrow 1-D = 2D \Longrightarrow 3D = 1 \Longrightarrow D= \frac{1}{3}.  \]</span>
 <p>
 Hence, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y = \frac{\frac{1}{3}x^2}{1- \frac{1}{3}x} = \frac{x^2}{3-x},</script></span>
+<span class="dmath">\[  y = \frac{\frac{1}{3}x^2}{1- \frac{1}{3}x} = \frac{x^2}{3-x},  \]</span>
 <p>
  which is the required answer. 
 </p>
@@ -319,64 +321,64 @@ Hence,
 <p>
   Recalling our definition of a linear operator (<a class="ref" href="">None</a>), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">L(y) = c_ n(x)y^{(n)} + c_{n-1}(x)y^{(n-1)}+\ldots + c_1(x)y’ + c_0(x)y</script></span>
+<span class="dmath">\[  L(y) = c_ n(x)y^{(n)} + c_{n-1}(x)y^{(n-1)}+\ldots + c_1(x)y’ + c_0(x)y  \]</span>
 <p>
-(where the <script type="math/tex">c_ i(x)</script> are specified functions of <script type="math/tex">x</script>), any <b class="bf">linear first-order ODE</b> can be written in the form 
+(where the \(c_ i(x)\) are specified functions of \(x\)), any <b class="bf">linear first-order ODE</b> can be written in the form 
 </p>
 <div class="eqn" id="eqn:first:pregenerallinear">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:pregenerallinear} L(y)\equiv c_1(x)y’+c_0(x)y = f(x),\tag{1.6}\end{equation}</script>
+\begin{equation}\label{eqn:first:pregenerallinear} L(y)\equiv c_1(x)y’+c_0(x)y = f(x),\tag{1.6}\end{equation}
 </div>
 <p>
- where <script type="math/tex">f(x)</script> is another given function of <script type="math/tex">x</script>. Without loss of generality, we shall assume <script type="math/tex">c_1(x)\neq 0</script>. 
+ where \(f(x)\) is another given function of \(x\). Without loss of generality, we shall assume \(c_1(x)\neq 0\). 
 </p>
 <p>
-<b class="bfseries">Note. </b><i class="itshape">The case of <script type="math/tex">c_1(x)=0</script> is trivial, i.e. <script type="math/tex">\displaystyle {c_0(x)y = f(x) \Longrightarrow y = \frac{f(x)}{c_0(x)}}</script>. </i>
+<b class="bfseries">Note. </b><i class="itshape">The case of \(c_1(x)=0\) is trivial, i.e. \(\displaystyle {c_0(x)y = f(x) \Longrightarrow y = \frac{f(x)}{c_0(x)}}\). </i>
 </p>
 <p>
-Dividing (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:pregenerallinear">1.6</a>) by <script type="math/tex">c_1(x)</script>, 
+Dividing (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:pregenerallinear">1.6</a>) by \(c_1(x)\), 
 </p>
 <div class="eqn" id="eqn:first:generallinear">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:generallinear} y’+p(x)y = q(x),\tag{1.7}\end{equation}</script>
+\begin{equation}\label{eqn:first:generallinear} y’+p(x)y = q(x),\tag{1.7}\end{equation}
 </div>
 <p>
- where <script type="math/tex">p(x)=c_0(x)/c_1(x)</script> and <script type="math/tex">q(x)=f(x)/c_1(x)</script>. This is the most general form for a (non-trivial) first-order linear ODE. 
+ where \(p(x)=c_0(x)/c_1(x)\) and \(q(x)=f(x)/c_1(x)\). This is the most general form for a (non-trivial) first-order linear ODE. 
 </p>
 </section><section class="subsection">
 <h3 id="subsec:first:linearint">1.3.2 The integrating factor method</h3>
 <p>
-  The challenge is to solve <script type="math/tex">y’+p(x)y = q(x)</script>. We shall assume that <script type="math/tex">p(x)</script> and <script type="math/tex">q(x)</script> are continuous (and hence integrable) over some interval <script type="math/tex">(a,b)</script>, possibly the whole real line <script type="math/tex">(-\infty ,\infty )</script>. Let 
+  The challenge is to solve \(y’+p(x)y = q(x)\). We shall assume that \(p(x)\) and \(q(x)\) are continuous (and hence integrable) over some interval \((a,b)\), possibly the whole real line \((-\infty ,\infty )\). Let 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">P(x) = \int p(x)\, \mathrm{d}x.</script></span>
+<span class="dmath">\[  P(x) = \int p(x)\, \mathrm{d}x.  \]</span>
 <p>
- For any <script type="math/tex">x\in (a,b)</script>, the fundamental theorem of calculus tells us that 
+ For any \(x\in (a,b)\), the fundamental theorem of calculus tells us that 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">P’(x) = p(x).</script></span>
+<span class="dmath">\[  P’(x) = p(x).  \]</span>
 <p>
  This implies that 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  \frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] & =&  y’\mathrm{e}^{P(x)} + P’(x)y \mathrm{e}^{P(x)}\\ & =&  y’\mathrm{e}^{P(x)} + p(x)y \mathrm{e}^{P(x)}\\ & =&  \left[y’+p(x)y\right] \mathrm{e}^{P(x)}. \end{eqnarray*}</script></span>
 <p>
-The quantity <script type="math/tex">\displaystyle {\mathrm{e}^{P(x)}\equiv \exp \left[P(x)\right]}</script> is known as the <b class="bf">integrating factor</b>. As we have just shown, if we multiply our original ODE by this integrating factor, i.e. 
+The quantity \(\displaystyle {\mathrm{e}^{P(x)}\equiv \exp \left[P(x)\right]}\) is known as the <b class="bf">integrating factor</b>. As we have just shown, if we multiply our original ODE by this integrating factor, i.e. 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\left[y’+p(x)y\right] \mathrm{e}^{P(x)}=q(x) \mathrm{e}^{P(x)},</script></span>
+<span class="dmath">\[  \left[y’+p(x)y\right] \mathrm{e}^{P(x)}=q(x) \mathrm{e}^{P(x)},  \]</span>
 <p>
  this is equivalent to 
 </p>
 <div class="eqn" id="eqn:first:preintfactor">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:preintfactor} \frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] = q(x) \mathrm{e}^{P(x)}.\tag{1.8}\end{equation}</script>
+\begin{equation}\label{eqn:first:preintfactor} \frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] = q(x) \mathrm{e}^{P(x)}.\tag{1.8}\end{equation}
 </div>
 <p>
 Integrating this equation, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y\mathrm{e}^{P(x)} = C + \int \left[q(x) \mathrm{e}^{P(x)}\right]\, \mathrm{d}x,</script></span>
+<span class="dmath">\[  y\mathrm{e}^{P(x)} = C + \int \left[q(x) \mathrm{e}^{P(x)}\right]\, \mathrm{d}x,  \]</span>
 <p>
- where <script type="math/tex">C</script> is a constant. Hence, recalling that <script type="math/tex">\displaystyle {P(x)=\int p(x)\, \mathrm{d}x}</script>, 
+ where \(C\) is a constant. Hence, recalling that \(\displaystyle {P(x)=\int p(x)\, \mathrm{d}x}\), 
 </p>
 <div class="eqn" id="eqn:first:intfactor">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:intfactor} y = C \mathrm{e}^{-P(x)} + \mathrm{e}^{-P(x)}\int \left[q(x) \mathrm{e}^{P(x)}\right]\, \mathrm{d}x.\tag{1.9}\end{equation}</script>
+\begin{equation}\label{eqn:first:intfactor} y = C \mathrm{e}^{-P(x)} + \mathrm{e}^{-P(x)}\int \left[q(x) \mathrm{e}^{P(x)}\right]\, \mathrm{d}x.\tag{1.9}\end{equation}
 </div>
 <p>
-This is the general solution. The term proportional to <script type="math/tex">C</script> is often referred to as the <b class="bf">complementary function</b>, whilst the rest of the right-hand side is known as the <b class="bf">particular integral</b>. 
+This is the general solution. The term proportional to \(C\) is often referred to as the <b class="bf">complementary function</b>, whilst the rest of the right-hand side is known as the <b class="bf">particular integral</b>. 
 </p>
 <p>
 <b class="bfseries">Example 1.6. </b><i class="itshape"><p>
@@ -388,7 +390,7 @@ This is the general solution. The term proportional to <script type="math/tex">C
 </p>
 </td>
 <td colspan="" rowspan="" style="text-align:left"><p>
-<script type="math/tex">\displaystyle {y’+\frac{y}{x} = x}</script>;
+ \(\displaystyle {y’+\frac{y}{x} = x}\);
 </p>
 </td>
 </tr>
@@ -397,7 +399,7 @@ ii)
 </p>
 </td>
 <td colspan="" rowspan="" style="text-align:left"><p>
-<script type="math/tex">\displaystyle {5xy’+6y = 1+x^2}</script>. 
+ \(\displaystyle {5xy’+6y = 1+x^2}\). 
 </p>
 </td>
 </tr>
@@ -406,98 +408,98 @@ ii)
 </p>
 <p>
 <b class="bfseries">Solution. </b><i class="itshape"><p>
-i) This equation is already in the form <script type="math/tex">y’ + p(x)y = q(x)</script>. Here, <script type="math/tex">p(x)=1/x</script> and <script type="math/tex">q(x)=x</script>. Clearly, 
+i) This equation is already in the form \(y’ + p(x)y = q(x)\). Here, \(p(x)=1/x\) and \(q(x)=x\). Clearly, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">P(x) = \int p(x)\, \mathrm{d}x= \int \frac{\mathrm{d}x}{x}= \ln |x|</script></span>
+<span class="dmath">\[  P(x) = \int p(x)\, \mathrm{d}x= \int \frac{\mathrm{d}x}{x}= \ln |x|  \]</span>
 <p>
  (note that the integrating factor is simply a computational tool, so we can ignore any constants of integration here). Hence, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\mathrm{e}^{P(x)} = \mathrm{e}^{\ln |x|} = |x|.</script></span>
+<span class="dmath">\[  \mathrm{e}^{P(x)} = \mathrm{e}^{\ln |x|} = |x|.  \]</span>
 <p>
-Without loss of generality, we can ignore the modulus operator here, setting <script type="math/tex">\displaystyle {\mathrm{e}^{P(x)}=x}</script> (this is because a negative integrating factor would also work in the same way). Multiplying our original equation by this integrating factor, we obtain the following ODE: 
+Without loss of generality, we can ignore the modulus operator here, setting \(\displaystyle {\mathrm{e}^{P(x)}=x}\) (this is because a negative integrating factor would also work in the same way). Multiplying our original equation by this integrating factor, we obtain the following ODE: 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">x\left(y’+\frac{y}{x}\right) = x^2 \Longrightarrow xy’ + y = x^2.</script></span>
+<span class="dmath">\[  x\left(y’+\frac{y}{x}\right) = x^2 \Longrightarrow xy’ + y = x^2.  \]</span>
 <p>
  Referrring to (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:preintfactor">1.8</a>), we have already shown that this is equivalent to 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] = q(x) \mathrm{e}^{P(x)} \Longrightarrow \frac{\mathrm{d}}{\mathrm{d}x}\left[xy\right] = x^2.</script></span>
+<span class="dmath">\[  \frac{\mathrm{d}}{\mathrm{d}x}\left[y\mathrm{e}^{P(x)}\right] = q(x) \mathrm{e}^{P(x)} \Longrightarrow \frac{\mathrm{d}}{\mathrm{d}x}\left[xy\right] = x^2.  \]</span>
 <p>
 Integrating this equation, 
 </p>
-<span><script type="math/tex; mode=display">\begin{eqnarray*}  xy & =&  C+ \frac{x^3}{3}\quad \mbox{(where $C$ is constant)}\\ \Longrightarrow y & =&  \frac{C}{x} +\frac{x^2}{3}, \end{eqnarray*}</script></span>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  xy & =&  C+ \frac{x^3}{3}\quad \mbox{(where \(C\) is constant)}\\ \Longrightarrow y & =&  \frac{C}{x} +\frac{x^2}{3}, \end{eqnarray*}</script></span>
 <p>
  which is the required result.<br/>
 </p>
 <p>
-[<b class="bf">Check:</b> <script type="math/tex">\displaystyle {y’+\frac{y}{x}=-\frac{C}{x^2}+\frac{2x}{3}+\frac{C}{x^2}+\frac{x}{3}=x}</script>, as required.] <br/>
+[<b class="bf">Check:</b> \(\displaystyle {y’+\frac{y}{x}=-\frac{C}{x^2}+\frac{2x}{3}+\frac{C}{x^2}+\frac{x}{3}=x}\), as required.] <br/>
 </p>
 <p>
-ii) This equation (<script type="math/tex">\displaystyle {5xy’+6y = 1+x^2}</script>) is not in the correct form to apply the integrating factor directly. Dividing through by <script type="math/tex">5x</script>, 
+ii) This equation (\(\displaystyle {5xy’+6y = 1+x^2}\)) is not in the correct form to apply the integrating factor directly. Dividing through by \(5x\), 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’ + \frac{6y}{5x} = \frac{1}{5x} + \frac{x}{5},</script></span>
+<span class="dmath">\[  y’ + \frac{6y}{5x} = \frac{1}{5x} + \frac{x}{5},  \]</span>
 <p>
- so <script type="math/tex">p(x)=6/5x</script> and <script type="math/tex">q(x)=(1/5x)+(x/5)</script>. Here, 
+ so \(p(x)=6/5x\) and \(q(x)=(1/5x)+(x/5)\). Here, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">P(x) = \int p(x)\, \mathrm{d}x= \int \frac{\mathrm{6d}x}{5x}= \frac{6}{5}\ln |x|= \ln \left(|x|^{6/5}\right).</script></span>
+<span class="dmath">\[  P(x) = \int p(x)\, \mathrm{d}x= \int \frac{\mathrm{6d}x}{5x}= \frac{6}{5}\ln |x|= \ln \left(|x|^{6/5}\right).  \]</span>
 <p>
  Hence, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\mathrm{e}^{P(x)} = |x|^{6/5}.</script></span>
+<span class="dmath">\[  \mathrm{e}^{P(x)} = |x|^{6/5}.  \]</span>
 <p>
- Again we can drop the modulus operator, so that <script type="math/tex">\displaystyle {\mathrm{e}^{P(x)}=x^{6/5}}</script>. Applying this integrating factor, 
+ Again we can drop the modulus operator, so that \(\displaystyle {\mathrm{e}^{P(x)}=x^{6/5}}\). Applying this integrating factor, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">x^{6/5}y’ + \frac{6yx^{1/5}}{5} = x^{6/5} \left(\frac{1}{5x} + \frac{x}{5}\right),</script></span>
+<span class="dmath">\[  x^{6/5}y’ + \frac{6yx^{1/5}}{5} = x^{6/5} \left(\frac{1}{5x} + \frac{x}{5}\right),  \]</span>
 <p>
  which, by (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:preintfactor">1.8</a>), is equivalent to 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}x} \left[x^{6/5}y\right]= \frac{x^{1/5}}{5} + \frac{x^{11/5}}{5}.</script></span>
+<span class="dmath">\[  \frac{\mathrm{d}}{\mathrm{d}x} \left[x^{6/5}y\right]= \frac{x^{1/5}}{5} + \frac{x^{11/5}}{5}.  \]</span>
 <p>
  Integrating each side of this equation, 
 </p>
-<span><script type="math/tex; mode=display">\begin{eqnarray*}  x^{6/5}y & =&  C + \frac{x^{6/5}}{6}+\frac{x^{16/5}}{16}\quad \mbox{(where $C$ is constant)}\\ \Longrightarrow y & =&  Cx^{-6/5} + \frac{1}{6} + \frac{x^2}{16}, \end{eqnarray*}</script></span>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  x^{6/5}y & =&  C + \frac{x^{6/5}}{6}+\frac{x^{16/5}}{16}\quad \mbox{(where \(C\) is constant)}\\ \Longrightarrow y & =&  Cx^{-6/5} + \frac{1}{6} + \frac{x^2}{16}, \end{eqnarray*}</script></span>
 <p>
  which is the required solution.<br/>
 </p>
 <p>
-[<b class="bf">Check:</b> <script type="math/tex">\displaystyle {5xy’+6y=-6Cx^{-6/5}+\frac{5x^2}{8}+6Cx^{-6/5}+1+\frac{3x^2}{8}=1+x^2}</script>, as required.] <br/>
+[<b class="bf">Check:</b> \(\displaystyle {5xy’+6y=-6Cx^{-6/5}+\frac{5x^2}{8}+6Cx^{-6/5}+1+\frac{3x^2}{8}=1+x^2}\), as required.] <br/>
 </p>
 </i>
 </p>
 </section><section class="subsection">
 <h3 id="subsec:first:linearexist">1.3.3 Existence and uniqueness</h3>
 <p>
-<b class="bf">Theorem:</b> If the functions <script type="math/tex">p(x)</script> and <script type="math/tex">q(x)</script> are continuous <script type="math/tex">\forall x \in (a,b)</script>, then there exists a unique function <script type="math/tex">y(x)</script>, defined on the open interval <script type="math/tex">a < x < b</script>, satisfying the linear first-order ODE 
+<b class="bf">Theorem:</b> If the functions \(p(x)\) and \(q(x)\) are continuous \(\forall x \in (a,b)\), then there exists a unique function \(y(x)\), defined on the open interval \(a &lt; x &lt; b\), satisfying the linear first-order ODE 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’+p(x)y=q(x), \quad y\left(x_0\right)=y_0,</script></span>
+<span class="dmath">\[  y’+p(x)y=q(x), \quad y\left(x_0\right)=y_0,  \]</span>
 <p>
- for some given <script type="math/tex">x_0\in (a,b)</script> and <script type="math/tex">y_0\in \mathbb {R}</script>. <br/>
+ for some given \(x_0\in (a,b)\) and \(y_0\in \mathbb {R}\). <br/>
 </p>
 <p>
-<b class="bf">Proof:</b> Existence has already been demonstrated by the construction of an explicit solution (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:intfactor">1.9</a>). For uniqueness, we assume that there are two solutions <script type="math/tex">y_1(x)</script> and <script type="math/tex">y_2(x)</script>. Consider the function <script type="math/tex">Y(x)=y_1(x)-y_2(x)</script>. Clearly 
+<b class="bf">Proof:</b> Existence has already been demonstrated by the construction of an explicit solution (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:intfactor">1.9</a>). For uniqueness, we assume that there are two solutions \(y_1(x)\) and \(y_2(x)\). Consider the function \(Y(x)=y_1(x)-y_2(x)\). Clearly 
 </p>
 <span><script type="math/tex; mode=display">\begin{eqnarray*}  Y’ + p(x)Y & =&  \left(y_1-y_2\right)’ + p(x)\left(y_1-y_2\right)\\ & =&  \left[y_1’+p(x)y_1\right] - \left[y_2’+p(x)y_2\right]\\ & =&  q(x)-q(x)\\ \Longrightarrow Y’ + p(x)Y & =&  0, \end{eqnarray*}</script></span>
 <p>
-whilst <script type="math/tex">\displaystyle {Y\left(x_0\right) = y_1\left(x_0\right)-y_2\left(x_0\right) = y_0-y_0 = 0}</script>. Obviously <script type="math/tex">Y=0</script> is a possible solution of this ODE, in which case <script type="math/tex">y_1(x)=y_2(x)</script> (i.e. the solution is unique). For <script type="math/tex">Y\neq 0</script>, separation of variables leads to 
+whilst \(\displaystyle {Y\left(x_0\right) = y_1\left(x_0\right)-y_2\left(x_0\right) = y_0-y_0 = 0}\). Obviously \(Y=0\) is a possible solution of this ODE, in which case \(y_1(x)=y_2(x)\) (i.e. the solution is unique). For \(Y\neq 0\), separation of variables leads to 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">Y’ = -p(x)Y \iff \int \frac{\mathrm{d}Y}{Y} = -\int p(x)\, \mathrm{d}x \iff \ln |Y| = C-P(x),</script></span>
+<span class="dmath">\[  Y’ = -p(x)Y \iff \int \frac{\mathrm{d}Y}{Y} = -\int p(x)\, \mathrm{d}x \iff \ln |Y| = C-P(x),  \]</span>
 <p>
- (where, as before. <script type="math/tex">\displaystyle {P(x) = \int p(x)\, \mathrm{d}x}</script> and <script type="math/tex">C</script> is a constant). Rearranging this expression, we see that 
+ (where, as before. \(\displaystyle {P(x) = \int p(x)\, \mathrm{d}x}\) and \(C\) is a constant). Rearranging this expression, we see that 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">Y = A\mathrm{e}^{-P(x)},</script></span>
+<span class="dmath">\[  Y = A\mathrm{e}^{-P(x)},  \]</span>
 <p>
- where <script type="math/tex">A</script> is a redefined constant. The only way that this can be compatible with <script type="math/tex">Y(0)=0</script> is if <script type="math/tex">A=0 \Longrightarrow Y(x)=0 \; \forall x</script>. This again implies that <script type="math/tex">y_1(x)=y_2(x)</script>, i.e. unique solution. 
+ where \(A\) is a redefined constant. The only way that this can be compatible with \(Y(0)=0\) is if \(A=0 \Longrightarrow Y(x)=0 \; \forall x\). This again implies that \(y_1(x)=y_2(x)\), i.e. unique solution. 
 </p>
 <p>
 <b class="bfseries">Note. </b><i class="itshape"><p>
 Linearity is crucial to this result. There are many <b class="bf">nonlinear</b> ODEs for which solutions are not unique. For example, consider the following differentiable function, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y(x)=\left\{ \begin{array}{l} 0 \hspace{0.83in} \mbox{if} \hspace{0.1in} x\le C \\ (x-C)^2 \hspace{0.3in} \mbox{if} \hspace{0.1in} x > C, \end{array} \right\}</script></span>
+<span class="dmath">\[  y(x)=\left\{ \begin{array}{l} 0 \hspace{0.83in} \mbox{if} \hspace{0.1in} x\le C \\ (x-C)^2 \hspace{0.3in} \mbox{if} \hspace{0.1in} x &gt; C, \end{array} \right\}   \]</span>
 <p>
-where <script type="math/tex">C</script> is <b class="bf">any</b> positive constant (i.e. <script type="math/tex">C\ge 0</script>). For any valid choice of <script type="math/tex">C</script> (of which there are infinitely many), this function satisfies the nonlinear ODE 
+where \(C\) is <b class="bf">any</b> positive constant (i.e. \(C\ge 0\)). For any valid choice of \(C\) (of which there are infinitely many), this function satisfies the nonlinear ODE 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’=2\sqrt{y},</script></span>
+<span class="dmath">\[  y’=2\sqrt{y},  \]</span>
 <p>
- subject to <script type="math/tex">y(0)=0</script>. 
+ subject to \(y(0)=0\). 
 </p>
 </i>
 </p>
@@ -505,21 +507,21 @@ where <script type="math/tex">C</script> is <b class="bf">any</b> positive const
 </section><section class="section">
 <h2 id="sec:first:iso">1.4 Isoclines</h2>
 <p>
-Consider an equation of the form <script type="math/tex">y’=f(x,y)</script>. The function <script type="math/tex">f(x,y)</script> defines the <b class="bf">slope</b> of the solution curve at each point in the <script type="math/tex">xy</script>-plane. Lines of constant slope, known as <b class="bf">isoclines</b>, satisfy 
+Consider an equation of the form \(y’=f(x,y)\). The function \(f(x,y)\) defines the <b class="bf">slope</b> of the solution curve at each point in the \(xy\)-plane. Lines of constant slope, known as <b class="bf">isoclines</b>, satisfy 
 </p>
 <div class="eqn" id="eqn:first:isocline">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:isocline} f(x,y)=m,\tag{1.10}\end{equation}</script>
+\begin{equation}\label{eqn:first:isocline} f(x,y)=m,\tag{1.10}\end{equation}
 </div>
 <p>
- where <script type="math/tex">m</script> is a constant (<script type="math/tex">m\in \mathbb {R}</script>). Isoclines can be used to sketch the solution curves. 
+ where \(m\) is a constant (\(m\in \mathbb {R}\)). Isoclines can be used to sketch the solution curves. 
 </p>
 <p>
 <b class="bfseries">Example 1.7. </b><i class="itshape"><p>
  Consider the following ODE: 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’ = y+2x.</script></span>
+<span class="dmath">\[  y’ = y+2x.  \]</span>
 <p>
-By finding the isoclines, sketch some integral curves (i.e. solution curves) for this ODE (<b class="bf">Exercise:</b> show that the general solution is <script type="math/tex">\displaystyle {y=A\mathrm{e}^ x-2-2x}</script>, where <script type="math/tex">A</script> is a constant). 
+By finding the isoclines, sketch some integral curves (i.e. solution curves) for this ODE (<b class="bf">Exercise:</b> show that the general solution is \(\displaystyle {y=A\mathrm{e}^ x-2-2x}\), where \(A\) is a constant). 
 </p>
 </i>
 </p>
@@ -527,9 +529,9 @@ By finding the isoclines, sketch some integral curves (i.e. solution curves) for
 <b class="bfseries">Solution. </b><i class="itshape"><p>
 The isoclines correspond to 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y+2x =m \Longrightarrow y=m-2x.</script></span>
+<span class="dmath">\[  y+2x =m \Longrightarrow y=m-2x.  \]</span>
 <p>
- These are straight lines on which the slope of the solution curve is <script type="math/tex">m</script>. The short line elements (or <b class="bf">flow vectors</b>) on the sketch indicate the corresponding <b class="bf">direction field</b>, i.e. the slope of the solution curves at each point in space. By connecting these, we can sketch the solution. 
+ These are straight lines on which the slope of the solution curve is \(m\). The short line elements (or <b class="bf">flow vectors</b>) on the sketch indicate the corresponding <b class="bf">direction field</b>, i.e. the slope of the solution curves at each point in space. By connecting these, we can sketch the solution. 
 </p>
 </i>
 </p>
@@ -537,7 +539,7 @@ The isoclines correspond to
 <b class="bfseries">Example 1.8. </b><i class="itshape"><p>
  Find the isoclines and sketch some solution curves for the following ODE, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’ =-\frac{x}{y}.</script></span>
+<span class="dmath">\[  y’ =-\frac{x}{y}.  \]</span>
 <p>
  Check your solution curves by finding the exact solution. 
 </p>
@@ -547,43 +549,44 @@ The isoclines correspond to
 <b class="bfseries">Solution. </b><i class="itshape"><p>
 The isoclines are given by 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">-\frac{x}{y} = m \Longrightarrow y = -\frac{x}{m},</script></span>
+<span class="dmath">\[  -\frac{x}{y} = m \Longrightarrow y = -\frac{x}{m},  \]</span>
 <p>
- which are straight lines, of gradient <script type="math/tex">-1/m</script>, passing through the origin. 
+ which are straight lines, of gradient \(-1/m\), passing through the origin. 
 </p>
 <p>
 Connecting up the flow vectors (see sketch) we obtain the solution curves. These look like concentric circles, centred at the origin. To find the exact solution, we can separate variables: 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\int y\, \mathrm{d}y = -\int x \, \mathrm{d}x \Longrightarrow \frac{y^2}{2} = - \frac{x^2}{2}+C,</script></span>
+<span class="dmath">\[  \int y\, \mathrm{d}y = -\int x \, \mathrm{d}x \Longrightarrow \frac{y^2}{2} = - \frac{x^2}{2}+C,  \]</span>
 <p>
- where <script type="math/tex">C</script> is a constant of integration. Rearranging, 
+ where \(C\) is a constant of integration. Rearranging, 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y^2+x^2 = 2C,</script></span>
+<span class="dmath">\[  y^2+x^2 = 2C,  \]</span>
 <p>
- which describes a circle, centred at the origin in the <script type="math/tex">xy</script>-plane, of radius <script type="math/tex">\sqrt{2C}</script>. This is consistent with the solution curves obtained from the isoclines. 
+ which describes a circle, centred at the origin in the \(xy\)-plane, of radius \(\sqrt{2C}\). This is consistent with the solution curves obtained from the isoclines. 
 </p>
 </i>
 </p>
 <p>
 <b class="bf">Terminology:</b> Consider an ODE of the form 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">y’ =\frac{g(x,y)}{h(x,y)},</script></span>
+<span class="dmath">\[  y’ =\frac{g(x,y)}{h(x,y)},  \]</span>
 <p>
 with isoclines defined by 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">\frac{g(x,y)}{h(x,y)} = m.</script></span>
+<span class="dmath">\[  \frac{g(x,y)}{h(x,y)} = m.  \]</span>
 <p>
- Lines of zero slope (i.e. <script type="math/tex">m=0</script>) are defined by <script type="math/tex">g(x,y)=0</script>, whilst lines of infinite slope (i.e. <script type="math/tex">1/m=0</script>) are defined by <script type="math/tex">h(x,y)=0</script>. If 
+ Lines of zero slope (i.e. \(m=0\)) are defined by \(g(x,y)=0\), whilst lines of infinite slope (i.e. \(1/m=0\)) are defined by \(h(x,y)=0\). If 
 </p>
-<span class="dmath"><script type="math/tex; mode=display">g(x,y)=h(x,y)=0</script></span>
+<span class="dmath">\[  g(x,y)=h(x,y)=0  \]</span>
 <p>
- at any point in the <script type="math/tex">xy</script>-plane, then the point is said to be <b class="bf">singular</b>. At this point, the slope is not single-valued: it lies on both the <script type="math/tex">m=0</script> and <script type="math/tex">1/m=0</script> isoclines. In Example <a class="ref" href="../../course_material/latex_notes/index.html#ex:first:iso2">1.8</a>, <b class="bf">all</b> of the isoclines intersect at the origin, which is the only singular point in this case. See handout for a more complicated example. 
+ at any point in the \(xy\)-plane, then the point is said to be <b class="bf">singular</b>. At this point, the slope is not single-valued: it lies on both the \(m=0\) and \(1/m=0\) isoclines. In Example <a class="ref" href="../../course_material/latex_notes/index.html#ex:first:iso2">1.8</a>, <b class="bf">all</b> of the isoclines intersect at the origin, which is the only singular point in this case. See handout for a more complicated example. 
 </p>
 </section>
 
 
         </main>
-				<footer>
+		
+		<footer>
 	<a href="#">Back to top</a>
 	
 <div class="theme-switch">
@@ -602,5 +605,6 @@ with isoclines defined by
 </div>
 
 </footer>
+		
     </body>
 </html>

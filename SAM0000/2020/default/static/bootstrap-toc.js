@@ -63,7 +63,7 @@
       generateNavEl: function(anchor, text) {
         var $a = $('<a class="nav-link"></a>');
         $a.attr('href', '#' + anchor);
-        $a.text(text);
+        $a.html(text);
         var $li = $('<li></li>');
         $li.append($a);
         return $li;
@@ -72,8 +72,10 @@
       generateNavItem: function(headingEl) {
         var anchor = this.generateAnchor(headingEl);
         var $heading = $(headingEl);
-        var text = $heading.data('toc-text') || $heading.text();
-        return this.generateNavEl(anchor, text);
+        var text = $heading.data('toc-text') || $heading.html();
+        if(text.replace(/\s/g, '').replace(/&nbsp;/g,'').length){
+            return this.generateNavEl(anchor, text);
+        } else return null;
       },
 
       // Find the first heading level (`<h1>`, then `<h2>`, etc.) that has more than one element. Defaults to 1 (for `<h1>`).

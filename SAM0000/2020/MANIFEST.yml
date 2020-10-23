@@ -1,0 +1,42 @@
+author: Ann Example
+base_dir: sample_course
+build_pdf: true
+code: SAM0000
+num_pdf_runs: 1
+structure:
+- source: intro.tex
+  title: index
+  type: introduction
+- content:
+  - source: latex.tex
+    title: LaTeX notes
+    type: chapter
+  - source: markdown.md
+    title: Markdown notes
+    type: chapter
+  - source: figures_embed.tex
+    title: Figures and Embedding
+    type: chapter
+  - source: https://bbc.co.uk/
+    title: An External URL
+    type: url
+  title: Course Material
+  type: part
+- content:
+  - source: slides/slides.md
+    title: Markdown Slides
+    type: slides
+  - source: slides/slides.tex
+    title: Beamer Slides
+    type: slides
+  title: Slides
+  type: part
+themes:
+- path: default
+  source: default
+  title: Default
+- path: accessible
+  source: accessible
+  title: Accessible
+title: Sample Course
+year: 2020

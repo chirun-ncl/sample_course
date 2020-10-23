@@ -3,7 +3,7 @@
 }
 
 body {
-  position: relative;
+	top:0;
 }
 
 .jumbotron {
@@ -41,10 +41,18 @@ body {
 .breadcrumb-item > a:focus {
 	text-decoration: none;
 }
-.navbar-toggler{
-	padding: 0;
+.standalone-toggler{
+	position: absolute;
+	top:0;
+	right:0;
 }
-
+.standalone-nav{
+	display: flex;
+	margin-bottom: 0.5rem;
+}
+.standalone-navitem{
+	margin-right: 1rem;
+}
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -318,10 +326,47 @@ figure + em, .reveal figure + em {
 	justify-content: space-evenly;
 }
 
+.beamer-frame > header {
+  margin-bottom: 1.0rem;
+}
+.beamer-frame-title {
+  font-size: 1.5rem;
+}
+.beamer-frame-subtitle {
+  font-size: 1.3rem;
+}
+.beamer-section-heading {
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+}
+.beamer-section-title {
+  font-size: 2rem;
+}
+.beamer-subsection-title {
+  font-size: 1.5rem;
+}
+.beamer-subsubsection-title {
+  font-size: 1.3rem;
+}
+
 .kframe {
 	margin-top: 1rem;
 }
 
 .collapse-content {
 	margin-bottom: 1rem;
+}
+
+.tcolorbox {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.tcolorbox .frametitle {
+  font-weight: 400;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-bottom: 1em;
 }

@@ -258,6 +258,13 @@ nav[data-toggle='toc'] .nav-link.active:focus {
   background-color: transparent;
   border-left: 2px solid #445258;
 }
+.standalone-nav > a {
+  color: #586e75;
+}
+.standalone-nav > a:hover,
+.standalone-nav > a:focus {
+  color: #445258;
+}
 
 /* coursebuilder */
 .exercise {
@@ -268,4 +275,9 @@ nav[data-toggle='toc'] .nav-link.active:focus {
 	border-color: #eee8d5;
 	background-color: #aec6cf;
 	color: #212529;
+}
+
+.tcolorbox {
+  background-color: #f0e7d1;
+  border: 2px solid #555;
 }
