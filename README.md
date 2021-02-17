@@ -18,3 +18,4 @@ The result after running this course through CourseBuilder can be viewed online 
 
 ### Theme Customisation
 The "Default" theme also includes some customisation features. These can be accessed in the top right of most outputted web pages by clicking the cog symbol. Theme colours can be changed to so called "Dark" and "Pastel" modes and font size can be changed dynamically.
+
