@@ -6,7 +6,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Ann Example" />
-            <meta name="date" content="2020-10-23" />
+            <meta name="date" content="2021-02-17" />
         
 
         <title>Markdown Slides | Sample Course</title>
@@ -26,22 +26,12 @@
 
         
 
-            <script type="text/x-mathjax-config">MathJax.Hub.Config({
-    TeX: { extensions: ["color.js", "boldsymbol.js"],
-		    Macros: { mathsterling: '{\\unicode{xA3}}',
-									pounds: '{\\unicode{xA3}}',
-									euro: '\\unicode{x20AC}',
-									bm: ["\\boldsymbol{ #1 }",1],
-								}
-		},
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-		skipStartupTypeset: false,
-});
-MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 1 });</script>
             <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <script defer src="../../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+			<script defer src="../../static/mp4.js"></script>
+            
+            
         
 <script defer src="../../static/jquery.flexibleArea.js"></script>
 <script defer src="../../static/spin.min.js"></script>
@@ -103,7 +93,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 <script type="math/tex; mode=display"> \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x </script>
 <hr/>
 </section><section class="section3"><h3>Live code</h3>
-<pre class="cm-block" data-language="octave" data-runnable="true" data-uuid="310f4ecd-b2f4-4af4-976a-5740284bebf7"><code>x = 1:100;
+<pre class="cm-block" data-language="octave" data-runnable="true" data-uuid="114f0402-76a8-47c1-aa8b-8b8572e8c3e9"><code>x = 1:100;
 x(mod(x,7)==0)</code></pre>
 </section></section>
 

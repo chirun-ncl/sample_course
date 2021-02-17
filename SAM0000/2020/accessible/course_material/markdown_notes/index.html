@@ -6,7 +6,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Ann Example" />
-            <meta name="date" content="2020-10-23" />
+            <meta name="date" content="2021-02-17" />
         
 
         <title>Markdown notes | Sample Course</title>
@@ -26,22 +26,12 @@
 
         
 
-            <script type="text/x-mathjax-config">MathJax.Hub.Config({
-    TeX: { extensions: ["color.js", "boldsymbol.js"],
-		    Macros: { mathsterling: '{\\unicode{xA3}}',
-									pounds: '{\\unicode{xA3}}',
-									euro: '\\unicode{x20AC}',
-									bm: ["\\boldsymbol{ #1 }",1],
-								}
-		},
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-		skipStartupTypeset: false,
-});
-MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 1 });</script>
             <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <script defer src="../../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+			<script defer src="../../static/mp4.js"></script>
+            
+            
         
 <script defer src="../../static/jquery.flexibleArea.js"></script>
 <script defer src="../../static/spin.min.js"></script>
@@ -184,7 +174,7 @@ measurement of the degree of improvement (0-50 scale) was recorded.</p>
 <p>We wish to test whether the different methods have made any difference
 to the mean levels of response.</p>
 <section class="section3"><h3>R Code</h3>
-<pre class="cm-block" data-language="r" data-runnable="true" data-uuid="43de1eed-52b5-4bb3-ba76-1082f057f1e8"><code>Response = c(46,35,34,39,43,40,47,39,37,37,31,40,28,36,39,
+<pre class="cm-block" data-language="r" data-runnable="true" data-uuid="e5a0b88f-ae77-40d5-ad2f-c61331e46ac7"><code>Response = c(46,35,34,39,43,40,47,39,37,37,31,40,28,36,39,
              42,26,36,34,26,37,34,32,31,35,40,28)
 Group = factor(c('A','A','A','A','A','A','A','A','A',
                  'B','B','B','B','B','B','B','B','B',

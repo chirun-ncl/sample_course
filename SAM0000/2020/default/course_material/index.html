@@ -6,7 +6,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Ann Example" />
-            <meta name="date" content="2020-10-23" />
+            <meta name="date" content="2021-02-17" />
         
 
         <title>Course Material | Sample Course</title>
@@ -24,39 +24,42 @@
 
 
         
-            <script type="text/x-mathjax-config">MathJax.Hub.Config({
-    TeX: { extensions: ["color.js", "boldsymbol.js"],
-		    Macros: { mathsterling: '{\\unicode{xA3}}',
-									pounds: '{\\unicode{xA3}}',
-									euro: '\\unicode{x20AC}',
-									bm: ["\\boldsymbol{ #1 }",1],
-									lefteqn: ["\\rlap{ #1 }\\quad",1],
-								}
-		},
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-		skipStartupTypeset: false,
-});
-MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 1 });</script>
             <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
             <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <script defer src="../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
             <script defer src="../static/customisation.js"></script>
+            <script defer src="../static/mp4.js"></script>
+            
+            
         
     </head>
     <body >
         
 <div class="collapse" id="navbarToggleCustomise">
-	<div class="bg-secondary text-white p-2">
-		<p>Theme Customisation</p>
-		<form onsubmit="return false;" id="navbarCustomise" class="form-inline">
-			<button class="btn btn-dark mr-2" value="dark">Dark</button>
-			<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
-			<button class="btn btn-light mr-4" value="light">Light</button>
-			<label class="mr-2" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
-			<input type="range" class="form-control-range col-md-3 mr-2" id="font-scale" min="60" max="700" value="100">
+	<div class="bg-secondary text-white p-3">
+		<form onsubmit="return false;" id="navbarCustomise">
+			<div class="form-row">
+				<label>Theme Customisation</label>
+				<div id="themeSelector" class="form-group col-md-12">
+					<button class="btn btn-dark mr-2" value="dark">Dark</button>
+					<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
+					<button class="btn btn-light mr-4" value="light">Light</button>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label style="display: block" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="font-scale" min="50" max="600" value="100">
+					<button id="font-scale-reset" class="btn btn-sm">Reset</button>
+				</div>
+				<div class="form-group col-md-4">
+					<label style="display: block" for="p-space">Spacing (<span id="p-space-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="p-space" min="0" max="600" value="100">
+					<button id="p-space-reset" class="btn btn-sm">Reset</button>
+				</div>
+			</div>
 		</form>
 	</div>
 </div>
@@ -102,7 +105,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 	<div class="container">
 		<div class="row">
 			
-			<div class="col-md-6 col-lg-4 pb-4 lti-hint-item">
+			<div class="card-container col-md-6 col-lg-4 pb-4 lti-hint-item">
 				<div class="card mb-4 h-100 box-shadow">
 					<div class="card-body">
 						<div class="card-text">
@@ -120,7 +123,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 				</div>
 			</div>
 			
-			<div class="col-md-6 col-lg-4 pb-4 lti-hint-item">
+			<div class="card-container col-md-6 col-lg-4 pb-4 lti-hint-item">
 				<div class="card mb-4 h-100 box-shadow">
 					<div class="card-body">
 						<div class="card-text">
@@ -138,16 +141,16 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 				</div>
 			</div>
 			
-			<div class="col-md-6 col-lg-4 pb-4 lti-hint-item">
+			<div class="card-container col-md-6 col-lg-4 pb-4 lti-hint-item">
 				<div class="card mb-4 h-100 box-shadow">
 					<div class="card-body">
 						<div class="card-text">
                             
                                 
-                                    <a href="../course_material/figures_and_embedding/index.html">Figures and Embedding</a>
+                                    <a href="../course_material/figures_and_embeddin/index.html">Figures and Embedding</a>
                                     
                                     
-                                    <a target="_blank" class="float-right ml-2" href="../course_material/figures_and_embedding/figures_and_embedding.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true" title="PDF"></i> <span class="sr-only">PDF</span></a>
+                                    <a target="_blank" class="float-right ml-2" href="../course_material/figures_and_embeddin/figures_and_embeddin.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true" title="PDF"></i> <span class="sr-only">PDF</span></a>
                                     
                                 
                             
@@ -156,7 +159,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 				</div>
 			</div>
 			
-			<div class="col-md-6 col-lg-4 pb-4 lti-hint-item">
+			<div class="card-container col-md-6 col-lg-4 pb-4 lti-hint-item">
 				<div class="card mb-4 h-100 box-shadow">
 					<div class="card-body">
 						<div class="card-text">
@@ -187,7 +190,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 			</ul>
 		</div>
 		<p>Generated using <a target="_blank" href="https://github.com/coursebuilder-ncl/makecourse">NCL Coursebuilder</a>, written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-		<p>Site last generated: 2020-10-23</p>
+		<p>This page last generated: 2021-02-17</p>
 	</div>
 </footer>
 		

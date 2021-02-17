@@ -2,33 +2,43 @@ author: Ann Example
 base_dir: sample_course
 build_pdf: true
 code: SAM0000
+format_version: 2
 num_pdf_runs: 1
 structure:
-- source: intro.tex
+- slug: index
+  source: intro.tex
   title: index
   type: introduction
 - content:
-  - source: latex.tex
+  - slug: latex_notes
+    source: latex.tex
     title: LaTeX notes
     type: chapter
-  - source: markdown.md
+  - slug: markdown_notes
+    source: markdown.md
     title: Markdown notes
     type: chapter
-  - source: figures_embed.tex
+  - slug: figures_and_embeddin
+    source: figures_embed.tex
     title: Figures and Embedding
     type: chapter
-  - source: https://bbc.co.uk/
+  - slug: an_external_url
+    source: https://bbc.co.uk/
     title: An External URL
     type: url
+  slug: course_material
   title: Course Material
   type: part
 - content:
-  - source: slides/slides.md
+  - slug: markdown_slides
+    source: slides/slides.md
     title: Markdown Slides
     type: slides
-  - source: slides/slides.tex
+  - slug: beamer_slides
+    source: slides/slides.tex
     title: Beamer Slides
     type: slides
+  slug: slides
   title: Slides
   type: part
 themes:

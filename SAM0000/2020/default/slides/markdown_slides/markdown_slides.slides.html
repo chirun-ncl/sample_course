@@ -5,15 +5,15 @@
 		<meta charset="utf-8">
 		<meta name="robots" content="noindex">
 		<meta name="author" content="Ann Example" />
-		<meta name="date" content="2020-10-23" />
+		<meta name="date" content="2021-02-17" />
 		
 
 		<title>Markdown Slides</title>
 
 		
 		<link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
-		<link rel="stylesheet" href="../../static/reveal.js/css/reveal.css">
-		<link id="customiseCSS" rel="stylesheet" href="../../static/reveal.js/css/theme/light.css">
+		<link rel="stylesheet" href="../../static/reveal.js/dist/reveal.css">
+		<link id="customiseCSS" rel="stylesheet" href="../../static/reveal.js/dist/theme/light.css">
 		<link rel="stylesheet" href="../../static/slides.css">
 		<link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
 		<link rel="stylesheet" href="../../static/boole.css">
@@ -23,13 +23,12 @@
 
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+		<script defer src="../../static/mathjax_config.js"></script>
+		<script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
 		<script defer src="../../static/jquery.flexibleArea.js"></script>
 		<script defer src="../../static/spin.min.js"></script>
-		<script defer src="../../static/codemirror-5.26.0/lib/codemirror.js"></script>
-		<script defer src="../../static/codemirror-5.26.0/mode/octave/octave.js"></script>
-		<script defer src="../../static/codemirror-5.26.0/mode/python/python.js"></script>
-		<script defer src="../../static/codemirror-5.26.0/mode/r/r.js"></script>
 		<script src="../../static/customisation.js"></script>
+		<script defer src="../../static/mp4.js"></script>
 		<script src="../../static/boole.js"></script>
 		<script>
 			if( window.location.search.match( /print-pdf/gi )){
@@ -45,21 +44,6 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
-		<script type="text/x-mathjax-config">MathJax.Hub.Config({
-    TeX: { extensions: ["color.js", "boldsymbol.js"],
-		    Macros: { mathsterling: '{\\unicode{xA3}}',
-									pounds: '{\\unicode{xA3}}',
-									euro: '\\unicode{x20AC}',
-									bm: ["\\boldsymbol{ #1 }",1],
-									lefteqn: ["\\rlap{ #1 }\\quad",1],
-								}
-		},
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-		skipStartupTypeset: false,
-});
-MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 1 });</script>
 		
 
 	</head>
@@ -107,7 +91,7 @@ MathJax.Hub.Register.StartupHook("End",function () { window.mathjax_is_loaded = 
 <script type="math/tex; mode=display"> \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x </script>
 <hr/>
 </section><section class="section3"><h3>Live code</h3>
-<pre class="cm-block" data-language="octave" data-runnable="true" data-uuid="efc55f80-7fb9-4c69-9423-1930b5a0ad5f"><code>x = 1:100;
+<pre class="cm-block" data-language="octave" data-runnable="true" data-uuid="14913490-18fa-40d9-9117-48e106d6c865"><code>x = 1:100;
 x(mod(x,7)==0)</code></pre>
 </section></section>
 					</textarea>
@@ -117,18 +101,24 @@ x(mod(x,7)==0)</code></pre>
 			</div>
 
 		</div>
-		<script src="../../static/reveal.js/js/reveal.js"></script>
-		<script src="../../static/reveal.js/lib/js/head.min.js"></script>
+		<script src="../../static/reveal.js/dist/reveal.js"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
 				history: true,
 				dependencies: [
 					{ src: "../../static/reveal.js/plugin/splitter/splitter.js" },
-					{ src: "../../static/reveal.js/plugin/math/math.js" },
 					{ src: "../../static/reveal.js/plugin/notes/notes.js", async: true },
 					{ src: "../../static/reveal.js/plugin/highlight/highlight.js", async: true }
 				]
+			});
+			Reveal.on( 'ready', event => {
+				try {
+					MathJax.typeset();
+				} catch(err) {
+					console.log('Problem running MathJax.typeset()');
+				}
+				mp4ImageFallback();
 			});
 		</script>
 	</body>
