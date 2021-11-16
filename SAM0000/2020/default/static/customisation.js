@@ -28,11 +28,17 @@ $("#navbarCustomise #p-space").on("input change", function() {
 
 $("#navbarCustomise #font-scale-reset").click(function() {
 	changeFontSize(100);
+	localStorage.removeItem('css-font-size');
 });
 
 $("#navbarCustomise #p-space-reset").click(function() {
 	changeParagraphSpacing(150);
+	localStorage.removeItem('css-p-space');
 });
+
+function updateThemeBodyTag() {
+	$('body').attr('data-theme', localStorage.getItem('theme') || 'light');
+}
 
 function handleThemeUpdate(theme) {
 	if($('#customiseCSS')[0]){
@@ -46,6 +52,7 @@ function handleThemeUpdate(theme) {
 	
 	// Save in local storage
 	localStorage.setItem('theme',theme);
+	updateThemeBodyTag();
 }
 
 function changeFontSize(fontScale) {
@@ -108,3 +115,7 @@ function changeParagraphSpacing(paragraphScale) {
 	// Save in local storage
 	localStorage.setItem('css-p-space',paragraphScale);
 }
+
+$(document).ready(() => {
+	updateThemeBodyTag(localStorage.getItem('theme'))
+});

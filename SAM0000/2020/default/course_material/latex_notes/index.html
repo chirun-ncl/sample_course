@@ -6,7 +6,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Ann Example" />
-            <meta name="date" content="2021-02-17" />
+            <meta name="date" content="2021-11-16" />
         
 
         <title>LaTeX notes | Sample Course</title>
@@ -22,20 +22,22 @@
             
         
     <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
-
-    <link rel="stylesheet" href="../../static/bootstrap-toc.css?v=3">
     <link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
     <link rel="stylesheet" href="../../static/boole.css">
+    <link rel="stylesheet" href="../../static/numbasEmbed.css">
+
+    <link rel="stylesheet" href="../../static/bootstrap-toc.css?v=3">
     <link rel="stylesheet" href="../../static/print.css">
 
 
         
     
+    
             <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
             <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script defer src="../../static/mathjax_config.js"></script>
-            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <script defer src="../../static/customisation.js"></script>
             <script defer src="../../static/mp4.js"></script>
             
@@ -48,6 +50,8 @@
     <script defer src="../../static/codemirror-5.26.0/mode/python/python.js"></script>
     <script defer src="../../static/codemirror-5.26.0/mode/r/r.js"></script>
     <script defer src="../../static/boole.js"></script>
+    <script defer src="../../static/numbasEmbed.js"></script>
+
     <script defer src="../../static/bootstrap-toc.js"></script>
 
     </head>
@@ -116,7 +120,8 @@
                     <ul class="nav navbar-nav">
                         
                         
-                        <li><a class="nav-link" href="../../course_material/latex_notes/latex_notes.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Download as PDF"></i>&nbsp;Download as PDF</a></li>
+                        
+                        <li><a id="pdf-link" class="nav-link" href="../../course_material/latex_notes/latex_notes.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Download as PDF"></i>&nbsp;Download as PDF</a></li>
                         
                     </ul>
                 </nav>
@@ -131,7 +136,7 @@
 A <b class="bf">separable</b> first-order ODE can be written in the form 
 </p>
 <div class="eqn" id="eqn:first:separable">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:separable} y’=g(x)h(y).\tag{1.1}\end{equation}</script>
+<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:separable} y'=g(x)h(y).\tag{1.1}\end{equation}</script>
 </div>
 <p>
  We will assume that <script type="math/tex">g(x)</script> is continuous over some range of values of <script type="math/tex">x</script>, e.g. <script type="math/tex">x\in (a,b)</script>, possibly the whole real line <script type="math/tex">(-\infty ,\infty )</script>. Continuity of <script type="math/tex">g(x)</script> ensures that we can take the necessary integrals. 
@@ -158,7 +163,7 @@ Any (constant) solution of the equation <script type="math/tex">h(y)=0</script> 
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000028">
+<div class="thmwrapper solution_thmwrapper" id="a0000000029">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -166,7 +171,7 @@ Any (constant) solution of the equation <script type="math/tex">h(y)=0</script> 
 </div>
 <div class="thmcontent solution_thmcontent">
 <p>
-Here <script type="math/tex">g(x)=x</script> and <script type="math/tex">h(y)=\sin (y)</script>. Now, <script type="math/tex">h(y)=\sin (y)=0</script> if <script type="math/tex">y=n\pi </script> (where <script type="math/tex">n\in \mathbb {Z}</script>), so the right-hand side of the ODE is zero. Clearly <script type="math/tex">y=n\pi </script> (constant) <script type="math/tex">\forall x</script> <script type="math/tex">\Longrightarrow </script> <script type="math/tex">y’=0</script> (i.e. the left-hand side is also zero). Therefore <script type="math/tex">y=n\pi </script> is a possible solution. 
+Here <script type="math/tex">g(x)=x</script> and <script type="math/tex">h(y)=\sin (y)</script>. Now, <script type="math/tex">h(y)=\sin (y)=0</script> if <script type="math/tex">y=n\pi </script> (where <script type="math/tex">n\in \mathbb {Z}</script>), so the right-hand side of the ODE is zero. Clearly <script type="math/tex">y=n\pi </script> (constant) <script type="math/tex">\forall x</script> <script type="math/tex">\Longrightarrow </script> <script type="math/tex">y'=0</script> (i.e. the left-hand side is also zero). Therefore <script type="math/tex">y=n\pi </script> is a possible solution. 
 </p>
 </div>
 </div>
@@ -182,7 +187,7 @@ To derive a more general solution, we must assume that <script type="math/tex">h
 </p>
 <span class="dmath"><script type="math/tex; mode=display">\int \frac{y'}{h(y)}~ {\rm d} x=\int g(x)~ {\rm d}x.</script></span>
 <p>
- since <script type="math/tex">\mathrm{d}y=y’\, \mathrm{d}x</script>, this implies that 
+ since <script type="math/tex">\mathrm{d}y=y'\, \mathrm{d}x</script>, this implies that 
 </p>
 <div class="eqn" id="eqn:first:sepsolution">
 <script type="math/tex; mode=display">\begin{equation}\label{eqn:first:sepsolution} \int \frac{{\rm d}y}{h(y)}=\int g(x)~ {\rm d}x.\tag{1.2}\end{equation}</script>
@@ -207,7 +212,7 @@ To derive a more general solution, we must assume that <script type="math/tex">h
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000029">
+<div class="thmwrapper solution_thmwrapper" id="a0000000030">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -245,13 +250,13 @@ as required.<br/>
 </div>
 <div class="thmcontent example_thmcontent">
 <p>
- Find the general solution of the ODE <script type="math/tex">y’=(y+xy)/x^2</script> and then the particular solution which passes through the point <script type="math/tex">(1,1)</script>, i.e. <script type="math/tex">y(1)=1</script>. 
+ Find the general solution of the ODE <script type="math/tex">y'=(y+xy)/x^2</script> and then the particular solution which passes through the point <script type="math/tex">(1,1)</script>, i.e. <script type="math/tex">y(1)=1</script>. 
 </p>
 </div>
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000030">
+<div class="thmwrapper solution_thmwrapper" id="a0000000031">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -309,7 +314,7 @@ We have
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000031">
+<div class="thmwrapper solution_thmwrapper" id="a0000000032">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -349,7 +354,7 @@ This is the time it takes for half the sample to decay (known as the sample’s 
 A <b class="bf">homogeneous</b> first-order ODE can be written in the form 
 </p>
 <div class="eqn" id="eqn:first:homoneode">
-<script type="math/tex; mode=display">\begin{equation}y’=f(x,y)=F\left(\frac{y}{x} \right). \label{eqn:first:homoneode}\tag{1.3}\end{equation}</script>
+<script type="math/tex; mode=display">\begin{equation}y'=f(x,y)=F\left(\frac{y}{x} \right). \label{eqn:first:homoneode}\tag{1.3}\end{equation}</script>
 </div>
 <p>
  We will assume that <script type="math/tex">F(y/x)</script> is a continuous function of its argument. <br/>
@@ -368,7 +373,7 @@ A <b class="bf">homogeneous</b> first-order ODE can be written in the form
 Hence, 
 </p>
 <div class="eqn" id="eqn:first:homoneodesolution">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:homoneodesolution} xv’ = F(v) - v,\tag{1.5}\end{equation}</script>
+<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:homoneodesolution} xv' = F(v) - v,\tag{1.5}\end{equation}</script>
 </div>
 <p>
  which can be solved by separating variables. 
@@ -383,13 +388,13 @@ Hence,
 </div>
 <div class="thmcontent example_thmcontent">
 <p>
- Find the general solution to <script type="math/tex">y’=(y^2+2xy)/x^2</script>. Then find the specific solution satisfying <script type="math/tex">y(1)=0.5</script>. 
+ Find the general solution to <script type="math/tex">y'=(y^2+2xy)/x^2</script>. Then find the specific solution satisfying <script type="math/tex">y(1)=0.5</script>. 
 </p>
 </div>
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000032">
+<div class="thmwrapper solution_thmwrapper" id="a0000000033">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -465,13 +470,13 @@ Hence,
 (where the <script type="math/tex">c_ i(x)</script> are specified functions of <script type="math/tex">x</script>), any <b class="bf">linear first-order ODE</b> can be written in the form 
 </p>
 <div class="eqn" id="eqn:first:pregenerallinear">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:pregenerallinear} L(y)\equiv c_1(x)y’+c_0(x)y = f(x),\tag{1.6}\end{equation}</script>
+<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:pregenerallinear} L(y)\equiv c_1(x)y'+c_0(x)y = f(x),\tag{1.6}\end{equation}</script>
 </div>
 <p>
  where <script type="math/tex">f(x)</script> is another given function of <script type="math/tex">x</script>. Without loss of generality, we shall assume <script type="math/tex">c_1(x)\neq 0</script>. 
 </p>
 <p>
-<div class="thmwrapper note_thmwrapper" id="a0000000033">
+<div class="thmwrapper note_thmwrapper" id="a0000000034">
 <div class="thmheading note_thmheading">
 <span class="thmcaption note_thmcaption">
     Note
@@ -488,7 +493,7 @@ The case of <script type="math/tex">c_1(x)=0</script> is trivial, i.e. <script t
 Dividing (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:first:pregenerallinear">1.6</a>) by <script type="math/tex">c_1(x)</script>, 
 </p>
 <div class="eqn" id="eqn:first:generallinear">
-<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:generallinear} y’+p(x)y = q(x),\tag{1.7}\end{equation}</script>
+<script type="math/tex; mode=display">\begin{equation}\label{eqn:first:generallinear} y'+p(x)y = q(x),\tag{1.7}\end{equation}</script>
 </div>
 <p>
  where <script type="math/tex">p(x)=c_0(x)/c_1(x)</script> and <script type="math/tex">q(x)=f(x)/c_1(x)</script>. This is the most general form for a (non-trivial) first-order linear ODE. 
@@ -496,7 +501,7 @@ Dividing (<a class="ref" href="../../course_material/latex_notes/index.html#eqn:
 </section><section class="subsection">
 <h3 id="subsec:first:linearint">1.3.2 The integrating factor method</h3>
 <p>
-  The challenge is to solve <script type="math/tex">y’+p(x)y = q(x)</script>. We shall assume that <script type="math/tex">p(x)</script> and <script type="math/tex">q(x)</script> are continuous (and hence integrable) over some interval <script type="math/tex">(a,b)</script>, possibly the whole real line <script type="math/tex">(-\infty ,\infty )</script>. Let 
+  The challenge is to solve <script type="math/tex">y'+p(x)y = q(x)</script>. We shall assume that <script type="math/tex">p(x)</script> and <script type="math/tex">q(x)</script> are continuous (and hence integrable) over some interval <script type="math/tex">(a,b)</script>, possibly the whole real line <script type="math/tex">(-\infty ,\infty )</script>. Let 
 </p>
 <span class="dmath"><script type="math/tex; mode=display">P(x) = \int p(x)\, \mathrm{d}x.</script></span>
 <p>
@@ -566,7 +571,7 @@ ii)
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000034">
+<div class="thmwrapper solution_thmwrapper" id="a0000000035">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -574,7 +579,7 @@ ii)
 </div>
 <div class="thmcontent solution_thmcontent">
 <p>
-i) This equation is already in the form <script type="math/tex">y’ + p(x)y = q(x)</script>. Here, <script type="math/tex">p(x)=1/x</script> and <script type="math/tex">q(x)=x</script>. Clearly, 
+i) This equation is already in the form <script type="math/tex">y' + p(x)y = q(x)</script>. Here, <script type="math/tex">p(x)=1/x</script> and <script type="math/tex">q(x)=x</script>. Clearly, 
 </p>
 <span class="dmath"><script type="math/tex; mode=display">P(x) = \int p(x)\, \mathrm{d}x= \int \frac{\mathrm{d}x}{x}= \ln |x|</script></span>
 <p>
@@ -657,7 +662,7 @@ whilst <script type="math/tex">\displaystyle {Y\left(x_0\right) = y_1\left(x_0\r
  where <script type="math/tex">A</script> is a redefined constant. The only way that this can be compatible with <script type="math/tex">Y(0)=0</script> is if <script type="math/tex">A=0 \Longrightarrow Y(x)=0 \; \forall x</script>. This again implies that <script type="math/tex">y_1(x)=y_2(x)</script>, i.e. unique solution. 
 </p>
 <p>
-<div class="thmwrapper note_thmwrapper" id="a0000000035">
+<div class="thmwrapper note_thmwrapper" id="a0000000036">
 <div class="thmheading note_thmheading">
 <span class="thmcaption note_thmcaption">
     Note
@@ -682,7 +687,7 @@ where <script type="math/tex">C</script> is <b class="bf">any</b> positive const
 </section><section class="section">
 <h2 id="sec:first:iso">1.4 Isoclines</h2>
 <p>
-Consider an equation of the form <script type="math/tex">y’=f(x,y)</script>. The function <script type="math/tex">f(x,y)</script> defines the <b class="bf">slope</b> of the solution curve at each point in the <script type="math/tex">xy</script>-plane. Lines of constant slope, known as <b class="bf">isoclines</b>, satisfy 
+Consider an equation of the form <script type="math/tex">y'=f(x,y)</script>. The function <script type="math/tex">f(x,y)</script> defines the <b class="bf">slope</b> of the solution curve at each point in the <script type="math/tex">xy</script>-plane. Lines of constant slope, known as <b class="bf">isoclines</b>, satisfy 
 </p>
 <div class="eqn" id="eqn:first:isocline">
 <script type="math/tex; mode=display">\begin{equation}\label{eqn:first:isocline} f(x,y)=m,\tag{1.10}\end{equation}</script>
@@ -710,7 +715,7 @@ By finding the isoclines, sketch some integral curves (i.e. solution curves) for
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000036">
+<div class="thmwrapper solution_thmwrapper" id="a0000000037">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -747,7 +752,7 @@ The isoclines correspond to
 </div>
 </p>
 <p>
-<div class="thmwrapper solution_thmwrapper" id="a0000000037">
+<div class="thmwrapper solution_thmwrapper" id="a0000000038">
 <div class="thmheading solution_thmheading">
 <span class="thmcaption solution_thmcaption">
     Solution
@@ -811,7 +816,7 @@ with isoclines defined by
 			</ul>
 		</div>
 		<p>Generated using <a target="_blank" href="https://github.com/coursebuilder-ncl/makecourse">NCL Coursebuilder</a>, written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-		<p>This page last generated: 2021-02-17</p>
+		<p>This page last generated: 2021-11-16</p>
 	</div>
 </footer>
 		

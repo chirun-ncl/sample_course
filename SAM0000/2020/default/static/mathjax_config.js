@@ -10,11 +10,19 @@ window.MathJax = {
     },
     inlineMath: [['\\(','\\)']],
     autoload: {},
-    packages: {'[+]': ['noerrors','mhchem']}
+    packages: {'[+]': [
+        'noerrors',
+        'mhchem',
+        'textmacros',
+        'mathtools'
+    ]},
+    textmacros: {
+      packages: {'[+]': ['bbox']}
+    }
   },
   startup: {
     typeset: true,
-	ready: () => {
+    ready: () => {
       MathJax.startup.defaultReady();
       MathJax.startup.promise.then(() => {
         window.mathjax_is_loaded = 1;
@@ -39,6 +47,12 @@ window.MathJax = {
     }
   },
   loader: {
-    load: ['[tex]/noerrors','[tex]/mhchem']
+    load: [
+        '[tex]/noerrors',
+        '[tex]/mhchem',
+        '[tex]/textmacros',
+        '[tex]/bbox',
+        '[tex]/mathtools'
+    ]
   }
 };

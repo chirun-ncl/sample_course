@@ -3,50 +3,69 @@ base_dir: sample_course
 build_pdf: true
 code: SAM0000
 format_version: 2
+mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 num_pdf_runs: 1
 structure:
-- slug: index
+- build_pdf: false
+  content: []
+  pdf_url: index.pdf
+  slug: index
   source: intro.tex
   title: index
   type: introduction
-- content:
-  - slug: latex_notes
+- build_pdf: false
+  content:
+  - build_pdf: true
+    pdf_url: course_material/latex_notes/latex_notes.pdf
+    slug: latex_notes
     source: latex.tex
     title: LaTeX notes
     type: chapter
-  - slug: markdown_notes
+  - build_pdf: true
+    pdf_url: course_material/markdown_notes/markdown_notes.pdf
+    slug: markdown_notes
     source: markdown.md
     title: Markdown notes
     type: chapter
-  - slug: figures_and_embeddin
+  - build_pdf: true
+    pdf_url: course_material/figures_and_embeddin/figures_and_embeddin.pdf
+    slug: figures_and_embeddin
     source: figures_embed.tex
     title: Figures and Embedding
     type: chapter
-  - slug: an_external_url
+  - build_pdf: false
+    pdf_url: course_material/an_external_url/an_external_url.pdf
+    slug: an_external_url
     source: https://bbc.co.uk/
     title: An External URL
     type: url
+  pdf_url: course_material/course_material.pdf
   slug: course_material
+  source: .
   title: Course Material
   type: part
-- content:
-  - slug: markdown_slides
+- build_pdf: false
+  content:
+  - build_pdf: true
+    pdf_url: slides/markdown_slides/markdown_slides.pdf
+    slug: markdown_slides
     source: slides/slides.md
     title: Markdown Slides
     type: slides
-  - slug: beamer_slides
+  - build_pdf: true
+    pdf_url: slides/beamer_slides/beamer_slides.pdf
+    slug: beamer_slides
     source: slides/slides.tex
     title: Beamer Slides
     type: slides
+  pdf_url: slides/slides.pdf
   slug: slides
+  source: .
   title: Slides
   type: part
 themes:
 - path: default
   source: default
   title: Default
-- path: accessible
-  source: accessible
-  title: Accessible
 title: Sample Course
 year: 2020
