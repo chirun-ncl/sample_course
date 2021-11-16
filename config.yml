@@ -36,7 +36,4 @@ themes:
   - title: Default
     source: default
     path: default
-  - title: Accessible
-    source: accessible
-    path: accessible
 build_pdf: True
