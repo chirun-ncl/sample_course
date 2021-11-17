@@ -7,7 +7,8 @@
 **/*.blg
 **/*.bbl
 **/*.pdf
-!images/*.pdf
+!latex/images/*.pdf
+!markdown/images/*.pdf
 **/*.swp
 **/*.toc
 **/*.snm
