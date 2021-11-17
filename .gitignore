@@ -3,6 +3,9 @@
 **/*.out
 **/*.fdb_latexmk
 **/*.fls
+**/*.dst
+**/*.blg
+**/*.bbl
 **/*.pdf
 !images/*.pdf
 **/*.swp
