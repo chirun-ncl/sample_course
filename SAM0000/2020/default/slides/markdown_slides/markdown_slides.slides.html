@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="robots" content="noindex">
 		<meta name="author" content="Ann Example" />
-		<meta name="date" content="2021-11-16" />
+		<meta name="date" content="2021-11-17" />
 		
 
 		<title>Markdown Slides</title>
@@ -70,32 +70,337 @@
 				
 				<section data-splitter data-separator="<hr/?>" data-separator-notes="^Data-Note:">
 					<textarea data-template>
-						<section class="section2"><h2>Do not adjust your set!</h2>
-<p>Maths is important</p>
-<hr/>
-<p>How is maths traditionally presented - Whiteboard/visualiser, PDF, hand-written notes, viewed via BB/Canvas mobile website or app</p>
-<hr/>
-<script type="math/tex; mode=display"> \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x </script>
-<hr/>
-<section class="section3"><h3>About Coursebuilder</h3>
-<p>Motivations:</p>
+						<section class="section2"><h2>Today's Topics</h2>
 <ul>
-<li>to support students with special requirements</li>
-<li>to offer flexibility for different devices</li>
-<li>to enrich lecture notes</li>
+<li>Recap on last week</li>
+<li>Control flow</li>
+<li>Loops</li>
+<li>Creating your own functions</li>
 </ul>
 <hr/>
-<p>The idea: to use a single source file to generate lecture material in a variety of formats:</p>
-<figure class="figure1" data-title="Coursebuilder Image"><img alt="Coursebuilder Image" src="images/coursebuilder.png"/></figure><hr/>
-<p>The content for this page - in the format of slides, PDF and responsive web pages in multiple themes - is all generated from one file.</p>
+</section><section class="section2"><h2>Recap: Plotting</h2>
+<p>Matplotlib's <code>plot</code> function takes two arrays and produces a 2D plot:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
 <hr/>
-</section><section class="section3"><h3>Maths!</h3>
-<script type="math/tex; mode=display"> \Huge \int_0^\infty \frac{\sin(x)}{x} \mathrm{d}x </script>
+<figure class="figure1" data-title="A plot of y=sin(x) for x between 0 and 2*pi."><img alt="A plot of y=sin(x) for x between 0 and 2*pi." src="images/lecture_sine1.png" width="70%"/></figure><p><em><a href="files/lecture_sine1.py" target="_blank">Download the full source code for this plot.</a></em></p>
 <hr/>
-</section><section class="section3"><h3>Live code</h3>
-<pre class="cm-block" data-language="octave" data-runnable="true" data-uuid="9fbfa4b2-efb9-43a2-b667-5dd50b822f86"><code>x = 1:100;
-x(mod(x,7)==0)</code></pre>
-</section></section>
+<p>Methods such as <code>xlabel</code>, <code>ylabel</code> and <code>title</code> can be used to make the plot look nice:</p>
+<div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'y = sin(x)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+<figure class="figure2" data-title="A plot of y=sin(x) for x between 0 and 2*pi, with axis labels, a title, and adjusted x limits."><img alt="A plot of y=sin(x) for x between 0 and 2*pi, with axis labels, a title, and adjusted x limits." src="images/lecture_sine2.png" width="70%"/></figure><p><em><a href="files/lecture_sine2.py" target="_blank">Download the full source code for this plot</a></em></p>
+<hr/>
+</section><section class="section2"><h2>Control Flow</h2>
+<p>Control flow statements are used to determine if and when commands in your code are carried out. Control flow is part of the staple diet for almost all programming languages.</p>
+<div class="fragment">
+<p>We're going to look at three types of construct which control the flow of a piece of computer code:</p>
+<ul>
+<li>If statements</li>
+<li>For loops </li>
+<li>While loops </li>
+</ul>
+</div><hr/>
+<section class="section3"><h3>Control flow concepts</h3>
+<p>Let's consider these in turn conceptually, before we look at the Python syntax.</p>
+<hr/>
+</section><section class="section3"><h3>If statements</h3>
+<p>An <strong>if</strong> statement is used to specify that a command(s) that is only executed if a condition is satisfied.</p>
+<p>Note: in case it isn't clear, these are not Python commands! This is a made-up language called <em>pseudocode</em>.</p>
+<div class="highlight"><pre><span></span>If something is true
+  Do something
+</pre></div>
+<div class="fragment">
+<p>e.g. Choosing what you do on the metro:</p>
+<div class="highlight"><pre><span></span>If it is Monday
+  Listen to music
+</pre></div>
+</div><hr/>
+<p>This can be extended to <strong>if...else</strong> statements:</p>
+<div class="highlight"><pre><span></span>If something is true
+  Do something
+else
+  Do something else
+</pre></div>
+<div class="fragment">
+<p>e.g. Choosing what you do on the metro:</p>
+<div class="highlight"><pre><span></span>If remembered to bring headphones
+  Listen to music
+else
+  Read the newspaper  
+</pre></div>
+</div><hr/>
+</section><section class="section3"><h3>For loops</h3>
+<p>A for loop repeats a specified command or list of commands several times in succession</p>
+<div class="highlight"><pre><span></span>For some list of things
+  Do something
+</pre></div>
+<div class="fragment">
+<p>e.g. reading a newspaper on the metro</p>
+<div class="highlight"><pre><span></span>For each page in the Metro newspaper
+  Read the page
+</pre></div>
+</div><hr/>
+<p>The for loop can contain many commands. And often there is a counter: here it might be our page number</p>
+<div class="highlight"><pre><span></span>For x = each page in the Metro newspaper
+  Read page x
+  Check location on the metro map
+  Check phone for messages
+</pre></div>
+<hr/>
+</section><section class="section3"><h3>While loops</h3>
+<p>A while loop is similar to a for loop, but in this case the loop is repeated only whilst a condition is satisified.</p>
+<div class="highlight"><pre><span></span>While something is true
+  Do something
+</pre></div>
+<div class="fragment">
+<p>E.g. reading a newspaper til you reach your destination:</p>
+<div class="highlight"><pre><span></span>While on the train
+  Read a newspaper page
+  Turn to the next page
+</pre></div>
+</div><hr/>
+<p>Note that if you need a counter then you need to set it yourself</p>
+<div class="highlight"><pre><span></span>x = 0
+While on the train
+  x = x + 1
+  Read page x
+</pre></div>
+<hr/>
+<p>Similar ideas have been used in music for many centuries...</p>
+<figure class="figure3" data-title=""><img alt="" src="images/gregorian.jpg" width="30%"/></figure><hr/>
+<figure class="figure4" data-title=""><img alt="" src="images/maple.jpg" width="60%"/></figure><hr/>
+<figure class="figure5" data-title=""><img alt="" src="images/repeat.jpg"/></figure><hr/>
+</section></section><section class="section2"><h2>Control flow in Python</h2>
+<p>Now let's take a look at control flow in Python</p>
+<hr/>
+<section class="section3"><h3>If statements</h3>
+<pre class="cm-block" data-language="python" data-runnable="true" data-uuid="1939c652-a276-483c-87f5-49ac607411a4"><code>x = 2
+if x &gt; 0:
+    print('it is true')  # Print something if true</code></pre>
+<p>Note that it is required to indent the contents of the <code>if</code> statement!</p>
+<hr/>
+</section><section class="section3"><h3>For loops</h3>
+<pre class="cm-block" data-language="python" data-runnable="true" data-uuid="a7eea5e4-c3fc-40bb-80d5-3674324e548f"><code>for i in range(1,6):
+    print(i)  # useful function to display i</code></pre>
+<hr/>
+</section><section class="section3"><h3>While loops</h3>
+<pre class="cm-block" data-language="python" data-runnable="true" data-uuid="51778312-7918-4cc3-9b6c-0a7bde2ea8c8"><code>x = 0
+while x &lt; 5:
+    x = x + 1
+    print(x)  # display x at this iteration</code></pre>
+<hr/>
+</section></section><section class="section2"><h2>Applications of control flow</h2>
+<p>Loops and if statements are essential blocks of computer code and we'll have a look at some examples of how to use them in the handout this week.</p>
+<p>Here's an example of plotting multiple curves, adapting and example from last week.</p>
+<hr/>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Create the x axis</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Create 3 plots in a loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Add axis labels etc.</span>
+</pre></div>
+<hr/>
+<figure class="figure6" data-title="A plot of y=sin(i*x) for x between 0 and 6, for i equal to 1,2 and 3"><img alt="A plot of y=sin(i*x) for x between 0 and 6, for i equal to 1,2 and 3" src="images/lecture_sine3.png" width="80%"/></figure><p><em><a href="files/lecture_sine3.py" target="_blank">Download the full source code for this plot</a></em></p>
+<hr/>
+</section><section class="section2"><h2>Functions</h2>
+<ul>
+<li>
+<p>So far we have made use of a variety of built-in functions. And today we are going to see how to create our own.</p>
+</li>
+<li>
+<p>Splitting up computer code by writing user-defined functions is a very good idea, and Python has a couple of options for separating chunks of code out into a function.</p>
+</li>
+</ul>
+<hr/>
+<p>The syntax for creating a function is as follows:</p>
+<p><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"My function prints this"</span><span class="p">)</span>
+</pre></div>
+ . . .</p>
+<p>Note a similar syntax and indenting as for control flow</p>
+<div class="fragment">
+<p>The function begins with the keyword <code>def</code> and then the function name "my_func".</p>
+</div><div class="fragment">
+<p>Input arguments are defined inside brackets - for this function there are none</p>
+</div><div class="fragment">
+<p>Once defined, we can use the function by running:</p>
+<div class="highlight"><pre><span></span><span class="n">my_func</span><span class="p">()</span>
+</pre></div>
+</div><hr/>
+<p>Let's add an argument:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_a_number</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+<div class="fragment">
+<p>The argument <code>x</code> has been added. You provide a value for it when you "call" the function</p>
+</div><div class="fragment">
+<p>The <code>return</code> statement controls what value (or values) your function outputs</p>
+</div><hr/>
+<p><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">square_a_number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<pre class="output-block"><code>9</code></pre></p>
+<hr/>
+</section><section class="section2"><h2>Handling errors</h2>
+<p>During your work in the practicals, you have probably encountered a bit of red text and errors that occur when you run commands Python has a problem with.</p>
+<figure class="figure7" data-title="An error message"><img alt="An error message" src="images/error.png" style="80%"/></figure><p>You can create your own error messages in your code too!</p>
+<hr/>
+<p>The <code>raise</code> function displays a message in red, and halts execution of the code.</p>
+<div class="highlight"><pre><span></span><span class="k">raise</span><span class="p">(</span><span class="ne">Exception</span><span class="p">(</span><span class="s1">'This is a custom error message!'</span><span class="p">))</span>
+</pre></div>
+<hr/>
+<p>For example,</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span><span class="p">(</span><span class="ne">Exception</span><span class="p">(</span><span class="s2">"Sorry, no imaginary numbers here!"</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+<div class="fragment">
+<figure class="figure8" data-title="Using the do_sqrt function and triggering an error"><img alt="Using the do_sqrt function and triggering an error" src="images/error2.png" style="80%"/></figure></div><hr/>
+</section><section class="section2"><h2>Adding help</h2>
+<p>A comment contained within three quotes <code>"""</code> at the start of our custom function is used to display help. It is known as a <em>docstring</em> (documentation string)</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">sin_plus_cos</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">""" Takes in a value x and </span>
+<span class="sd">        returns cos(x)+sin(x) """</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>Test your help with</p>
+<div class="highlight"><pre><span></span>help(sin_plus_cos)
+</pre></div>
+<hr/>
+</section><section class="section2"><h2>Algorithmic thinking</h2>
+<p><strong>algorithm</strong><br/><em>noun</em><br/>a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.</p>
+<div class="fragment">
+<p>The following is a worked example...</p>
+</div><hr/>
+</section><section class="section2"><h2>Numerical Solutions to differential equations</h2>
+<p>Differential equations play a part in almost every model of physical processes: from the fundamental laws of physics, to population growth, chemical reactions and economic modelling.</p>
+<div class="fragment">
+<p>We are (or at least you will be later on) interested in solving differential equations, for example
+<script type="math/tex; mode=display"> \frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+</div><hr/>
+<section class="section3"><h3>Why Python?</h3>
+<ul>
+<li>This problem can be solved using pen and paper, but that is not always the case!</li>
+<li>We can use Python as a powerful visualisation tool </li>
+</ul>
+<hr/>
+</section><section class="section3"><h3>Euler's Method</h3>
+<p>Let's derive a method to solve this ODE on a computer, simply by applying some problem solving...</p>
+<hr/>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+<figure class="figure9" data-title=""><img alt="" src="images/explanation0.png" width="55%"/></figure><p>What's our goal?</p>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure10" data-title=""><img alt="" src="images/explanation1.png" width="55%"/></figure><p>We want to know how <script type="math/tex">y</script> evolves with <script type="math/tex">t</script>.</p>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure12" data-title=""><img alt="" src="images/explanation0.png" width="55%"/></figure><p>What do we know?</p>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure14" data-title=""><img alt="" src="images/explanation2.png" width="55%"/></figure><script type="math/tex; mode=display">y(0)=5</script>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure16" data-title=""><img alt="" src="images/explanation3.png" width="55%"/></figure><script type="math/tex; mode=display">\frac{\mathrm{d}y}{\mathrm{d}t}(0)=-\frac{5}{2}</script>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure18" data-title=""><img alt="" src="images/explanation4.png" width="55%"/></figure><p>Suppose we use this to estimate the position of <script type="math/tex">y(1)</script>
+</p>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure20" data-title=""><img alt="" src="images/explanation5.png" width="55%"/></figure><p>
+<script type="math/tex">y(1) = 5 -\left(\frac{5}{2}\right)h</script>, where <script type="math/tex">h</script> is the separation in <script type="math/tex">t</script>
+</p>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure22" data-title=""><img alt="" src="images/explanation6.png" width="55%"/></figure><script type="math/tex; mode=display">y(1) = \frac{5}{2}</script>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure24" data-title=""><img alt="" src="images/explanation7.png" width="55%"/></figure><script type="math/tex; mode=display">\frac{\mathrm{d}y}{\mathrm{d}t}\left(\frac{5}{2}\right)=-\frac{5}{4}</script>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure26" data-title=""><img alt="" src="images/explanation8.png" width="55%"/></figure><p>And so on...</p>
+</section><section class="section3" data-transition="none"><h3> </h3>
+<p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 </script>
+</p>
+<figure class="figure28" data-title=""><img alt="" src="images/explanation9.png" width="55%"/></figure><p>And so on...</p>
+<hr/>
+<figure class="figure30" data-title=""><img alt="" src="images/euler.gif" width="80%"/></figure><hr/>
+<p>How does this compare to the exact solution?</p>
+<hr/>
+<p>
+<script type="math/tex">h = 1</script>
+</p>
+<figure class="figure31" data-title=""><img alt="" src="../../static/images/week5/h1.png" width="80%"/></figure><hr/>
+<p>
+<script type="math/tex">h = 0.5</script>
+</p>
+<figure class="figure32" data-title=""><img alt="" src="../../static/images/week5/h0p5.png" width="80%"/></figure><hr/>
+<p>
+<script type="math/tex">h = 0.25</script>
+</p>
+<figure class="figure33" data-title=""><img alt="" src="../../static/images/week5/h0p25.png" width="80%"/></figure><hr/>
+</section><section class="section3"><h3>Euler's Method Algorithm</h3>
+<p>For first order differential equations of the form</p>
+<script type="math/tex; mode=display"> \frac{dy}{dt}=f(y,t). </script>
+<p>Euler's Method approximates the solution using</p>
+<script type="math/tex; mode=display"> y_{n} = y_{n-1} + hf(y_{n-1},t_{n-1}). </script>
+<hr/>
+<p>We can write our algorithm for this problem as:</p>
+<script type="math/tex; mode=display"> f(y)=-\frac{y}{2}, \quad y_{n} = y_{n-1} + hf(y_{n-1}), \quad y_0=5 </script>
+<p>as a function</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+<p>and a for loop (I've chosen <script type="math/tex">h=0.5</script>)</p>
+<div class="highlight"><pre><span></span><span class="n">y</span> <span class="p">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">5</span>
+<span class="k">for</span> <span class="n">n</span> <span class="n">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nb">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+<hr/>
+</section></section><section class="section2"><h2>Lecture 3 Summary</h2>
+<p>Creating our own functions and being able to control when commands are used using loops and if statements will bring us new powers to process data, plot and more. In the handout we'll apply some of these ideas to some more <em>algorithms</em>. </p>
+</section>
 					</textarea>
 				</section>
 				
