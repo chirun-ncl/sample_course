@@ -8,30 +8,36 @@ structure:
       source: intro.tex
       leading_text: "This is a short paragraph that will be 
       inserted into the introduction page, just under the author and year."
+    - type: document
+      title: Introduction to Real Analysis
+      source: basic-analysis/realanal12.tex
     - type: part
-      title: Course Material
+      title: Notes
       content:
         - type: chapter
           title: LaTeX notes
-          source: latex.tex
+          source: latex/latex.tex
         - type: chapter
           title: Markdown notes
-          source: markdown.md
-        - type: chapter
-          title: Figures and Embedding
-          source: figures_embed.tex
-        - type: url
-          title: An External URL
-          source: "https://bbc.co.uk/"
+          source: markdown/handout.md
     - type: part
       title: Slides
       content:
         - type: slides
           title: Markdown Slides
-          source: slides/slides.md
+          source: markdown/lecture.md
         - type: slides
           title: Beamer Slides
           source: slides/slides.tex
+    - type: part
+      title: Other Content
+      content:
+        - type: chapter
+          title: Figures and Embedding
+          source: latex/figures_embed.tex
+        - type: url
+          title: An External URL
+          source: "https://bbc.co.uk/"
 themes: 
   - title: Default
     source: default
