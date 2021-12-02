@@ -35,9 +35,15 @@ structure:
         - type: chapter
           title: Figures and Embedding
           source: latex/figures_embed.tex
+        - type: notebook
+          title: Jupyter Notebook notes
+          source: markdown/handout.md
         - type: url
           title: An External URL
           source: "https://bbc.co.uk/"
+        - type: url
+          title: A Static File
+          source: static/data/dataset.RData
 themes: 
   - title: Default
     source: default

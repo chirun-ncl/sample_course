@@ -1,7 +1,6 @@
 Before we get on to the main topics in this week's handout - control flow and functions - there are a couple of topics
 to level up in first: using the `print()` function and a reminder of logical operators.
 
-
 ## The print function
 
 We're going to be using a bit more of the `print` function today in our scripts, to help us to see what's

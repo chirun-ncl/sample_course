@@ -415,111 +415,15 @@ Let's derive a method to solve this ODE on a computer, simply by applying some p
 
 ---
 
-
-### &nbsp; {: data-transition="none"}
-
 $$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
 
-![](images/explanation0.png){width=55%}
-
-
-What's our goal?
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation1.png){width=55%}
+![Schematic showing our goal](images/explanation1.png){width=55%}
 
 We want to know how $y$ evolves with $t$.
 
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation0.png){width=55%}
-
-What do we know?
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$ 
-![](images/explanation2.png){width=55%}
-
-$$y(0)=5$$
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation3.png){width=55%}
-
-$$\frac{\mathrm{d}y}{\mathrm{d}t}(0)=-\frac{5}{2}$$
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation4.png){width=55%}
-
-Suppose we use this to estimate the position of $y(1)$
-
-
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation5.png){width=55%}
-
-$y(1) = 5 -\left(\frac{5}{2}\right)h$, where $h$ is the separation in $t$
-
-
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation6.png){width=55%}
-
-$$y(1) = \frac{5}{2}$$
-
-
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation7.png){width=55%}
-
-$$\frac{\mathrm{d}y}{\mathrm{d}t}\left(\frac{5}{2}\right)=-\frac{5}{4}$$
- 
-
-
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation8.png){width=55%}
-
-And so on...
-
-
- 
-### &nbsp; {: data-transition="none"}
-$$ \frac{dy}{dt}=-\frac{y}{2}, \quad y(0)=5 $$
-![](images/explanation9.png){width=55%}
-
-And so on...
-
 ---
 
-![](images/euler.gif){width=80%}
-
----
-
-How does this compare to the exact solution?
-
----
-
-$h = 1$
-
-![](/static/images/week5/h1.png){width=80%}
-
----
-
-$h = 0.5$
-
-![](/static/images/week5/h0p5.png){width=80%}
-
----
-
-$h = 0.25$
-
-![](/static/images/week5/h0p25.png){width=80%}
+![Animation of Euler's method](images/euler.gif){width=80%}
 
 ---
 
