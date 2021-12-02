@@ -12,13 +12,13 @@ on:
 jobs:
   test-build:
     runs-on: ubuntu-latest
-    container: coursebuilder/coursebuilder-docker:latest
+    container: coursebuilder/chirun-docker:latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run the makecourse script
+    - name: Run the chirun script
       run: make
     - name: Setup webdirectory
-      run: mkdir -p deploy/SAM0000/2020/ && cp -r build/* deploy/SAM0000/2020/ && cp .github/workflows/index.html deploy/index.html
+      run: mkdir -p deploy/ && cp -r build/* deploy/
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
