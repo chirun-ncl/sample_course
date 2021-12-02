@@ -8,9 +8,6 @@ structure:
       source: intro.tex
       leading_text: "This is a short paragraph that will be 
       inserted into the introduction page, just under the author and year."
-    - type: document
-      title: Introduction to Real Analysis
-      source: basic-analysis/realanal12.tex
     - type: part
       title: Notes
       content:

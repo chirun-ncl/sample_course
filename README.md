@@ -5,10 +5,6 @@
 This repository contains a set of sample Chirun compatible notes, using both Markdown
 and LaTeX formatted documents. Notes, embeddable content and presentation slides are demonstrated.
 
-Included for demonstration is a modified copy of the first five chapters of 
-*Basic Analysis: Introduction to Real Analysis*, a free textbook released under CC BY-SA license.
-See https://www.jirka.org/ra/ for more information
-
 ### Build
 
 Build the notes locally by installing the
