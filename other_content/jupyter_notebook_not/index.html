@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Ann Example" />
+            <meta name="date" content="2021-12-02" />
+        
+
+        <title>Jupyter Notebook notes | Sample Course</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../static/styles.css">
+            <link rel="stylesheet" id="customiseCSS" href="../../static/light.css">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
+    <link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
+    <link rel="stylesheet" href="../../static/boole.css">
+    <link rel="stylesheet" href="../../static/numbasEmbed.css">
+
+    <link rel="stylesheet" href="../../static/bootstrap-toc.css?v=3">
+    <link rel="stylesheet" href="../../static/print.css">
+
+
+        
+    
+    
+            <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script defer src="../../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script defer src="../../static/customisation.js"></script>
+            <script defer src="../../static/mp4.js"></script>
+            
+            
+        
+    <script defer src="../../static/jquery.flexibleArea.js"></script>
+    <script defer src="../../static/spin.min.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/lib/codemirror.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/octave/octave.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/python/python.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/r/r.js"></script>
+    <script defer src="../../static/boole.js"></script>
+    <script defer src="../../static/numbasEmbed.js"></script>
+
+    <script defer src="../../static/bootstrap-toc.js"></script>
+
+    </head>
+    <body data-spy="scroll" data-target="#chapterTOC" data-offset="50">
+        
+<div class="collapse" id="navbarToggleCustomise">
+	<div class="bg-secondary text-white p-3">
+		<form onsubmit="return false;" id="navbarCustomise">
+			<div class="form-row">
+				<label>Theme Customisation</label>
+				<div id="themeSelector" class="form-group col-md-12">
+					<button class="btn btn-dark mr-2" value="dark">Dark</button>
+					<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
+					<button class="btn btn-light mr-4" value="light">Light</button>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label style="display: block" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="font-scale" min="50" max="600" value="100">
+					<button id="font-scale-reset" class="btn btn-sm">Reset</button>
+				</div>
+				<div class="form-group col-md-4">
+					<label style="display: block" for="p-space">Spacing (<span id="p-space-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="p-space" min="0" max="600" value="100">
+					<button id="p-space-reset" class="btn btn-sm">Reset</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<nav aria-label="breadcrumb">
+	<ul class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="../../index.html">Sample Course</a>
+		</li>
+		
+		<li class="breadcrumb-item">
+			<a href="../../other_content/index.html">Other Content</a>
+		</li>
+		
+		<li class="breadcrumb-item active">
+			Jupyter Notebook notes
+		</li>
+		<li class="ml-auto">
+			<button class="navbar-toggler p0" type="button" data-toggle="collapse" data-target="#navbarToggleCustomise" aria-controls="navbarToggleCustomise" aria-expanded="false" aria-label="Toggle customisations panel">
+				<i class="fa fa-cog" aria-hidden="true" title="Toggle customisations panel"></i> <span class="sr-only">Toggle customisations panel</span>
+			</button>
+		</li>
+	</ul>
+</nav>
+
+
+        <header>
+            
+            
+        </header>
+        <main>
+            
+    <div class="container mt-3">
+        <div class="row">
+            
+            <div id="sidebar" class="col-md-3">
+                <nav class="mb-3" id="chapterTOC" data-toggle="toc">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                        <li><a id="notebook-link" class="nav-link" href="../../other_content/jupyter_notebook_not/jupyter_notebook_not.ipynb" download><i class="fa fa-book" aria-hidden="true" title="Download Notebook"></i>&nbsp;Download Notebook</a></li>
+                        
+                        
+                        <li><a id="pdf-link" class="nav-link" href="../../other_content/jupyter_notebook_not/jupyter_notebook_not.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Download as PDF"></i>&nbsp;Download as PDF</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div id="content" class="col-md-9"> 
+            
+            <p>Before we get on to the main topics in this week's handout - control flow and functions - there are a couple of topics
+to level up in first: using the <code>print()</code> function and a reminder of logical operators.</p>
+<section class="section2"><h2>The print function</h2>
+<p>We're going to be using a bit more of the <code>print</code> function today in our scripts, to help us to see what's
+happening in our code.</p>
+<p>Recall that <code>print()</code> can be used with a value (of any type) inserted directly</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
+</pre></div>
+<p>It can also print more than one thing at once:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="s2">"World"</span><span class="p">)</span>
+</pre></div>
+<p>It can be used to print a variable</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>But what if we want the output to be something like this, where the 5 is a variable?</p>
+<div class="highlight"><pre><span></span>The value is 5
+</pre></div>
+<p>this is going to be a string with a variable value injected into it. The way this is done is as follows:</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The value is </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+<p><code>{}</code> is a placeholder for the variable that is specified inside <code>format()</code>. If we need to insert more than one variable
+then we can add them, comma-separated, inside <code>format()</code> as follows</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The values are </span><span class="si">{}</span><span class="s2"> and </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+<p>The placeholders can be labelled so that a variable can be inserted twice in the same string:</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The values are </span><span class="si">{0}</span><span class="s2"> and </span><span class="si">{1}</span><span class="s2">. Here's the first one again...</span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+<p>Things start to get a little complicated if you want to specify the format of the values you are inserting.
+Here's an example which prints <script type="math/tex">\pi</script> and <script type="math/tex">e</script> to 2 decimal places:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Some stuff to 2 decimal places... pi = </span><span class="si">{:.2f}</span><span class="s2"> and e = </span><span class="si">{:.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+<span class="c1"># or including the labels </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Some stuff to 2 decimal places... pi = </span><span class="si">{0:.2f}</span><span class="s2"> and e = </span><span class="si">{1:.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+<p>In <code>{0:.2f}</code>, the <code>0</code> is the label (so <code>np.pi</code> is inserted here), the <code>:</code> separates the label from the format
+specification, <code>.2</code> is for 2 decimal places and <code>f</code> is for float.</p>
+<p>We could spend all day talking about string formatting, and at this stage it will be easier to look up what you
+want to do when you get to it; here's a <a href="https://docs.python.org/3.4/library/string.html#string-formatting" target="_blank">guide</a>
+for reference later, or if you're just really keen.</p>
+</section><section class="section2"><h2>Logical operators</h2>
+<p>Recall from Handout 1 that we use logical operators to determine whether a statement is true or false</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span>
+</pre></div>
+<p>Others which can be used to make up such an expression are as follows:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operator</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td>==</td>
+<td>Equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not equal to</td>
+</tr>
+<tr>
+<td>a and b</td>
+<td>is a AND b</td>
+</tr>
+<tr>
+<td>a or b</td>
+<td>is a OR b</td>
+</tr>
+</tbody>
+</table>
+<p>Here are some more examples</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>            <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span>   <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span>  <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>        <span class="c1"># False (is the remainder when divided by 2 zero - in other words is a even)</span>
+</pre></div>
+<p>These will form an important part of the next section on control flow.</p>
+</section><section class="section2"><h2>Control Flow</h2>
+<p>This section introduces loops and if statements, part of a family of tools used by programmers and referred to
+generally as control flow.</p>
+<section class="section3"><h3>For Loops</h3>
+<p>A 'for loop' is used when we would like to repeat a piece of code many times, usually incrementing a value so that
+something slightly different happens at each iteration. </p>
+<p>The basic construction of a for loop is as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="c1"># do something with n</span>
+</pre></div>
+<p>Notice the syntax, importantly the colon at the end of the <code>for</code> line, and the indentation. It doesn't really matter
+what the indentation is, a tab or some spaces - a Python enthusiast will tell you that 4 spaces is best - the important
+thing is that you are consistent!</p>
+<p>Go on try it without...</p>
+<p><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+<span class="c1"># do something with n</span>
+</pre></div>
+Yep, you get an error!</p>
+<p>The comment labelled "do something with n" indicates exactly that, usually you would do something with the
+current value of <script type="math/tex">n</script>. The loop, in this case, runs 5 times, the first time <script type="math/tex">n=1</script>, then <script type="math/tex">n=2</script> and so on until <script type="math/tex">n=5</script>,
+and then it stops. </p>
+<p>So here my choice of "doing something" is to print the value of <script type="math/tex">n^2</script>:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>We could get fancy and print some text alongside the value:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The value squared is </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+<p>The <code>range(1,6)</code> could be any list, so we can do this, for example</p>
+<p><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+Or even other data types,</p>
+<div class="highlight"><pre><span></span><span class="n">bears</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"koala"</span><span class="p">,</span> <span class="s2">"panda"</span><span class="p">,</span> <span class="s2">"sun"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bears</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>The loop could do pretty much anything with <code>n</code>. For example here I add the values of n by initialising a variable s,
+and then adding n to it at each step of the loop:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Intitialise a variable</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Loop through adding n each time</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span>
+
+<span class="c1"># print final value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+<p>Notice that the line break and subsequent unindent marks the end of the for loop contents.</p>
+<p>The <code>s += n</code> adds <code>n</code> to the current <code>s</code> value and is equivalent to <code>s = s + n</code>. </p>
+<p><code>+=</code> is known as an assignment operator, and there are others such as <code>*=</code> e.g. <code>s *= n</code> equivalent to <code>s = s * n</code>.</p>
+</section><section class="exercise section3"><h3>Exercise 3.1</h3>
+<p>Practice looping with <code>for</code> in this exercise.</p>
+<p><div class="numbas_container" data-numbas-id="exercise-3-1" data-numbas-url="https://numbas.mathcentre.ac.uk/question/106512/python-factorial-for-loop/embed/?token=c0bd949b-3906-4f7f-aa5b-ec6246ed1d2a">
+<div class="feedback_bar">
+<button class="btn btn-danger" data-target="#exercise-3-1_collapse" data-toggle="collapse">
+            Show Exercise
+        </button>
+<div class="feedback_right">
+<span class="complete">✔</span>
+<span class="incomplete">✔</span>
+</div>
+</div>
+<div class="collapse-content collapse embed" id="exercise-3-1_collapse">
+<iframe class="numbas_iframe" src="https://numbas.mathcentre.ac.uk/question/106512/python-factorial-for-loop/embed/?token=c0bd949b-3906-4f7f-aa5b-ec6246ed1d2a"></iframe>
+</div>
+</div></p>
+</section><section class="section3"><h3>While Loops</h3>
+<p>Loops aren't always faster, but can offer a lot of flexibility. For example a <code>while</code> loop can run whilst a certain
+condition is satisfied, e.g.</p>
+<div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># some value we'll add to</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># this is my counter</span>
+
+<span class="k">while</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>    <span class="c1"># increment the counter</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span>    <span class="c1"># add to s  </span>
+
+<span class="c1"># Output the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"s is equal to </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+<p>Here, the <code>s &lt; 1000</code> is a logical expression, it returns either true or false, and so the while loop can be read
+"while s &lt; 1000 is true". Note that you might expect the final value of <code>s</code> to be less than 1000. Have a read through
+the code logic to convince yourself that it is sensible that its value should be greater than 1000.</p>
+<p>Note that it's easy to get stuck in an infinite while loop, if the condition that is set happens to never be satisfied.
+If this happens to you then the stop button in the Console, or Ctrl-C will stop your code!</p>
+</section><section class="section3"><h3>If statements</h3>
+<p>An <code>if</code> statement ensures that a bit of code is only executed if a condition is met:
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"that is true"</span><span class="p">)</span>
+</pre></div>
+The <code>print</code> command is only executed "if x &gt;= 2" is true. On the other hand here,</p>
+<p><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"that is true"</span><span class="p">)</span>
+</pre></div>
+the <code>print</code> command in the if statement is not executed.</p>
+<p>That isn't the whole story: we can use <code>if</code>...<code>else</code>..., with the command after <code>else</code> acting as a fall back,
+for example,</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is less than 2"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is not less than 2"</span><span class="p">)</span>
+</pre></div>
+<p>Or, for even more options, <code>if</code>...<code>elif</code>...<code>else</code>...
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is less than 2"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is equal to 2"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is greater than 2"</span><span class="p">)</span>
+</pre></div></p>
+<p>Take note again of the indenting. This is particularly important for nested clauses. The following is an alternative
+to the <code>while</code> loop above:</p>
+<div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>    <span class="c1"># increment the counter</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span>    <span class="c1"># calculate the new sum  </span>
+    <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="c1"># Output the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+<p>Here the command <code>break</code> ends the for loop when <code>s &gt; 1000</code>. Of course this wasn't as good as our while loop as we had
+to guess how many iterations to use (i.e. that 100 was large enough). Notice how we can see which commands go with
+the <code>if</code> and <code>for</code> respectively, thanks to the consistent indenting.</p>
+</section><section class="section3"><h3>Control flow and array elements</h3>
+<p>Recall that we can query a single element of a list or array like this:</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+<p>We can also update the value inside a list:
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div></p>
+<p>We could use this inside a for loop. Suppose we try to fill an array t with values. We might expect that we
+could do this to update the n-th element of <code>t</code> at each iteration, but not quite. Python is happy over-writing
+array values, but isn't happy if they don't yet exist. So this doesn't work:</p>
+<p><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+The solution is to either append,</p>
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>or, using NumPy, initialise <code>t</code> as an empty array first using the <code>np.zeros()</code> function</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+<p>then the code works perfectly. Check with</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+<p>Note this is the same as
+<div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+and that this way (using vector arithmetic) is much more efficient; using for loops is not always the best solution.
+I take a look at the performance of the above two options in an interlude shortly.</p>
+</section><section class="section3"><h3>For loops plot example</h3>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Array of x values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Plot f(x)=xe^(ax) for a from 1 to 5</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<p>Which produces this plot:</p>
+<figure class="figure1" data-title="Five curves plotted on the same axes, each one using a different value of a inside the function."><img alt="Five curves plotted on the same axes, each one using a different value of a inside the function." src="images/lecture_multiplot.png" width="90%"/></figure><p><em><a href="files/lecture_multiplot.py" target="_blank">Download the full source code for this plot</a></em></p>
+</section><section class="exercise section3"><h3>Exercise 3.2</h3>
+<p>Use the above as a template to help you tackle the following exercise:</p>
+<p><div class="numbas_container" data-numbas-id="exercise-3-2" data-numbas-url="https://numbas.mathcentre.ac.uk/question/106518/mordell-curves/embed/?token=7a66dea9-5a8e-4d45-b618-e1e51ed6391a">
+<div class="feedback_bar">
+<button class="btn btn-danger" data-target="#exercise-3-2_collapse" data-toggle="collapse">
+            Show Exercise
+        </button>
+<div class="feedback_right">
+<span class="complete">✔</span>
+<span class="incomplete">✔</span>
+</div>
+</div>
+<div class="collapse-content collapse embed" id="exercise-3-2_collapse">
+<iframe class="numbas_iframe" src="https://numbas.mathcentre.ac.uk/question/106518/mordell-curves/embed/?token=7a66dea9-5a8e-4d45-b618-e1e51ed6391a"></iframe>
+</div>
+</div></p>
+</section></section><section class="section2"><h2>Functions</h2>
+<p>Python makes it possible to write your own functions, which take some input and return a value or values, in just the
+same way as Python's built-in functions. This helps to keep your Python code as modular as possible.</p>
+<p>The syntax for creating a function is as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"My function prints this"</span><span class="p">)</span>
+</pre></div>
+<p>Note a similar syntax as for control flow: the function begins with the keyword <code>def</code> and then the function name
+"my_func". This is followed by input arguments inside brackets - for this function there are none, and finally a colon.
+The contents of the function are then indented. </p>
+<p>We can call the function with</p>
+<div class="highlight"><pre><span></span><span class="n">my_func</span><span class="p">()</span>
+</pre></div>
+<p>either from the same file or the Console.</p>
+<p>Now let's add an input argument to our function and a more descriptive name:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zoo_visit</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I went to the zoo and saw a </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
+
+<span class="n">zoo_visit</span><span class="p">(</span><span class="s2">"koala"</span><span class="p">)</span>
+<span class="n">zoo_visit</span><span class="p">(</span><span class="s2">"panda"</span><span class="p">)</span>
+<span class="n">zoo_visit</span><span class="p">(</span><span class="s2">"sun bear"</span><span class="p">)</span>
+</pre></div>
+<p>We can also set a default value by using argument = ... in the parentheses. This default is used if the input
+argument is not set.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zoo_visit</span><span class="p">(</span><span class="n">animal</span><span class="o">=</span><span class="s2">"bear"</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I went to the zoo and saw a </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
+
+<span class="n">zoo_visit</span><span class="p">(</span><span class="s2">"koala"</span><span class="p">)</span>
+<span class="n">zoo_visit</span><span class="p">(</span><span class="s2">"panda"</span><span class="p">)</span>
+<span class="n">zoo_visit</span><span class="p">(</span><span class="s2">"sun bear"</span><span class="p">)</span>
+<span class="n">zoo_visit</span><span class="p">()</span>
+</pre></div>
+<p>Any data type can be sent to a function. Here's a list, with a for loop to print each value - pay careful attention
+to the indenting:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_my_list</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">print_my_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+<p>And a simple one with a number</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_a_number</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">square_a_number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>All of the above examples print something. The functions we have been using however return a value which can be
+assigned to a variable. For example at the moment this does not do what we might like</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">square_a_number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>To return a value (or values) from a function we need to use a <code>return</code> statement. This is done as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_a_number</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">square_a_number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>Note that the <code>x</code> in the function argument and the <code>x</code> outside the function are completely unrelated.
+This is known as the scope of a variable.</p>
+<p>Now let's extend this by accepting two input arguments:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_me_the_bigger</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">show_me_the_bigger</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<section class="exercise section3"><h3>Exercise 3.3</h3>
+<p>Some function practice.</p>
+<p><div class="numbas_container" data-numbas-id="exercise-3-3" data-numbas-url="https://numbas.mathcentre.ac.uk/question/106519/cube-and-add/embed/?token=b9fffaf1-d4ba-4ebd-a81b-6684392575dc">
+<div class="feedback_bar">
+<button class="btn btn-danger" data-target="#exercise-3-3_collapse" data-toggle="collapse">
+            Show Exercise
+        </button>
+<div class="feedback_right">
+<span class="complete">✔</span>
+<span class="incomplete">✔</span>
+</div>
+</div>
+<div class="collapse-content collapse embed" id="exercise-3-3_collapse">
+<iframe class="numbas_iframe" src="https://numbas.mathcentre.ac.uk/question/106519/cube-and-add/embed/?token=b9fffaf1-d4ba-4ebd-a81b-6684392575dc"></iframe>
+</div>
+</div></p>
+</section><section class="exercise section3"><h3>Exercise 3.4</h3>
+<p>In this exercise we'll bring the work we did in exercise 3.1 into a function.</p>
+<p><div class="numbas_container" data-numbas-id="exercise-3-4" data-numbas-url="https://numbas.mathcentre.ac.uk/question/106521/python-factorial-function/embed/?token=48c8aa16-a1a5-452b-961f-1d8431b5c34b">
+<div class="feedback_bar">
+<button class="btn btn-danger" data-target="#exercise-3-4_collapse" data-toggle="collapse">
+            Show Exercise
+        </button>
+<div class="feedback_right">
+<span class="complete">✔</span>
+<span class="incomplete">✔</span>
+</div>
+</div>
+<div class="collapse-content collapse embed" id="exercise-3-4_collapse">
+<iframe class="numbas_iframe" src="https://numbas.mathcentre.ac.uk/question/106521/python-factorial-function/embed/?token=48c8aa16-a1a5-452b-961f-1d8431b5c34b"></iframe>
+</div>
+</div></p>
+</section><section class="interlude section3"><h3>Interlude: List comprehension</h3>
+<p>Here is a neat trick! It can be used when you have a function that returns a value, and you'd like to make a list using the output of that
+function for various inputs. For example, let's say you have some function:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_something</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">a</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span><span class="o">/</span><span class="mf">2.5</span><span class="p">)</span><span class="o">**</span><span class="mi">6</span>
+</pre></div>
+<p>and a list of values you want to calculate that function for:</p>
+<div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">]</span>
+</pre></div>
+<p>You can get the result of running the function on each element in the list by performing what's called a "list comprehension":</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_something</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">a_list</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>Of course, if you're using numpy functions, this is often not required because they can act on lists already (e.g. <code>np.sin([0.1,0.2,0.3])</code>).
+Still, list comprehension can be useful!</p>
+</section></section><section class="section2"><h2>Adding help to your function</h2>
+<p>A comment contained within three quotes <code>"""</code> at the start of our custom function is used to display help.
+It is known as a <em>docstring</em> (documentation string)</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">sin_plus_cos</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Takes in a value x and </span>
+<span class="sd">    returns cos(x)+sin(x)</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>Test your help with</p>
+<div class="highlight"><pre><span></span>help(sin_plus_cos)
+</pre></div>
+<section class="section3"><h3>Error messages</h3>
+<p>Consider the following function (which is a bit silly!)</p>
+<div class="highlight"><pre><span></span><span class="k">def</span>  <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>    
+
+<span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>We will get an error when we try the following:</p>
+<p><div class="highlight"><pre><span></span><span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<pre class="output-block"><code>Traceback (most recent call last):
+
+  File "&lt;ipython-input-72-1bc64584a5ff&gt;", line 1, in &lt;module&gt;
+    runfile('/Users/georgestagg/python/tests/untitled0.py', wdir='/Users/georgestagg/python/tests')
+
+  File "/Users/georgestagg/anaconda3/lib/python3.7/site-packages/spyder_kernels/customize/spydercustomize.py", line 786, in runfile
+    execfile(filename, namespace)
+
+  File "/Users/georgestagg/anaconda3/lib/python3.7/site-packages/spyder_kernels/customize/spydercustomize.py", line 110, in execfile
+    exec(compile(f.read(), filename, 'exec'), namespace)
+
+  File "/Users/georgestagg/python/tests/untitled0.py", line 6, in &lt;module&gt;
+    fraction(1,0)
+
+  File "/Users/georgestagg/python/tests/untitled0.py", line 3, in fraction
+    print("as a decimal: {}".format(numerator/denominator))
+
+ZeroDivisionError: division by zero</code></pre></p>
+<p>Not very easy to read, you have to go right to the bottom to see where the problem is!</p>
+<section class="section4"><h4>Try and except</h4>
+<p>The try and except block is used to catch and handle exceptions. Python executes code following the try statement,
+and if there is an exception then the code that follows the except statement is executed.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Something went wrong"</span><span class="p">)</span>
+
+<span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">inverse</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span>
+</pre></div>
+<p>This gives quite a generic error message, which does not depend on which of the two problems
+(zero division or string input) that we have. </p>
+<p>We can be more precise with error handling by using the exception classes provided by Python. In the long code output
+above you will have noticed that the error was classified as a <code>ZeroDivisionError</code>. There are others including
+<code>TypeError</code> which will be the problem when we use <code>fraction(1,"2")</code> as input. For a full list
+<a href="https://docs.python.org/3/library/exceptions.html" target="_blank">see the Python documentation</a>. </p>
+<p>We can catch these specific errors and send more specific info back as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+  <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: please enter a non-zero value"</span><span class="p">)</span>
+  <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: input argument should be a float or integer"</span><span class="p">)</span>
+
+<span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">inverse</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span>
+<span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</section><section class="section4"><h4>Custom exceptions</h4>
+<p>One more thing we might want to do with this function is reject decimal input values. We can do this by proactively
+"raising" an exception by querying the input. The syntax goes like this:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">"Please enter a non-zero denominator"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+
+<span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<p>When we raise an error like this we get the full traceback, like the example at the start of this section.</p>
+</section></section></section><section class="section2"><h2>Writing algorithms</h2>
+<p>When does a piece of code become an algorithm? For us we're pretty much there already at that point.</p>
+<p>An algorithm is a set of step-by-step instructions, in our case carried out by our Python code, to solve a problem. </p>
+<p>As an analogy, in the problem of baking a cake, a recipe book lays out the step-by-step instructions to achieve the
+tasty goal. The detail is such that, if the instructions are followed precisely, a second cake produced using the same
+recipe will be identical. </p>
+<p>Our goal in the next two worked examples will be to identify what the steps are to solving problems presented to us,
+and then how to code them in Python.</p>
+<p>Here are two worked examples:</p>
+</section><section class="section2"><h2>Worked example: Fibonacci sequence</h2>
+<p>In the Fibonacci sequence, each number is the sum of the two preceding ones:</p>
+<script type="math/tex; mode=display"> F_{n}=F_{n-1}+F_{n-2}</script>
+<p>where typically the seed values <script type="math/tex">F_{0}=0,F_{1}=1</script> are used.</p>
+<p>Our task is to write an algorithm that puts (say the first 15) values of the sequence into a vector.</p>
+<section class="section3"><h3>Planning</h3>
+<p>It's useful to plan out what we want to do in advance. In this case I note the following:</p>
+<ul>
+<li>I will need a vector <code>F</code> which I can initialise with <code>zeros</code>, ready to fill with 15 values</li>
+<li>The first two values are given, so I can set <code>F[0]</code> and <code>F[1]</code> straight away (<script type="math/tex">F_0</script> is going to be stored in <code>F[0]</code>, <script type="math/tex">F_1</script> in <code>F[1]</code> and so on).</li>
+<li>For each value from <script type="math/tex">n = 2</script> and upwards, <code>F[n]</code> is going to depend on the values of <code>F[n-1]</code> and <code>F[n-2]</code>. As this will get repetitive, it will be ideal for a <code>for</code> or <code>while</code> loop!</li>
+</ul>
+</section><section class="section3"><h3>Coding the algorithm</h3>
+<p>Now that I've done a bit of planning, I am in a position to put this into Python:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Set up an empty vector F for Fibonacci values</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Set the seed values</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># loop through from n = 2 upwards to get other values</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span>
+   <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">F</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Take a look at the output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+</pre></div>
+<p>Try increasing the number of Fibonacci values calculated. Note that they grow very fast! If you like, you could make a
+plot showing how quickly they grow by plotting <code>F</code> with matplotlib.</p>
+</section></section><section class="section2"><h2>Worked example 2: Euler's Method</h2>
+<p>Spoiler alert: Later in your degree you will be confronted with all sorts of problems involving differential equations,
+as many physical behaviours can be easily described with them. A differential equation is simply an equation which
+relates some function(s) to its derivatives, for example</p>
+<script type="math/tex; mode=display"> \frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{y}{2}. </script>
+<p>This sort of differential equation (involving the derivative of a function which depends on just one variable) is
+known as an <strong>ordinary differential equation (ODE)</strong> and is usually associated with some sort of initial condition,
+for example the value at <script type="math/tex">y(0)</script>, in which case it is known as an <strong>initial value problem</strong>.</p>
+<p>To name but a few differential equations: Newton's second law, Maxwell's equations of electromagnetism,
+radioactive decay, Newton's law of cooling... some of these you will have already met in some form... others you will
+meet: the heat equation (thermodynamics), the Schrödinger equation (quantum mechanics), Navier-Stokes (fluid dynamics),
+and many more... </p>
+<p>It is interesting for us to look at solving differential equations for several reasons. One, that it is clearly going
+to be useful to your later study. But secondly, the oldest algorithm to compute a numerical solution to straight forward
+problems of this sort is <strong>Euler’s method</strong>, which involves little more than a <code>for</code> loop.</p>
+<p>Suppose that we know the value of <script type="math/tex">y(t_0)</script> = <script type="math/tex">y_0</script> and we want to find <script type="math/tex">y(t_1)</script> = <script type="math/tex">y_1</script> for some equation in the form</p>
+<script type="math/tex; mode=display"> \frac{\mathrm{d}y}{\mathrm{d}t}=f(t,y). </script>
+<p>If <script type="math/tex">h = t_1-t_0</script> is very small, then we can reasonably expect that <script type="math/tex">y_1</script> will be close to the tangent line to <script type="math/tex">y(t)</script>
+at <script type="math/tex">t_0</script>. The gradient of that tangent line is <script type="math/tex">m = f(t_0,y_0)</script>, the right hand side of the ODE at <script type="math/tex">t_0</script>. So,
+from elementary geometry,</p>
+<script type="math/tex; mode=display"> y_1-y_0 \approx m(t_1 -t_0) = f(t_0,y_0)(t_1 -t_0) </script>
+<p>And since <script type="math/tex">t_1 = h + t_0</script>, we obtain,</p>
+<script type="math/tex; mode=display"> y_1 \approx y_0 + f(t_0,y_0)h. </script>
+<p>Now we can use the same method to find <script type="math/tex">y_2</script> from <script type="math/tex">y_1</script>, and so on. So the Euler Method approximates the solution using</p>
+<script type="math/tex; mode=display"> y_{n} = y_{n-1} + hf(t_{n-1},y_{n-1}). </script>
+<p>Here's a visual of how it works:</p>
+<figure class="figure2" data-title=""><img alt="" src="images/euler.gif" width="90%"/></figure><p>The accuracy will clearly depend on choosing <script type="math/tex">h</script> carefully. As we can see, as the stepsize <script type="math/tex">h</script> is reduced,
+the solution approaches the exact (red curve below)</p>
+<script type="math/tex; mode=display"> h = 1</script>
+<figure class="figure3" data-title=""><img alt="" src="images/h1.png" width="90%"/></figure><script type="math/tex; mode=display"> h = 0.5</script>
+<figure class="figure4" data-title=""><img alt="" src="images/h0p5.png" width="90%"/></figure><script type="math/tex; mode=display"> h = 0.25</script>
+<figure class="figure5" data-title=""><img alt="" src="images/h0p25.png" width="90%"/></figure><p>Unfortunately, small <script type="math/tex">h</script> means more iterations. Even more unfortunately, Euler’s method is often not stable,
+meaning that the error in the approximation can quickly accumulate to such a size that the numerical solution
+diverges wildly from the true solution.</p>
+<p>The main value in Euler’s method is that it illustrates an important principle. Other, more reliable, methods use the
+same basic idea to find numerical solutions to differential equations, but use more information about <script type="math/tex">y(t)</script> to move
+from one point to the next.</p>
+<section class="section3"><h3>Coding the algorithm</h3>
+<p>The general problem is:</p>
+<script type="math/tex; mode=display"> \frac{\mathrm{d}y}{\mathrm{d}t}=f(t,y). </script>
+<p>and we would like to code up</p>
+<script type="math/tex; mode=display"> y_{n} = y_{n-1} + hf(t_{n-1},y_{n-1}). </script>
+<p>for some function <script type="math/tex">f</script> which might depend on <script type="math/tex">t</script> and <script type="math/tex">y</script>, some stepsize in <script type="math/tex">t</script> given by <script type="math/tex">h</script>, and where <script type="math/tex">y_0</script> is known.
+It's very similar in many ways to the Fibonacci example. In my example above, the differential equation is</p>
+<script type="math/tex; mode=display"> \frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{y}{2},\quad y(0)=5. </script>
+<p>So in fact my function will only depend on <script type="math/tex">y</script>. Here's my plan:</p>
+<ul>
+<li>Set up an function to do the job of <script type="math/tex">f(y)=-y/2</script>
+</li>
+<li>Choose a step-size for <script type="math/tex">h</script>: let's pick <script type="math/tex">h=0.5</script>.</li>
+<li>Choose how many values of <script type="math/tex">y</script> I'm going to compute - let's say 20 - and initialise a vector for <code>y</code> using <code>np.zeros</code>.</li>
+<li>Set the initial value <code>y[0]</code> = 0.</li>
+<li>Write a for loop to calculate the remaining values of <code>y[n]</code>, based on the value of <code>y[n-1]</code>.</li>
+</ul>
+<p>Here we go:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># A function for the RHS of the ODE</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># Time step</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># Initialise y and set value when t = 0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># For loop to calculate remaining values</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+<p>If we want to plot <script type="math/tex">y</script> versus <script type="math/tex">t</script> we will need a vector for <script type="math/tex">t</script>. Given the timestep <script type="math/tex">h=0.5</script>, we know that this is going to be</p>
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+<p>So now we could plot</p>
+<div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+<figure class="figure6" data-title="Solution to the ODE problem above using Euler method"><img alt="Solution to the ODE problem above using Euler method" src="images/lecture_euler.png" width="90%"/></figure><p><em><a href="files/lecture_euler.py" target="_blank">Download the full source code for this plot</a></em></p>
+</section><section class="exercise section3"><h3>Exercise 3.5 (Harder!)</h3>
+<ul>
+<li>Use the code above as a template (i.e. copy and paste it!) and change the problem to solve</li>
+</ul>
+<script type="math/tex; mode=display">\frac{\mathrm{d}y}{\mathrm{d}t}=0.5y(1-y),\quad y(0)=0.5 </script>
+<p>You should need to change only two lines in the code (the function and the initial value).</p>
+<ul>
+<li>Write a <code>for</code> loop over the whole bit of code above to change the value of <script type="math/tex">y(0)</script> to different values between 0 and 1.
+It might look something like this:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y0</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="c1"># Euler's method code as above in here</span>
+    <span class="c1"># except set the initial condition with y[0] = y0</span>
+</pre></div>
+<p>If you plot all of the solutions then you should get something like this:</p>
+<figure class="figure7" data-title="Solution to this example showing multiple plotted lines"><img alt="Solution to this example showing multiple plotted lines" src="images/lecture_euler2.png" width="70%"/></figure><p>The differential equation is a rather famous one, and is used for population modelling. The <script type="math/tex">y</script> here represents the
+proportion of a population area that is filled. And the <script type="math/tex">0.5</script> in the RHS of the ODE is a parameter which determines the rate of growth/decline
+(e.g. try changing it to -0.5 to see decline).</p>
+</section></section><section class="section2"><h2>Next time</h2>
+<p>That's it for this week! We now have all the skills to import data, run algorithms on it, and produce beautiful plots
+of output. We'll expand on the data analysis side of things next week, as we look at some curve fitting techniques.</p>
+</section>
+            </div>
+        </div>
+    </div>
+
+        </main>
+		
+		<footer class="text-muted">
+	<hr>
+	<div class="container">
+		<div class="float-right">
+			<ul style="list-style: none">
+			<li><a href="#">Back to top</a></li>
+			
+			
+			<li><a href="../../other_content/jupyter_notebook_not/jupyter_notebook_not.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download as PDF</a></li>
+			
+			</ul>
+		</div>
+		<p>Generated using <a target="_blank" href="https://github.com/chirun-ncl/chirun">Chirun</a>, written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+		<p>This page last generated: 2021-12-02</p>
+	</div>
+</footer>
+		
+    </body>
+</html>

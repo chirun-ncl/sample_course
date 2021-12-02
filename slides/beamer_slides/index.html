@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Ann Example" />
+            <meta name="date" content="2021-12-02" />
+        
+
+        <title>Beamer Slides | Sample Course</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../static/styles.css">
+            <link rel="stylesheet" id="customiseCSS" href="../../static/light.css">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
+    <link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
+    <link rel="stylesheet" href="../../static/boole.css">
+    <link rel="stylesheet" href="../../static/numbasEmbed.css">
+
+    <link rel="stylesheet" href="../../static/bootstrap-toc.css?v=3">
+    <link rel="stylesheet" href="../../static/print.css">
+
+
+        
+    
+    
+            <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script defer src="../../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script defer src="../../static/customisation.js"></script>
+            <script defer src="../../static/mp4.js"></script>
+            
+            
+        
+    <script defer src="../../static/jquery.flexibleArea.js"></script>
+    <script defer src="../../static/spin.min.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/lib/codemirror.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/octave/octave.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/python/python.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/r/r.js"></script>
+    <script defer src="../../static/boole.js"></script>
+    <script defer src="../../static/numbasEmbed.js"></script>
+
+    <script defer src="../../static/bootstrap-toc.js"></script>
+
+    </head>
+    <body data-spy="scroll" data-target="#chapterTOC" data-offset="50">
+        
+<div class="collapse" id="navbarToggleCustomise">
+	<div class="bg-secondary text-white p-3">
+		<form onsubmit="return false;" id="navbarCustomise">
+			<div class="form-row">
+				<label>Theme Customisation</label>
+				<div id="themeSelector" class="form-group col-md-12">
+					<button class="btn btn-dark mr-2" value="dark">Dark</button>
+					<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
+					<button class="btn btn-light mr-4" value="light">Light</button>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label style="display: block" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="font-scale" min="50" max="600" value="100">
+					<button id="font-scale-reset" class="btn btn-sm">Reset</button>
+				</div>
+				<div class="form-group col-md-4">
+					<label style="display: block" for="p-space">Spacing (<span id="p-space-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="p-space" min="0" max="600" value="100">
+					<button id="p-space-reset" class="btn btn-sm">Reset</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<nav aria-label="breadcrumb">
+	<ul class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="../../index.html">Sample Course</a>
+		</li>
+		
+		<li class="breadcrumb-item">
+			<a href="../../slides/index.html">Slides</a>
+		</li>
+		
+		<li class="breadcrumb-item active">
+			Beamer Slides
+		</li>
+		<li class="ml-auto">
+			<button class="navbar-toggler p0" type="button" data-toggle="collapse" data-target="#navbarToggleCustomise" aria-controls="navbarToggleCustomise" aria-expanded="false" aria-label="Toggle customisations panel">
+				<i class="fa fa-cog" aria-hidden="true" title="Toggle customisations panel"></i> <span class="sr-only">Toggle customisations panel</span>
+			</button>
+		</li>
+	</ul>
+</nav>
+
+
+        <header>
+            
+            
+        </header>
+        <main>
+            
+    <div class="container mt-3">
+        <div class="row">
+            
+            <div id="sidebar" class="col-md-3">
+                <nav class="mb-3" id="chapterTOC" data-toggle="toc">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                        <li><a class="nav-link" href="../../slides/beamer_slides/beamer_slides.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Download Slides as PDF"></i>&nbsp;Download Slides as PDF</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div id="content" class="col-md-9"> 
+            
+                <div class="breamer-titlepage">
+<h1>Sample Slides</h1>
+<p class="beamer-authors">
+<span class="author">Ann Example</span>
+</p>
+<p class="beamer-date"></p>
+</div>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Series Results</p>
+</header>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  \sum _{x=0}^{\infty } q^ x & =&  \frac{1}{1-q}, \  |q|<1. \\ \frac{d}{dx}\left(\sum _{x=0}^{\infty } q^ x \right) & =&  \sum _{x=0}^{\infty } xq^{x-1}=\sum _{x=1}^{\infty } xq^{x-1} = \frac{1}{(1-q)^2}, \  |q|<1. \\ \sum _{x=0}^{N} q^ x & =&  \frac{1-q^{N+1}}{1-q}. \\ \sum _{n=0}^{\infty } \frac{x^ n}{n!} & =&  1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots = e^ x \end{eqnarray*}</script></span>
+</div>
+<hr/>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Expectation</p>
+</header>
+<p>
+<b class="bf">Discrete Random Variables</b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  E[g(X)] & =&  \sum _{x \in S} g(x) Pr(X=x) \\ Var(X) & =&  E[X^2] - E[X]^2. \end{eqnarray*}</script></span>
+<p>
+<b class="bf">Continuous Random Variables</b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  E[g(X)] & =&  \int _{-\infty }^{\infty } g(x) f_ X(x) dx \\ Var(X) & =&  E[X^2]-E[X]^2. \end{eqnarray*}</script></span>
+</div>
+<hr/>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Families of Discrete Random Variables I</p>
+</header>
+<p>
+<b class="bf">Bernoulli random variables, <script type="math/tex">X \sim Bern(p)</script></b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \left\{  \begin{array}{cc} p, &  x=1, \\ 1-p, &  x=0. \end{array} \right. \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = p \qquad Var(X) = p(1-p).</script></span>
+<p>
+<b class="bf">Binomial random variables, <script type="math/tex">X \sim Bin(n,p)</script></b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \left( \begin{array}{c} n \\ x \end{array} \right) p^ x (1-p)^{n-x},\   x=0,1,\ldots ,n, \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = np \qquad Var(X) = np(1-p).</script></span>
+<p>
+<b class="bf">Poisson random variables, <script type="math/tex">X \sim Po(\lambda ), \  \lambda >0</script></b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \frac{\lambda ^ x e^{-\lambda }}{x!}, \  x=0,1,2,\ldots . \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = \lambda \qquad Var(X) = \lambda .</script></span>
+</div>
+<hr/>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Families of Discrete Random Variables II</p>
+</header>
+<p>
+<b class="bf">Geometric random variables, <script type="math/tex">X \sim Geom(p)</script></b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  p(1-p)^{x-1}, \  x=1,2,\ldots . \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = \frac{1}{p} \qquad Var(X) = \frac{1-p}{p^2}.</script></span>
+<p>
+<b class="bf">Negative Binomial random variables, <script type="math/tex">X \sim NBin(r,p)</script></b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \left( \begin{array}{cc} x-1 \\ r-1 \end{array} \right) p^ r (1-p)^{n-r}, \  x=r,r+1,\ldots . \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = \frac{r}{p} \qquad Var(X) = \frac{r(1-p)}{p^2}.</script></span>
+<p>
+<b class="bf">Discrete Uniform random variables, <script type="math/tex">X \sim U(1,2,\ldots ,n)</script></b>
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  Pr(X=x) & =&  \frac{1}{n}, \  x=1,2,\ldots ,n. \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = (n+1)/2 \qquad Var(X) = (n^2-1)/12.</script></span>
+</div>
+<hr/>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Families of Continuous Random Variables I</p>
+</header>
+<p>
+<b class="bf">Uniform random variables</b>, <script type="math/tex">X \sim U(a,b)</script>, 
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  f_ X(x) & =&  \frac{1}{b-a}, \  a < x < b. \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X]=\frac{a+b}{2} \qquad Var(X) = \frac{(b-a)^2}{12}.</script></span>
+<p>
+<b class="bf">Exponential random variables</b>, <script type="math/tex">X \sim Exp(\lambda )</script>, 
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  f_ X(x)& =&  \lambda e^{-\lambda x}, \  x>0, \  \lambda >0. \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X]= \frac{1}{\lambda } \qquad Var(X) = \frac{1}{\lambda ^2}.</script></span>
+<p>
+<b class="bf">Normal random variables</b>, <script type="math/tex">X \sim N(\mu ,\sigma ^2)</script>, 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">f_ X(x) = \frac{1}{\sqrt{2\pi \sigma ^2}} e^{-\frac{(x-\mu )^2}{2\sigma ^2}}, \  -\infty < x < \infty , \  -\infty < \mu < \infty , \  \sigma >0.</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X]= \mu \qquad Var(X) = \sigma ^2.</script></span>
+</div>
+<hr/>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Families of Continuous Random Variables II</p>
+</header>
+<p>
+<b class="bf">Gamma random variables</b>, <script type="math/tex">X \sim Ga(n,\lambda )</script>, 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">f_ X(x) = \frac{\lambda ^{n}}{\Gamma (n)} x^{n-1} e^{-\lambda x}, \qquad x>0, \  n>0,\  \lambda >0, \  \Gamma (n)=(n-1)!</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X] = \frac{n}{\lambda } \qquad Var(X) = \frac{n}{\lambda ^2}.</script></span>
+<p>
+<b class="bf">Beta random variables</b>, <script type="math/tex">X \sim Beta(a,b)</script>, 
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  f_ X(x) & =&  \frac{1}{B(a,b)} x^{a-1}(1-x)^{b-1} \\ & =&  \frac{\Gamma (a+b)}{\Gamma (a)\Gamma (b)} x^{a-1}(1-x)^{b-1},\qquad 0<x<1, \  a>0, \  b >0. \end{eqnarray*}</script></span>
+<span class="dmath"><script type="math/tex; mode=display">E[X]=\frac{a}{a+b} \qquad Var(X) = \frac{ab}{(a+b)^2(a+b+1)}.</script></span>
+</div>
+<hr/>
+<div class="beamer-frame">
+<header>
+<p class="beamer-frame-title">Column example</p>
+</header>
+<div class="beamer-columns">
+<div class="beamer-column" style="width:281.853pt">
+ Here is some text in a left hand column. 
+</div> <div class="beamer-column" style="width:187.90200000000002pt">
+<img alt="An image showing an example plot of a histogram." src="../../slides/beamer_slides/images/img-0001.png" style="width:469.755pt"/>
+</div>
+</div>
+</div>
+<hr/>
+
+            </div>
+        </div>
+    </div>
+
+        </main>
+		
+		<footer class="text-muted">
+	<hr>
+	<div class="container">
+		<div class="float-right">
+			<ul style="list-style: none">
+			<li><a href="#">Back to top</a></li>
+			
+			
+			<li><a href="../../slides/beamer_slides/beamer_slides.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download as PDF</a></li>
+			
+			</ul>
+		</div>
+		<p>Generated using <a target="_blank" href="https://github.com/chirun-ncl/chirun">Chirun</a>, written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+		<p>This page last generated: 2021-12-02</p>
+	</div>
+</footer>
+		
+    </body>
+</html>
