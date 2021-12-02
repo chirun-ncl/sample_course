@@ -16,44 +16,6 @@ structure:
 - build_pdf: false
   content:
   - build_pdf: true
-    pdf_url: introduction_to_real/pdf/real_numbers.pdf
-    slug: real_numbers
-    source: rn-chapter.html
-    title: Real Numbers
-    type: html
-  - build_pdf: true
-    pdf_url: introduction_to_real/pdf/sequences_and_series.pdf
-    slug: sequences_and_series
-    source: seq-chapter.html
-    title: Sequences and Series
-    type: html
-  - build_pdf: true
-    pdf_url: introduction_to_real/pdf/continuous_functions.pdf
-    slug: continuous_functions
-    source: lim-chapter.html
-    title: Continuous Functions
-    type: html
-  - build_pdf: true
-    pdf_url: introduction_to_real/pdf/the_derivative.pdf
-    slug: the_derivative
-    source: der-chapter.html
-    title: The Derivative
-    type: html
-  - build_pdf: true
-    pdf_url: introduction_to_real/pdf/the_riemann_integral.pdf
-    slug: the_riemann_integral
-    source: int-chapter.html
-    title: The Riemann Integral
-    type: html
-  pdf_url: introduction_to_real/pdf/realanal12.pdf
-  slug: introduction_to_real
-  source: basic-analysis/realanal12.tex
-  splitlevel: 0
-  title: Introduction to Real Analysis
-  type: document
-- build_pdf: false
-  content:
-  - build_pdf: true
     pdf_url: notes/latex_notes/latex_notes.pdf
     slug: latex_notes
     source: latex/latex.tex
