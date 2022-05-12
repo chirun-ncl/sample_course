@@ -1,0 +1,1446 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Ann Example" />
+            <meta name="date" content="2022-05-12" />
+        
+
+        <title>RevTeX article | Sample Course</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../static/styles.css">
+            <link rel="stylesheet" id="customiseCSS" href="../../static/light.css">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
+    <link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
+    <link rel="stylesheet" href="../../static/code.css">
+    <link rel="stylesheet" href="../../static/numbasEmbed.css">
+
+    <link rel="stylesheet" href="../../static/bootstrap-toc.css?v=3">
+    <link rel="stylesheet" href="../../static/print.css">
+
+
+        
+    
+    
+			<script>
+				var chirun_static_url="../../static/.";
+			</script>
+            <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script defer src="../../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script defer src="../../static/customisation.js"></script>
+            <script defer src="../../static/mp4.js"></script>
+            
+            
+			</script>
+        
+    <script defer src="../../static/jquery.flexibleArea.js"></script>
+    <script defer src="../../static/spin.min.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/lib/codemirror.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/octave/octave.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/python/python.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/r/r.js"></script>
+    <script defer src="../../static/code.js"></script>
+    <script defer src="../../static/numbasEmbed.js"></script>
+
+    <script defer src="../../static/bootstrap-toc.js"></script>
+
+    </head>
+    <body data-spy="scroll" data-target="#chapterTOC" data-offset="50">
+        
+<div class="collapse" id="navbarToggleCustomise">
+	<div class="bg-secondary text-white p-3">
+		<form onsubmit="return false;" id="navbarCustomise">
+			<div class="form-row">
+				<label>Theme Customisation</label>
+				<div id="themeSelector" class="form-group col-md-12">
+					<button class="btn btn-dark mr-2" value="dark">Dark</button>
+					<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
+					<button class="btn btn-light mr-4" value="light">Light</button>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label style="display: block" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="font-scale" min="50" max="600" value="100">
+					<button id="font-scale-reset" class="btn btn-sm">Reset</button>
+				</div>
+				<div class="form-group col-md-4">
+					<label style="display: block" for="p-space">Spacing (<span id="p-space-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="p-space" min="0" max="600" value="100">
+					<button id="p-space-reset" class="btn btn-sm">Reset</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<nav aria-label="breadcrumb">
+	<ul class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="../../index.html">Sample Course</a>
+		</li>
+		
+		<li class="breadcrumb-item">
+			<a href="../../notes/index.html">Notes</a>
+		</li>
+		
+		<li class="breadcrumb-item active">
+			RevTeX article
+		</li>
+		<li class="ml-auto">
+			<button class="navbar-toggler p0" type="button" data-toggle="collapse" data-target="#navbarToggleCustomise" aria-controls="navbarToggleCustomise" aria-expanded="false" aria-label="Toggle customisations panel">
+				<i class="fa fa-cog" aria-hidden="true" title="Toggle customisations panel"></i> <span class="sr-only">Toggle customisations panel</span>
+			</button>
+		</li>
+	</ul>
+</nav>
+
+
+        <header>
+            
+            
+        </header>
+        <main>
+            
+    <div class="container mt-3">
+        <div class="row">
+            
+            <div id="sidebar" class="col-md-3">
+                <nav class="mb-3" id="chapterTOC" data-toggle="toc">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                        
+                        <li><a id="pdf-link" class="nav-link" href="../../notes/revtex_article/revtex_article.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Download as PDF"></i>&nbsp;Download as PDF</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div id="content" class="col-md-9"> 
+            
+            
+<div class="titlepage text-center">
+<h1>
+        Manuscript Title
+            <a class="footnote" href="#a0000000089">
+<sup class="footnotemark">1</sup>
+</a>
+</h1>
+<div class="revtex-authors mt-3">
+<span class="author">Ann Author</span>
+<a class="footnote" href="#a0000000090">
+<sup class="footnotemark">2</sup>
+</a>
+<span class="author">Second Author</span>
+<a class="footnote" href="#a0000000091">
+<sup class="footnotemark">3</sup>
+</a>
+</div>
+<div class="revtex-affiliation">Authors’ institution and/or address </div>
+<div class="revtex-collaboration">(MUSO Collaboration)</div>
+<div class="revtex-authors mt-3">
+<span class="author">Charlie Author</span>
+<a class="footnote" href="#a0000000092">
+<sup class="footnotemark">4</sup>
+</a>
+</div>
+<div class="revtex-affiliation"> Second institution and/or address </div>
+<div class="revtex-affiliation"> Third institution, the second for Charlie Author </div>
+<div class="revtex-authors mt-3">
+<span class="author">Delta Author</span>
+</div>
+<div class="revtex-affiliation">Authors’ institution and/or address </div>
+<div class="revtex-collaboration">(CLEO Collaboration)</div>
+<p class="date">(Dated: May 12, 2022)</p>
+<p class="abstract"> An article usually includes an abstract, a concise summary of the work covered at length in the main body of the article. <dl class="description">
+<dt>Usage</dt>
+<dd><p>
+Secondary publications and information retrieval purposes. 
+</p>
+</dd>
+<dt>Structure</dt>
+<dd><p>
+You may use the <span class="ttfamily">description</span> environment to structure your abstract; use the optional argument of the <code class="verbatim">\item</code> command to give the category of each item. 
+</p>
+</dd>
+</dl> </p>
+</div>
+<h2 id="sec:level1" style="text-transform:uppercase">I. First-level heading</h2>
+<p>
+This sample document demonstrates proper use of REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X 4.2 (and L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X<span style="margin-left:0.3em">2</span><sub style="margin-left:-0.1em">ε</sub>) in mansucripts prepared for submission to APS journals. Further information can be found in the REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X 4.2 documentation included in the distribution or available at <a href="http://journals.aps.org/revtex/">http://journals.aps.org/revtex/</a>. 
+</p>
+<p>
+When commands are referred to in this example file, they are always shown with their required arguments, using normal T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X format. In this format, <code class="verbatim">#1</code>, <code class="verbatim">#2</code>, etc. stand for required author-supplied arguments to commands. For example, in <code class="verbatim">\section{#1}</code> the <code class="verbatim">#1</code> stands for the title text of the author’s section heading, and in <code class="verbatim">\title{#1}</code> the <code class="verbatim">#1</code> stands for the title text of the paper. 
+</p>
+<p>
+Line breaks in section headings at all levels can be introduced using \\. A blank input line tells T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X that the paragraph has ended. Note that top-level section headings are automatically uppercased. If a specific letter or word should appear in lowercase instead, you must escape it using <code class="verbatim">\lowercase{#1}</code>. 
+</p>
+<section class="subsection">
+<h3 id="sec:level2">A. Second-level heading: Formatting</h3>
+<p>
+This file may be formatted in either the <span class="ttfamily">preprint</span> or <span class="ttfamily">reprint</span> style. <span class="ttfamily">reprint</span> format mimics final journal output. Either format may be used for submission purposes. <span class="ttfamily">letter</span> sized paper should be used when submitting to APS journals. 
+</p>
+<h3 class="font-italic font-weight-normal" id="a0000000093">1. Wide text (A level-3 head)</h3>
+<p>
+ The <span class="ttfamily">widetext</span> environment will make the text the width of the full page, as on page <a class="ref crossref" href="../../notes/revtex_article/index.html#eq:wideeq">*</a>. (Note the use the <code class="verbatim">\pageref{#1}</code> command to refer to the page number.) 
+</p>
+<h4 class="font-italic font-weight-normal" id="a0000000094"><small>a. Note (Fourth-level head is run in)</small></h4>
+<p>
+ The width-changing commands only take effect in two-column formatting. There is no effect if text is in a single column. 
+</p>
+</section><section class="subsection">
+<h3 id="sec:citeref">B. Citations and References</h3>
+<p>
+ A citation in text uses the command <code class="verbatim">\cite{#1}</code> or <code class="verbatim">\onlinecite{#1}</code> and refers to an entry in the bibliography. An entry in the bibliography is a reference to another document. 
+</p>
+<h3 class="font-italic font-weight-normal" id="a0000000095">1. Citations</h3>
+<p>
+ Because REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X uses the <code class="verbatim">natbib</code> package of Patrick Daly, the entire repertoire of commands in that package are available for your document; see the <code class="verbatim">natbib</code> documentation for further details. Please note that REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X requires version 8.31a or later of <code class="verbatim">natbib</code>. 
+</p>
+<h4 class="font-italic font-weight-normal" id="a0000000096"><small>a. Syntax</small></h4>
+<p>
+ The argument of <code class="verbatim">\cite</code> may be a single <em>key</em>, or may consist of a comma-separated list of keys. The citation <em>key</em> may contain letters, numbers, the dash (-) character, or the period (.) character. New with natbib 8.3 is an extension to the syntax that allows for a star (*) form and two optional arguments on the citation key itself. The syntax of the <code class="verbatim">\cite</code> command is thus (informally stated) 
+</p>
+<blockquote class="quotation"><div class="flushleft"><code class="verbatim">\cite</code> <code class="verbatim">{</code> <em>key</em> <code class="verbatim">}</code>, or<br/><code class="verbatim">\cite</code> <code class="verbatim">{</code> <em>optarg+key</em> <code class="verbatim">}</code>, or<br/><code class="verbatim">\cite</code> <code class="verbatim">{</code> <em>optarg+key</em> <code class="verbatim">,</code> <em>optarg+key</em>…<code class="verbatim">}</code>, </div></blockquote>
+<p>
+where <em>optarg+key</em> signifies 
+</p>
+<blockquote class="quotation"><div class="flushleft"><em>key</em>, or<br/><span class="ttfamily">*</span><em>key</em>, or<br/><span class="ttfamily">[</span><em>pre</em><span class="ttfamily">]</span><em>key</em>, or<br/><span class="ttfamily">[</span><em>pre</em><span class="ttfamily">]</span><span class="ttfamily">[</span><em>post</em><span class="ttfamily">]</span><em>key</em>, or even<br/><span class="ttfamily">*</span><span class="ttfamily">[</span><em>pre</em><span class="ttfamily">]</span><span class="ttfamily">[</span><em>post</em><span class="ttfamily">]</span><em>key</em>. </div></blockquote>
+<p>
+where <em>pre</em> and <em>post</em> is whatever text you wish to place at the beginning and end, respectively, of the bibliographic reference (see Ref. [<span class="cite">
+<a href="../../notes/revtex_article/index.html#witten2001">1</a>
+</span>] and the two under Ref. [<span class="cite">
+<a href="../../notes/revtex_article/index.html#feyn54">2</a>
+</span>]). (Keep in mind that no automatic space or punctuation is applied.) It is highly recommended that you put the entire <em>pre</em> or <em>post</em> portion within its own set of braces, for example: <code class="verbatim">\cite</code> <code class="verbatim">{</code> <span class="ttfamily">[</span> <code class="verbatim">{</code><em>text</em><code class="verbatim">}</code><span class="ttfamily">]</span><em>key</em><code class="verbatim">}</code>. The extra set of braces will keep L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X out of trouble if your <em>text</em> contains the comma (,) character. 
+</p>
+<p>
+The star (*) modifier to the <em>key</em> signifies that the reference is to be merged with the previous reference into a single bibliographic entry, a common idiom in APS and AIP articles (see below, Ref. [<span class="cite">
+<a href="../../notes/revtex_article/index.html#epr">2</a>
+</span>]). When references are merged in this way, they are separated by a semicolon instead of the period (full stop) that would otherwise appear. 
+</p>
+<h4 class="font-italic font-weight-normal" id="a0000000097"><small>b. Eliding repeated information</small></h4>
+<p>
+ When a reference is merged, some of its fields may be elided: for example, when the author matches that of the previous reference, it is omitted. If both author and journal match, both are omitted. If the journal matches, but the author does not, the journal is replaced by <em>ibid.</em>, as exemplified by Ref. [<span class="cite">
+<a href="../../notes/revtex_article/index.html#epr">2</a>
+</span>]. These rules embody common editorial practice in APS and AIP journals and will only be in effect if the markup features of the APS and AIP BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X styles is employed. 
+</p>
+<h4 class="font-italic font-weight-normal" id="a0000000098"><small>c. The options of the cite command itself</small></h4>
+<p>
+ Please note that optional arguments to the <em>key</em> change the reference in the bibliography, not the citation in the body of the document. For the latter, use the optional arguments of the <code class="verbatim">\cite</code> command itself: <code class="verbatim">\cite</code> <span class="ttfamily">*</span><span class="ttfamily">[</span><em>pre-cite</em><span class="ttfamily">]</span><span class="ttfamily">[</span><em>post-cite</em><span class="ttfamily">]</span><code class="verbatim">{</code><em>key-list</em><code class="verbatim">}</code>. 
+</p>
+<h3 class="font-italic font-weight-normal" id="a0000000099">2. Example citations</h3>
+<p>
+ By default, citations are numerical<span class="cite">
+  (
+  
+  <a href="../../notes/revtex_article/index.html#Beutler1994">3</a>
+  
+  )
+</span>. Author-year citations are used when the journal is RMP. To give a textual citation, use <code class="verbatim">\onlinecite{#1}</code>: Refs. <span class="cite">
+<a href="../../notes/revtex_article/index.html#Bire82">4</a>
+</span>. By default, the <span class="ttfamily">natbib</span> package automatically sorts your citations into numerical order and “compresses” runs of three or more consecutive numerical citations. REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X provides the ability to automatically change the punctuation when switching between journal styles that provide citations in square brackets and those that use a superscript style instead. This is done through the <span class="ttfamily">citeautoscript</span> option. For instance, the journal style <span class="ttfamily">prb</span> automatically invokes this option because <i class="itshape">Physical Review B</i> uses superscript-style citations. The effect is to move the punctuation, which normally comes after a citation in square brackets, to its proper position before the superscript. To illustrate, we cite several together <span class="cite">
+  (
+  
+  <a href="../../notes/revtex_article/index.html#witten2001">1</a>
+  ; 
+  <a href="../../notes/revtex_article/index.html#Bire82">4</a>
+  -
+  <a href="../../notes/revtex_article/index.html#Davies1998">6</a>
+  
+  )
+</span>, and once again in different order (Refs. <span class="cite">
+  (
+  
+  <a href="../../notes/revtex_article/index.html#witten2001">1</a>
+  ; 
+  <a href="../../notes/revtex_article/index.html#feyn54">2</a>
+  ; 
+  <a href="../../notes/revtex_article/index.html#feyn54">2</a>
+  ; 
+  <a href="../../notes/revtex_article/index.html#Bire82">4</a>
+  -
+  <a href="../../notes/revtex_article/index.html#Davies1998">6</a>
+  
+  )
+</span>). Note that the citations were both compressed and sorted. Futhermore, running this sample file under the <span class="ttfamily">prb</span> option will move the punctuation to the correct place. 
+</p>
+<p>
+When the <code class="verbatim">prb</code> class option is used, the <code class="verbatim">\cite{#1}</code> command displays the reference’s number as a superscript rather than in square brackets. Note that the location of the <code class="verbatim">\cite{#1}</code> command should be adjusted for the reference style: the superscript references in <code class="verbatim">prb</code> style must appear after punctuation; otherwise the reference must appear before any punctuation. This sample was written for the regular (non-<span class="ttfamily">prb</span>) citation style. The command <code class="verbatim">\onlinecite{#1}</code> in the <span class="ttfamily">prb</span> style also displays the reference on the baseline. 
+</p>
+<h3 class="font-italic font-weight-normal" id="a0000000100">3. References</h3>
+<p>
+ A reference in the bibliography is specified by a <code class="verbatim">\bibitem{#1}</code> command with the same argument as the <code class="verbatim">\cite{#1}</code> command. <code class="verbatim">\bibitem{#1}</code> commands may be crafted by hand or, preferably, generated by BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X. REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X 4.2 includes BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X style files <code class="verbatim">apsrev4-2.bst</code>, <code class="verbatim">apsrmp4-2.bst</code> appropriate for <i class="itshape">Physical Review</i> and <i class="itshape">Reviews of Modern Physics</i>, respectively. 
+</p>
+<h3 class="font-italic font-weight-normal" id="a0000000101">4. Example references</h3>
+<p>
+ This sample file employs the <code class="verbatim">\bibliography</code> command, which formats the <span class="ttfamily">.bbl</span> file and specifies which bibliographic databases are to be used by BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X  (one of these should be by arXiv convention <span class="ttfamily">.bib</span>). Running BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X (via <span class="ttfamily">bibtex </span>) after the first pass of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X produces the file <span class="ttfamily">.bbl</span> which contains the automatically formatted <code class="verbatim">\bibitem</code> commands (including extra markup information via <code class="verbatim">\bibinfo</code> and <code class="verbatim">\bibfield</code> commands). If not using BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, you will have to create the <code class="verbatim">thebibiliography</code> environment and its <code class="verbatim">\bibitem</code> commands by hand. 
+</p>
+<p>
+Numerous examples of the use of the APS bibliographic entry types appear in the bibliography of this sample document. You can refer to the <span class="ttfamily">.bib</span> file, and compare its information to the formatted bibliography itself. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000102">C. Footnotes</h3>
+<p>
+Footnotes, produced using the <code class="verbatim">\footnote{#1}</code> command, usually integrated into the bibliography alongside the other entries. Numerical citation styles do this<a class="footnote" href="#a0000000103">
+<sup class="footnotemark">5</sup>
+</a>; author-year citation styles place the footnote at the bottom of the text column. Note: due to the method used to place footnotes in the bibliography, <em>you must re-run BibT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X every time you change any of your document’s footnotes</em>. 
+</p>
+</section><h2 id="a0000000104" style="text-transform:uppercase">II. Math and Equations</h2>
+<p>
+ Inline math may be typeset using the <code class="verbatim">$</code> delimiters. Bold math symbols may be achieved using the <code class="verbatim">bm</code> package and the <code class="verbatim">\bm{#1}</code> command it supplies. For instance, a bold <script type="math/tex">\alpha </script> can be typeset as <code class="verbatim">$\bm{\alpha}$</code> giving <script type="math/tex">\bm {\alpha }</script>. Fraktur and Blackboard (or open face or double struck) characters should be typeset using the <code class="verbatim">\mathfrak{#1}</code> and <code class="verbatim">\mathbb{#1}</code> commands respectively. Both are supplied by the <span class="ttfamily">amssymb</span> package. For example, <code class="verbatim">$\mathbb{R}$</code> gives <script type="math/tex">\mathbb {R}</script> and <code class="verbatim">$\mathfrak{G}$</code> gives <script type="math/tex">\mathfrak {G}</script>
+</p>
+<p>
+In L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X there are many different ways to display equations, and a few preferred ways are noted below. Displayed math will center by default. Use the class option <code class="verbatim">fleqn</code> to flush equations left. 
+</p>
+<p>
+Below we have numbered single-line equations; this is the most common type of equation in <i class="itshape">Physical Review</i>: 
+</p>
+<div id="a0000000105">
+<div class="eqnarrayid" id="a0000000106"></div><div class="eqnarrayid" id="eq:one"></div><script type="math/tex; mode=display">
+\begin{align}
+\tag{1} \chi _+(p)\lesssim {\bf [}2|{\bf p}|(|{\bf p}|+p_ z){\bf ]}^{-1/2} \left( \begin{array}{c} |{\bf p}|+p_ z\\ px+ip_ y \end{array}\right)\; , \\ 
+\tag{2}\left\{ \mathbb {1}234567890abc123\alpha \beta \gamma \delta 1234556\alpha \beta \frac{1\sum ^{a}_{b}}{A^2}\right\} \label{eq:one}. 
+\end{align}
+</script>
+</div>
+<p>
+ Note the open one in Eq. (<a class="ref" href="../../notes/revtex_article/index.html#eq:one">2</a>). 
+</p>
+<p>
+Not all numbered equations will fit within a narrow column this way. The equation number will move down automatically if it cannot fit on the same line with a one-line equation: 
+</p>
+<div class="eqn" id="a0000000107">
+<script type="math/tex; mode=display">\begin{equation}\left\{  ab12345678abc123456abcdef\alpha \beta \gamma \delta 1234556\alpha \beta \frac{1\sum ^{a}_{b}}{A^2}\right\} .\tag{3}\end{equation}</script>
+</div>
+<p>
+When the <code class="verbatim">\label{#1}</code> command is used [cf. input for Eq. (<a class="ref" href="../../notes/revtex_article/index.html#eq:one">2</a>)], the equation can be referred to in text without knowing the equation number that T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X will assign to it. Just use <code class="verbatim">\ref{#1}</code>, where <code class="verbatim">#1</code> is the same name that used in the <code class="verbatim">\label{#1}</code> command. 
+</p>
+<p>
+Unnumbered single-line equations can be typeset using the <code class="verbatim">\[</code>, <code class="verbatim">\]</code> format: 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">g^+g^+ \rightarrow g^+g^+g^+g^+ \dots ~ ,~ ~ q^+q^+\rightarrow q^+g^+g^+ \dots ~ .</script></span>
+<section class="subsection">
+<h3 id="a0000000108">A. Multiline equations</h3>
+<p>
+Multiline equations are obtained by using the <code class="verbatim">eqnarray</code> environment. Use the <code class="verbatim">\nonumber</code> command at the end of each line to avoid assigning a number: 
+</p>
+<div id="a0000000109">
+<div class="eqnarrayid" id="a0000000110"></div><script type="math/tex; mode=display">
+\begin{align}
+ {\cal M}=& & ig_ Z^2(4E_1E_2)^{1/2}(l_ i^2)^{-1} \delta _{\sigma _1,-\sigma _2} (g_{\sigma _2}^ e)^2\chi _{-\sigma _2}(p_2)\nonumber \\ 
+\tag{4}& & \times [\epsilon _ jl_ i\epsilon _ i]_{\sigma _1}\chi _{\sigma _1}(p_1), 
+\end{align}
+</script>
+</div>
+<div id="a0000000111">
+<div class="eqnarrayid" id="a0000000112"></div><script type="math/tex; mode=display">
+\begin{align}
+ \sum \vert M^{\text{viol}}_ g \vert ^2& =& g^{2n-4}_ S(Q^2)~ N^{n-2} (N^2-1)\nonumber \\ 
+\tag{5}& & \times \left( \sum _{i<j}\right) \sum _{\text{perm}} \frac{1}{S_{12}} \frac{1}{S_{12}} \sum _\tau c^ f_\tau ~ . 
+\end{align}
+</script>
+</div>
+<p>
+<b class="bfseries">Note:</b> Do not use <code class="verbatim">\label{#1}</code> on a line of a multiline equation if <code class="verbatim">\nonumber</code> is also used on that line. Incorrect cross-referencing will result. Notice the use <code class="verbatim">\text{#1}</code> for using a Roman font within a math environment. 
+</p>
+<p>
+To set a multiline equation without <em>any</em> equation numbers, use the <code class="verbatim">\begin{eqnarray*}</code>, <code class="verbatim">\end{eqnarray*}</code> format: 
+</p>
+<span><script type="math/tex; mode=display">\begin{eqnarray*}  \sum \vert M^{\text{viol}}_ g \vert ^2& =& g^{2n-4}_ S(Q^2)~ N^{n-2} (N^2-1)\\ & & \times \left( \sum _{i<j}\right) \left( \sum _{\text{perm}}\frac{1}{S_{12}S_{23}S_{n1}} \right) \frac{1}{S_{12}}~ . \end{eqnarray*}</script></span>
+<h4 class="font-italic font-weight-normal" id="a0000000113"><small>a. A few notes on <span class="ttfamily">tag</span>s</small></h4>
+<p>
+<code class="verbatim">\tag{#1}</code> requires the <span class="ttfamily">amsmath</span> package. Place the <code class="verbatim">\tag{#1}</code> command before the <code class="verbatim">\label{#1}</code>, if any. The numbering produced by <code class="verbatim">\tag{#1}</code> <i class="itshape">does not affect</i> the automatic numbering in REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X; therefore, the number must be known ahead of time, and it must be manually adjusted if other equations are added. <code class="verbatim">\tag{#1}</code> works with both single-line and multiline equations. <code class="verbatim">\tag{#1}</code> should only be used in exceptional cases—do not use it to number many equations in your paper. Please note that this feature of the <span class="ttfamily">amsmath</span> package is <em>not</em> compatible with the <span class="ttfamily">hyperref</span> (6.77u) package. 
+</p>
+<h3 class="font-italic font-weight-normal" id="a0000000114">1. Wide equations</h3>
+<p>
+ The equation that follows is set in a wide format, i.e., it spans the full page. The wide format is reserved for long equations that cannot easily be set in a single column:  
+</p>
+<div class="eqn" id="eq:wideeq">
+<script type="math/tex; mode=display">\begin{equation}{\cal R}^{(\text{d})}= g_{\sigma _2}^ e \left( \frac{[\Gamma ^ Z(3,21)]_{\sigma _1}}{Q_{12}^2-M_ W^2} +\frac{[\Gamma ^ Z(13,2)]_{\sigma _1}}{Q_{13}^2-M_ W^2} \right) + x_ WQ_ e \left( \frac{[\Gamma ^\gamma (3,21)]_{\sigma _1}}{Q_{12}^2-M_ W^2} +\frac{[\Gamma ^\gamma (13,2)]_{\sigma _1}}{Q_{13}^2-M_ W^2} \right)\; . \label{eq:wideeq}\tag{6}\end{equation}</script>
+</div>
+<p>
+  This is typed to show how the output appears in wide format. (Incidentally, since there is no blank line between the <span class="ttfamily">equation</span> environment above and the start of this paragraph, this paragraph is not indented.) 
+</p>
+</section><h2 id="a0000000115" style="text-transform:uppercase">III. Cross-referencing</h2>
+<p>
+ REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X will automatically number such things as sections, footnotes, equations, figure captions, and table captions. In order to reference them in text, use the <code class="verbatim">\label{#1}</code> and <code class="verbatim">\ref{#1}</code> commands. To reference a particular page, use the <code class="verbatim">\pageref{#1}</code> command. 
+</p>
+<p>
+The <code class="verbatim">\label{#1}</code> should appear within the section heading, within the footnote text, within the equation, or within the table or figure caption. The <code class="verbatim">\ref{#1}</code> command is used in text at the point where the reference is to be displayed. Some examples: Section <a class="ref" href="../../notes/revtex_article/index.html#sec:level1">I.</a> on page <a class="ref crossref" href="../../notes/revtex_article/index.html#sec:level1">*</a>, Table <a class="ref" href="../../notes/revtex_article/index.html#tab:table1">1</a>,
+</p>
+<div class="table" id="tab:table1">
+<figcaption>
+<span class="caption_title">Table</span>
+<span class="caption_ref">1</span>
+<span class="caption_text">A table that fits into a single column of a two-column layout. Note that REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X 4 adjusts the intercolumn spacing so that the table fills the entire width of the column. Table captions are numbered automatically. This table illustrates left-, center-, decimal- and right-aligned columns, along with the use of the <span class="ttfamily">ruledtabular</span> environment which sets the Scotch (double) rules above and below the alignment, per APS style. </span>
+</figcaption> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<span class="rmfamily">Left<a class="footnote" href="#a0000000116">
+<sup class="footnotemark">6</sup>
+</a></span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<span class="rmfamily">Centered<a class="footnote" href="#a0000000117">
+<sup class="footnotemark">7</sup>
+</a></span>
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:center"><p>
+<span class="rmfamily">Decimal</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+<span class="rmfamily">Right</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+1 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.001 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 4
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 30 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 40
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+100 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 200 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 300.0 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 400
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+ and Fig. <a class="ref" href="../../notes/revtex_article/index.html#fig:epsart">1</a>.
+</p>
+<figure id="fig:epsart">
+<p>
+<img src="../../notes/revtex_article/images/img-0001.png" style="None"/>
+</p>
+<figcaption>
+<span class="caption_title">Figure</span>
+<span class="caption_ref">1</span>
+<span class="caption_text"> A figure caption. The figure captions are automatically numbered.</span>
+</figcaption>
+</figure>
+<h2 id="a0000000118" style="text-transform:uppercase">IV. Floats: Figures, Tables, Videos, etc.</h2>
+<p>
+ Figures and tables are usually allowed to “float”, which means that their placement is determined by L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, while the document is being typeset. 
+</p>
+<p>
+Use the <span class="ttfamily">figure</span> environment for a figure, the <span class="ttfamily">table</span> environment for a table. In each case, use the <code class="verbatim">\caption</code> command within to give the text of the figure or table caption along with the <code class="verbatim">\label</code> command to provide a key for referring to this figure or table. The typical content of a figure is an image of some kind; that of a table is an alignment.
+</p>
+<figure id="fig:wide">
+<p>
+<img src="../../notes/revtex_article/images/img-0002.png" style="None"/>
+</p>
+<figcaption>
+<span class="caption_title">Figure</span>
+<span class="caption_ref">2</span>
+<span class="caption_text">Use the figure* environment to get a wide figure that spans the page in <span class="ttfamily">twocolumn</span> formatting.</span>
+</figcaption>
+</figure>
+<div class="table" id="tab:table3">
+<figcaption>
+<span class="caption_title">Table</span>
+<span class="caption_ref">2</span>
+<span class="caption_text">This is a wide table that spans the full page width in a two-column layout. It is formatted using the <span class="ttfamily">table*</span> environment. It also demonstates the use of \<span class="ttfamily">multicolumn</span> in rows with entries that span more than one column.</span>
+</figcaption> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="2" rowspan="" style="text-align:center"><p>
+<script type="math/tex">D_{4h}^1</script>
+</p>
+</td>
+<td colspan="2" rowspan="" style="text-align:center"><p>
+<script type="math/tex">D_{4h}^5</script>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Ion
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+1st alternative
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+2nd alternative
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+lst alternative 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+2nd alternative
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+K
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<script type="math/tex">(2e)+(2f)</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<script type="math/tex">(4i)</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<script type="math/tex">(2c)+(2d)</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<script type="math/tex">(4f)</script>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Mn
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(2g)</script><a class="footnote" href="#a0000000119">
+<sup class="footnotemark">8</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(a)+(b)+(c)+(d)</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(4e)</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(2a)+(2b)</script>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Cl
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(a)+(b)+(c)+(d)</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(2g)</script><a class="footnote" href="#footnotes">
+<sup class="footnotemark">11</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(4e)^{\text{a}}</script>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+He
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(8r)^{\text{a}}</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(4j)^{\text{a}}</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(4g)^{\text{a}}</script>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Ag
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(4k)^{\text{a}}</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">(4h)^{\text{a}}</script>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+Insert an image using either the <span class="ttfamily">graphics</span> or <span class="ttfamily">graphix</span> packages, which define the <code class="verbatim">\includegraphics{#1}</code> command. (The two packages differ in respect of the optional arguments used to specify the orientation, scaling, and translation of the image.) To create an alignment, use the <span class="ttfamily">tabular</span> environment. 
+</p>
+<p>
+The best place to locate the <span class="ttfamily">figure</span> or <span class="ttfamily">table</span> environment is immediately following its first reference in text; this sample document illustrates this practice for Fig. <a class="ref" href="../../notes/revtex_article/index.html#fig:epsart">1</a>, which shows a figure that is small enough to fit in a single column. 
+</p>
+<p>
+In exceptional cases, you will need to move the float earlier in the document, as was done with Table <a class="ref" href="../../notes/revtex_article/index.html#tab:table3">2</a>: L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s float placement algorithms need to know about a full-page-width float earlier. 
+</p>
+<p>
+Fig. <a class="ref" href="../../notes/revtex_article/index.html#fig:wide">2</a> has content that is too wide for a single column, so the <span class="ttfamily">figure*</span> environment has been used.
+</p>
+<div class="table" id="tab:table4">
+<figcaption>
+<span class="caption_title">Table</span>
+<span class="caption_ref">3</span>
+<span class="caption_text">Numbers in columns Three–Five are aligned with the “d” column specifier (requires the <span class="ttfamily">dcolumn</span> package). Non-numeric entries (those entries without a “.”) in a “d” column are aligned on the decimal point. Use the “D” specifier for more complex layouts. </span>
+</figcaption> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+ One
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Two
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:center"><p>
+<span class="rmfamily">Three</span>
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:center"><p>
+<span class="rmfamily">Four</span>
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:center"><p>
+<span class="rmfamily">Five</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+one
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+two
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<div class="mbox" id="a0000000120" style="width: ">three</div>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<div class="mbox" id="a0000000121" style="width: ">four</div>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+<div class="mbox" id="a0000000122" style="width: ">five</div>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+He
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+2
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.77234 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 45672. 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.69 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+C<a class="footnote" href="#a0000000123">
+<sup class="footnotemark">9</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+C<a class="footnote" href="#a0000000124">
+<sup class="footnotemark">10</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 12537.64 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 37.66345 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 86.37 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+The content of a table is typically a <span class="ttfamily">tabular</span> environment, giving rows of type in aligned columns. Column entries separated by <code class="verbatim">&amp;</code>’s, and each row ends with \\. The required argument for the <span class="ttfamily">tabular</span> environment specifies how data are aligned in the columns. For instance, entries may be centered, left-justified, right-justified, aligned on a decimal point. Extra column-spacing may be be specified as well, although REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X 4 sets this spacing so that the columns fill the width of the table. Horizontal rules are typeset using the <code class="verbatim">\hline</code> command. The doubled (or Scotch) rules that appear at the top and bottom of a table can be achieved enclosing the <span class="ttfamily">tabular</span> environment within a <span class="ttfamily">ruledtabular</span> environment. Rows whose columns span multiple columns can be typeset using the <code class="verbatim">\multicolumn{#1}{#2}{#3}</code> command (for example, see the first row of Table <a class="ref" href="../../notes/revtex_article/index.html#tab:table3">2</a>).
+</p>
+<p>
+Tables <a class="ref" href="../../notes/revtex_article/index.html#tab:table1">1</a>, <a class="ref" href="../../notes/revtex_article/index.html#tab:table3">2</a>, <a class="ref" href="../../notes/revtex_article/index.html#tab:table4">3</a>, and <a class="ref" href="../../notes/revtex_article/index.html#tab:table2">4</a>
+</p>
+<div class="table" id="tab:table2">
+<figcaption>
+<span class="caption_title">Table</span>
+<span class="caption_ref">4</span>
+<span class="caption_text"> A table with numerous columns that still fits into a single column. Here, several entries share the same footnote. Inspect the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X input for this table to see exactly how it is done.</span>
+</figcaption> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">r_ c</script> ()
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">r_0</script> ()
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">\kappa r_0</script>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">r_ c</script> () 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">r_0</script> ()
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+<script type="math/tex">\kappa r_0</script>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+Cu
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ 0.800 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ 14.10 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ 2.550 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+Sn<a class="footnote" href="#footnotes">
+<sup class="footnotemark">12</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ 0.680 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ 1.870 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ 3.700 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Ag
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.990 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 15.90 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.710 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Pb<a class="footnote" href="#footnotes">
+<sup class="footnotemark">13</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.450 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1.930 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.760 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Au
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1.150 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 15.90 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.710 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Ca<a class="footnote" href="#footnotes">
+<sup class="footnotemark">14</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.750 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.170 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.560 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Mg
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.490 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 17.60 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.200 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Sr<a class="footnote" href="#footnotes">
+<sup class="footnotemark">15</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.900 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.370 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.720 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Zn
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.300 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 15.20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.970 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Li<a class="footnote" href="#footnotes">
+<sup class="footnotemark">2</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.380 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1.730 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.830 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Cd
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.530 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 17.10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.160 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Na<a class="footnote" href="#footnotes">
+<sup class="footnotemark">5</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.760 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.110 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.120 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Hg
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.550 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 17.80 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.220 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+K<a class="footnote" href="#footnotes">
+<sup class="footnotemark">5</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1.120 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.620 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.480 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Al
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.230 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 15.80 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.240 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Rb<a class="footnote" href="#footnotes">
+<sup class="footnotemark">3</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1.330 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.800 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.590 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Ga
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.310 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 16.70 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.330 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Cs<a class="footnote" href="#footnotes">
+<sup class="footnotemark">4</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1.420 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.030 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.740 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+In
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.460 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 18.40 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.500 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+Ba<a class="footnote" href="#footnotes">
+<sup class="footnotemark">5</sup>
+</a>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.960 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2.460 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.780 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+Tl
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 0.480 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 18.90 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3.550 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+</table>
+</div>
+<p>
+ show various effects. A table that fits in a single column employs the <span class="ttfamily">table</span> environment. Table <a class="ref" href="../../notes/revtex_article/index.html#tab:table3">2</a> is a wide table, set with the <span class="ttfamily">table*</span> environment. Long tables may need to break across pages. The most straightforward way to accomplish this is to specify the <code class="verbatim">[H]</code> float placement on the <span class="ttfamily">table</span> or <span class="ttfamily">table*</span> environment. However, the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X<span style="margin-left:0.3em">2</span><sub style="margin-left:-0.1em">ε</sub> package <span class="ttfamily">longtable</span> allows headers and footers to be specified for each page of the table. A simple example of the use of <span class="ttfamily">longtable</span> can be found in the file <span class="ttfamily">summary.tex</span> that is included with the REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X 4 distribution. 
+</p>
+<p>
+There are two methods for setting footnotes within a table (these footnotes will be displayed directly below the table rather than at the bottom of the page or in the bibliography). The easiest and preferred method is just to use the <code class="verbatim">\footnote{#1}</code> command. This will automatically enumerate the footnotes with lowercase roman letters. However, it is sometimes necessary to have multiple entries in the table share the same footnote. In this case, there is no choice but to manually create the footnotes using <code class="verbatim">\footnotemark[#1]</code> and <code class="verbatim">\footnotetext[#1]{#2}</code>. <span class="ttfamily">#1</span> is a numeric value. Each time the same value for <span class="ttfamily">#1</span> is used, the same mark is produced in the table. The <code class="verbatim">\footnotetext[#1]{#2}</code> commands are placed after the <span class="ttfamily">tabular</span> environment. Examine the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X source and output for Tables <a class="ref" href="../../notes/revtex_article/index.html#tab:table1">1</a> and <a class="ref" href="../../notes/revtex_article/index.html#tab:table2">4</a> for examples. 
+</p>
+<p>
+<i class="itshape">Physical Review</i> style requires that the initial citation of figures or tables be in numerical order in text, so don’t cite Fig. <a class="ref" href="../../notes/revtex_article/index.html#fig:wide">2</a> until Fig. <a class="ref" href="../../notes/revtex_article/index.html#fig:epsart">1</a> has been cited. 
+</p>
+<p>
+<h2 id="a0000000125" style="text-transform:uppercase">Acknowledgments</h2>
+ We wish to acknowledge the support of the author community in using REVT<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, offering suggestions and encouragement, testing new versions, ….  
+</p>
+<h2 id="a0000000126" style="text-transform:uppercase">Appendix A: Appendixes</h2>
+<p>
+To start the appendixes, use the <code class="verbatim">\appendix</code> command. This signals that all following section commands refer to appendixes instead of regular sections. Therefore, the <code class="verbatim">\appendix</code> command should be used only once—to setup the section commands to act as appendixes. Thereafter normal section commands are used. The heading for a section can be left empty. For example, 
+</p>
+<pre class="verbatim">
+\appendix
+\section{}
+</pre>
+<p>
+ will produce an appendix heading that says “APPENDIX A” and 
+</p>
+<pre class="verbatim">
+\appendix
+\section{Background}
+</pre>
+<p>
+ will produce an appendix heading that says “APPENDIX A: BACKGROUND” (note that the colon is set automatically). 
+</p>
+<p>
+If there is only one appendix, then the letter “A” should not appear. This is suppressed by using the star version of the appendix command (<code class="verbatim">\appendix*</code> in the place of <code class="verbatim">\appendix</code>). 
+</p>
+<h2 id="a0000000127" style="text-transform:uppercase">Appendix B: A little more on appendixes</h2>
+<p>
+Observe that this appendix was started by using 
+</p>
+<pre class="verbatim">
+\section{A little more on appendixes}
+</pre>
+<p>
+Note the equation number in an appendix: 
+</p>
+<div class="eqn" id="a0000000128">
+<script type="math/tex; mode=display">\begin{equation}E=mc^2.\tag{B1}\end{equation}</script>
+</div>
+<section class="subsection">
+<h3 id="app:subsec">B1 A subsection in an appendix</h3>
+<p>
+You can use a subsection or subsubsection in an appendix. Note the numbering: we are now in Appendix <a class="ref" href="../../notes/revtex_article/index.html#app:subsec">B1</a>. 
+</p>
+<p>
+Note the equation numbers in this appendix: 
+</p>
+<div id="appa">
+<div class="eqnarrayid" id="a0000000129"></div><div class="eqnarrayid" id="appb"></div><div class="eqnarrayid" id="appc"></div><script type="math/tex; mode=display">
+\begin{align}
+\tag{B2} E& =& mc, \label{appa} \\ 
+\tag{B3}E& =& mc^2, \label{appb} \\ 
+\tag{B4}E& \gtrsim &  mc^3. \label{appc} 
+\end{align}
+</script>
+</div>
+<p>
+ They turn out to be Eqs. (<a class="ref" href="../../notes/revtex_article/index.html#appa">B2</a>), (<a class="ref" href="../../notes/revtex_article/index.html#appb">B3</a>), and (<a class="ref" href="../../notes/revtex_article/index.html#appc">B4</a>). 
+</p>
+</section><section class="section bibliography">
+<h2 id="a0000000130">References</h2>
+<ul class="bibliography">
+<li id="witten2001" style="list-style: none"> <div class="bibcite">[1]</div> <p>
+E. Witten,  (2001), hep-th/0106109 . 
+</p>
+</li>
+<li id="feyn54" style="list-style: none"> <div class="bibcite">[2]</div> <p>
+R. P. Feynman, Phys. Rev. <b class="bfseries">94</b>, 262 (1954). 
+</p>
+</li>
+<li id="epr" style="list-style: none"> <div class="bibcite">[2]</div> <p>
+A. Einstein, Yu. Podolsky, and N. Rosen (EPR), Phys. Rev. <b class="bfseries">47</b>, 777 (1935). 
+</p>
+</li>
+<li id="Beutler1994" style="list-style: none"> <div class="bibcite">[3]</div> <p>
+E. Beutler, in <em>Williams Hematology</em>, Vol. 2, edited by E. Beutler, M. A. Lichtman, B. W. Coller, and T. S. Kipps (McGraw-Hill, New York, 1994) Chap. 7, pp. 654–662, 5th ed.
+</p>
+</li>
+<li id="Bire82" style="list-style: none"> <div class="bibcite">[4]</div> <p>
+N. D. Birell and P. C. W. Davies, <em>Quantum Fields in Curved Space</em> (Cambridge University Press, 1982). 
+</p>
+</li>
+<li id="Berman1983" style="list-style: none"> <div class="bibcite">[5]</div> <p>
+J. G. P. Berman and J. F. M. Izrailev, Stability of nonlinear modes, Physica D <b class="bfseries">88</b>, 445 (1983). 
+</p>
+</li>
+<li id="Davies1998" style="list-style: none"> <div class="bibcite">[6]</div> <p>
+E. B. Davies and L. Parns, Trapped modes in acoustic waveguides, Q. J. Mech. Appl. Math. <b class="bfseries">51</b>, 477 (1988). 
+</p>
+</li>
+<li id="Note1" style="list-style: none"> <div class="bibcite">[7]</div> <p>
+Automatically placing footnotes into the bibliography requires using BibTeX to compile the bibliography.
+</p>
+</li>
+<li id="Beutler1994a" style="list-style: none"> <div class="bibcite">[8]</div> <p>
+E. Beutler, in <em>Williams Hematology</em>, Vol. 2, edited by E. Beutler, M. A. Lichtman, B. W. Coller, and T. S. Kipps (McGraw-Hill, New York, 1994) 5th ed., Chap. 7, pp. 654–662. 
+</p>
+</li>
+<li id="inbook-full" style="list-style: none"> <div class="bibcite">[9]</div> <p>
+D. E. Knuth, in <em>Fundamental Algorithms</em>, The Art of Computer Programming, Vol. 1 (Addison-Wesley, Reading, Massachusetts, 1973) Section 1.2, pp. 10–119, 2nd ed., a full INBOOK entry. 
+</p>
+</li>
+<li id="Smith2005" style="list-style: none"> <div class="bibcite">[10]</div> <p>
+J. S. Smith and G. W. Johnson, Philos. Trans. R. Soc. London, Ser. B <b class="bfseries">777</b>, 1395 (2005). 
+</p>
+</li>
+<li id="Smith2010" style="list-style: none"> <div class="bibcite">[11]</div> <p>
+W. J. Smith, T. J. Johnson, and B. G. Miller, Surface chemistry and preferential crystal orientation on a silicon surface (2010a), J. Appl. Phys. (unpublished). 
+</p>
+</li>
+<li id="Smith2010a" style="list-style: none"> <div class="bibcite">[12]</div> <p>
+V. K. Smith, K. Johnson, and M. O. Klein, Surface chemistry and preferential crystal orientation on a silicon surface (2010b), J. Appl. Phys. (submitted). 
+</p>
+</li>
+<li id="unpublished-full" style="list-style: none"> <div class="bibcite">[13]</div> <p>
+U. Ünderwood, N. Ñet, and P. Pot, Lower bounds for wishful research results (1988), talk at Fanstord University (A full UNPUBLISHED entry). 
+</p>
+</li>
+<li id="JohnsonMillerSmith2007" style="list-style: none"> <div class="bibcite">[14]</div> <p>
+M. P. Johnson, K. L. Miller, and K. Smith, personal communication (2007). 
+</p>
+</li>
+<li id="Smith2007" style="list-style: none"> <div class="bibcite">[15]</div> <p>
+J. Smith, ed., <em>AIP Conf. Proc.</em>, Vol. 841 (2007). 
+</p>
+</li>
+<li id="proceedings-full" style="list-style: none"> <div class="bibcite">[16]</div> <p>
+W. V. Oz and M. Yannakakis, eds., <em>Proc. Fifteenth Annual</em>, All ACM Conferences No. 17, ACM (Academic Press, Boston, 1983) a full PROCEEDINGS entry. 
+</p>
+</li>
+<li id="Burstyn2004" style="list-style: none"> <div class="bibcite">[17]</div> <p>
+Y. Burstyn, Proceedings of the 5th International Molecular Beam Epitaxy Conference, Santa Fe, NM (2004), (unpublished). 
+</p>
+</li>
+<li id="Quinn2001" style="list-style: none"> <div class="bibcite">[18]</div> <p>
+B. Quinn, ed., <em>Proceedings of the 2003 Particle Accelerator Conference, Portland, OR, 12-16 May 2005</em> (Wiley, New York, 2001) albeit the conference was held in 2005, it was the 2003 conference, and the proceedings were published in 2001; go figure. 
+</p>
+</li>
+<li id="Agarwal2001" style="list-style: none"> <div class="bibcite">[19]</div> <p>
+A. G. Agarwal, Proceedings of the Fifth Low Temperature Conference, Madison, WI, 1999, Semiconductors <b class="bfseries">66</b>, 1238 (2001). 
+</p>
+</li>
+<li id="SmithDA01" style="list-style: none"> <div class="bibcite">[20]</div> <p>
+R. Smith, Hummingbirds are our friends, J. Appl. Phys. (these proceedings)  (2001), abstract No. DA-01. 
+</p>
+</li>
+<li id="Smith2007a" style="list-style: none"> <div class="bibcite">[21]</div> <p>
+J. Smith, Proc. SPIE <b class="bfseries">124</b>, 367 (2007b), required title is missing. 
+</p>
+</li>
+<li id="techreport-full" style="list-style: none"> <div class="bibcite">[22]</div> <p>
+T. Térrific, <em>An <script type="math/tex">O(n \log n / \!  \log \log n)</script> Sorting Algorithm</em>, Wishful Research Result 7 (Fanstord University, Computer Science Department, Fanstord, California, 1988) a full TECHREPORT entry. 
+</p>
+</li>
+<li id="Nelson1999" style="list-style: none"> <div class="bibcite">[23]</div> <p>
+J. Nelson, TWI Report 666/1999 (Jan. 1999) required institution missing. 
+</p>
+</li>
+<li id="Fields2005" style="list-style: none"> <div class="bibcite">[24]</div> <p>
+W. K. Fields, ECE Report No. AL944 (2005) required institution missing. 
+</p>
+</li>
+<li id="Zalkins2008" style="list-style: none"> <div class="bibcite">[25]</div> <p>
+Y. M. Zalkins, e-print arXiv:cond-mat/040426 (2008). 
+</p>
+</li>
+<li id="Nelson2005" style="list-style: none"> <div class="bibcite">[26]</div> <p>
+J. Nelson, U.S. Patent No. 5,693,000 (12 Dec. 2005). 
+</p>
+</li>
+<li id="Nelson1999a" style="list-style: none"> <div class="bibcite">[27]</div> <p>
+J. K. Nelson, M.S. thesis, New York University (1999b). 
+</p>
+</li>
+<li id="mastersthesis-full" style="list-style: none"> <div class="bibcite">[28]</div> <p>
+É. Masterly, <em>Mastering Thesis Writing</em>, Master’s project, Stanford University, English Department (1988), a full MASTERSTHESIS entry. 
+</p>
+</li>
+<li id="Smith2003" style="list-style: none"> <div class="bibcite">[29]</div> <p>
+S. M. Smith, Ph.D. thesis, Massachusetts Institute of Technology (2003). 
+</p>
+</li>
+<li id="KawaLin2003" style="list-style: none"> <div class="bibcite">[30]</div> <p>
+S. R. Kawa and S.-J. Lin, J. Geophys. Res. <b class="bfseries">108</b>, 4201 (2003), DOI:10.1029/2002JD002268. 
+</p>
+</li>
+<li id="phdthesis-full" style="list-style: none"> <div class="bibcite">[31]</div> <p>
+F. P. Phony-Baloney, <em>Fighting Fire with Fire: Festooning French Phrases</em>, PhD dissertation, Fanstord University, Department of French (1988), a full PHDTHESIS entry. 
+</p>
+</li>
+<li id="book-full" style="list-style: none"> <div class="bibcite">[32]</div> <p>
+D. E. Knuth, <em>Seminumerical Algorithms</em>, 2nd ed., The Art of Computer Programming, Vol. 2 (Addison-Wesley, Reading, Massachusetts, 1981) a full BOOK entry. 
+</p>
+</li>
+<li id="booklet-full" style="list-style: none"> <div class="bibcite">[33]</div> <p>
+J. C. Knvth, The programming of computer art, Vernier Art Center, Stanford, California (1988), a full BOOKLET entry. 
+</p>
+</li>
+<li id="ballagh2000" style="list-style: none"> <div class="bibcite">[34]</div> <p>
+R. Ballagh and C. Savage, Bose-einstein condensation: from atomic physics to quantum fluids, proceedings of the 13th physics summer school (World Scientific, Singapore, 2000) cond-mat/0008070 . 
+</p>
+</li>
+<li id="ballagh2000a" style="list-style: none"> <div class="bibcite">[35]</div> <p>
+R. Ballagh and C. Savage, Bose-einstein condensation: from atomic physics to quantum fluids, in <em>Proceedings of the 13th Physics Summer School</em>, edited by C. Savage and M. Das (World Scientific, Singapore, 2000) cond-mat/0008070 . 
+</p>
+</li>
+<li id="Magnetism" style="list-style: none"> <div class="bibcite">[36]</div> <p>
+W. Opechowski and R. Guccione, Introduction to the theory of normal metals, in <em>Magnetism</em>, Vol. IIa, edited by G. T. Rado and H. Suhl (Academic Press, New York, 1965) p. 105. 
+</p>
+</li>
+<li id="Magnetisma" style="list-style: none"> <div class="bibcite">[37]</div> <p>
+W. Opechowski and R. Guccione, Introduction to the theory of normal metals, in <em>Magnetism</em>, Vol. IIa, edited by G. T. Rado and H. Suhl (Academic Press, New York, 1965) p. 105. 
+</p>
+</li>
+<li id="Magnetismb" style="list-style: none"> <div class="bibcite">[38]</div> <p>
+W. Opechowski and R. Guccione, Introduction to the theory of normal metals, in <em>Magnetism</em>, Vol. IIa, edited by G. T. Rado and H. Suhl (Academic Press, New York, 1965) p. 105. 
+</p>
+</li>
+<li id="Smith80" style="list-style: none"> <div class="bibcite">[39]</div> <p>
+J. M. Smith, Molecular dynamics (Academic, New York, 1980). 
+</p>
+</li>
+<li id="ZS71" style="list-style: none"> <div class="bibcite">[40]</div> <p>
+V. E. Zakharov and A. B. Shabat, Exact theory of two-dimensional self-focusing and one-dimensional self-modulation of waves in nonlinear media, Zh. Eksp. Teor. Fiz. <b class="bfseries">61</b>, 118 (1971), [Sov. Phys. JETP <b class="bfseries">34</b>, 62 (1972)]. 
+</p>
+</li>
+<li id="Smith80a" style="list-style: none"> <div class="bibcite">[41]</div> <p>
+J. M. Smith, in <em>Molecular Dynamics</em>, edited by C. Brown (Academic, New York, 1980). 
+</p>
+</li>
+<li id="incollection-full" style="list-style: none"> <div class="bibcite">[42]</div> <p>
+D. D. Lincoll, Semigroups of recurrences, in <em>High Speed Computer and Algorithm Organization</em>, Fast Computers No. 23, edited by D. J. Lipcoll, D. H. Lawrie, and A. H. Sameh (Academic Press, New York, 1977) 3rd ed., Part 3, pp. 179–183, a full INCOLLECTION entry. 
+</p>
+</li>
+<li id="inproceedings-full" style="list-style: none"> <div class="bibcite">[43]</div> <p>
+A. V. Oaho, J. D. Ullman, and M. Yannakakis, On notions of information transfer in VLSI circuits, in <em>Proc. Fifteenth Annual ACM</em>, Boston, 1982, All ACM Conferences No. 17, edited by W. V. Oz and M. Yannakakis, ACM (Academic Press, New York, 1983) pp. 133–139, a full INPROCEDINGS entry. 
+</p>
+</li>
+<li id="manual-full" style="list-style: none"> <div class="bibcite">[44]</div> <p>
+L. Manmaker, <em>The Definitive Computer Manual</em>, Chips-R-Us, Silicon Valley, silver ed. (1986), a full MANUAL entry. 
+</p>
+</li>
+</ul>
+</section>
+<hr/>
+<ol>
+<li id="a0000000089">A footnote to the article title</li>
+<li id="a0000000090">Also at Physics Department, XYZ University.</li>
+<li id="a0000000091">Second.Author@institution.edu</li>
+<li id="a0000000092">http://www.Second.institution.edu/ Charlie.Author</li>
+<li id="a0000000103">Automatically placing footnotes into the bibliography requires using BibTeX to compile the bibliography.</li>
+<li id="a0000000116">Note a.</li>
+<li id="a0000000117">Note b.</li>
+<li id="a0000000119">The <script type="math/tex">z</script> parameter of these positions is <script type="math/tex">z\sim \frac{1}{4}</script>.</li>
+<li id="a0000000123">Some tables require footnotes.</li>
+<li id="a0000000124">Some tables need more than one footnote.</li>
+<li id="a0000000131">Here’s the first, from Ref. <span class="cite">
+<a href="../../notes/revtex_article/index.html#feyn54">2</a>
+</span>.</li>
+<li id="a0000000132">Here’s the second.</li>
+<li id="a0000000133">Here’s the third.</li>
+<li id="a0000000134">Here’s the fourth.</li>
+<li id="a0000000135">And etc.</li>
+</ol>
+
+            </div>
+        </div>
+    </div>
+
+        </main>
+		
+		<footer class="text-muted">
+	<hr>
+	<div class="container">
+		<div class="float-right">
+			<ul style="list-style: none">
+			<li><a href="#">Back to top</a></li>
+			
+			
+			<li><a href="../../notes/revtex_article/revtex_article.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download as PDF</a></li>
+			
+			</ul>
+		</div>
+		<p>Generated using <a target="_blank" href="https://github.com/chirun-ncl/chirun">Chirun</a>, written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+		<p>This page last generated: 2022-05-12</p>
+	</div>
+</footer>
+		
+    </body>
+</html>

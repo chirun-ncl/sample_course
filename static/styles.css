@@ -372,3 +372,11 @@ blockquote {
 blockquote > p {
   margin: 0 !important;
 }
+
+.subfigure {
+  display: inline-block;
+}
+
+.revtex-affiliation {
+  font-style: italic; 
+}

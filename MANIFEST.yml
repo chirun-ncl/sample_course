@@ -5,6 +5,7 @@ code: SAM0000
 format_version: 2
 mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 num_pdf_runs: 1
+root_url: /{base}/{code}/
 structure:
 - build_pdf: false
   content: []
@@ -20,6 +21,12 @@ structure:
     slug: latex_notes
     source: latex/latex.tex
     title: LaTeX notes
+    type: chapter
+  - build_pdf: true
+    pdf_url: notes/revtex_article/revtex_article.pdf
+    slug: revtex_article
+    source: revtex/revtex.tex
+    title: RevTeX article
     type: chapter
   - build_pdf: true
     pdf_url: notes/markdown_notes/markdown_notes.pdf
