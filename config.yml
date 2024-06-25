@@ -44,8 +44,4 @@ structure:
         - type: url
           title: A Static File
           source: static/data/dataset.RData
-themes: 
-  - title: Default
-    source: default
-    path: default
-build_pdf: True
+build_pdf: true
